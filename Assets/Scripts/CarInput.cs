@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-[RequireComponent(typeof(CarController))]
 public class CarInput : MonoBehaviour
 {
     CarController carController;

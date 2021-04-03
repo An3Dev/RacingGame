@@ -5,10 +5,10 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody))]
 [RequireComponent(typeof(CarInput))]
 
-public class CarController : MonoBehaviour
+public class PhysicsCarController : MonoBehaviour
 {
     [Header("Car Settings")]
-    [SerializeField] float forwardSpeed;
+    [SerializeField] float forwardForce;
     [SerializeField] float maxForwardVelocity = 10;
     [SerializeField] float maxReverseVelocity = 10;
 
@@ -55,10 +55,10 @@ public class CarController : MonoBehaviour
         //    turnDir = -1;
 
         tiresOnGround = 0;
-        for(int i = 0; i < groundCheck.Length; i++)
+        for (int i = 0; i < groundCheck.Length; i++)
         {
             Collider[] colliders = Physics.OverlapSphere(groundCheck[i].position, groundCheckRadius);
-            foreach(Collider c in colliders)
+            foreach (Collider c in colliders)
             {
                 if (!c.transform.root.Equals(transform))
                 {
@@ -81,20 +81,21 @@ public class CarController : MonoBehaviour
             return;
         }
 
-        float turningMultiplier = (localVelocity.z > speedAtWhichTurningSlows) ? 1 : localVelocity.z / speedAtWhichTurningSlows;
+        float turningMultiplier = (transform.InverseTransformDirection(rb.velocity.normalized).z > speedAtWhichTurningSlows) ? 1 : localVelocity.z / speedAtWhichTurningSlows;
 
         // if player wants to turn left, but car is turning right, and vice versa
         if ((movementInput.x > 0 && currentTurnValue < 0) || (movementInput.x < 0 && currentTurnValue > 0))
         {
             //currentTurnValue = 0;
             currentTurnValue += movementInput.x * Time.fixedDeltaTime * 100;
-           
-        } else
+        }
+        else
         {
             if (movementInput.x != 0)
             {
                 currentTurnValue += movementInput.x * Time.fixedDeltaTime * 100;
-            } else
+            }
+            else
             {
                 float val = straightenOutSteeringWheelMultiplier * Time.fixedDeltaTime;
                 val = Mathf.Clamp(val, 0, 0.99f);
@@ -113,42 +114,48 @@ public class CarController : MonoBehaviour
         }
 
         transform.Rotate(new Vector3(0, currentTurnValue / maxTurnValue, 0) * turnDir * turnAmount * turningMultiplier * Time.fixedDeltaTime, Space.Self);
-        
+
+
+        rb.AddForce(transform.forward * movementInput.y * forwardForce * Time.fixedDeltaTime);
 
         // limit the velocity
-        if (localVelocity.z > maxForwardVelocity)
-        {
-            localVelocity.z = maxForwardVelocity;
-        } else if (localVelocity.z < -maxReverseVelocity)
-        {
-            localVelocity.z = -maxReverseVelocity; 
-        } else
-        {
-            // accelerates car  
-            localVelocity += Vector3.forward * movementInput.y * accelerationMagnitude;
-        }
+        //if (localVelocity.z > maxForwardVelocity)
+        //{
+        //    localVelocity.z = maxForwardVelocity;
+        //}
+        //else if (localVelocity.z < -maxReverseVelocity)
+        //{
+        //    localVelocity.z = -maxReverseVelocity;
+        //}
+        //else
+        //{
+        //    // accelerates car  
+        //    localVelocity += Vector3.forward * movementInput.y * accelerationMagnitude;
+        //}
+
+
 
         // if there's no input, and the car is not moving downhill, slow down the car
-        if (movementInput.y == 0 && localVelocity.z != 0 && rb.velocity.y > -1)
-        {
-            int slowDownDir = 1;
-            if (localVelocity.z < 0)
-            {
-                slowDownDir = -1;
-            }
+        //if (movementInput.y == 0 && localVelocity.z != 0 && rb.velocity.y > -1)
+        //{
+        //    int slowDownDir = 1;
+        //    if (localVelocity.z < 0)
+        //    {
+        //        slowDownDir = -1;
+        //    }
 
-            localVelocity.z -= slowDownDir * friction * Time.deltaTime;  
-            if (Mathf.Abs(localVelocity.z) < 0.01f)
-            {
-                localVelocity.z = 0;
-            }
-        }
+        //    localVelocity.z -= slowDownDir * friction * Time.deltaTime;
+        //    if (Mathf.Abs(localVelocity.z) < 0.01f)
+        //    {
+        //        localVelocity.z = 0;
+        //    }
+        //}
 
-        Vector3 worldVelocity = transform.TransformVector(localVelocity);
-        worldVelocity.y = rb.velocity.y;
-        rb.velocity = worldVelocity;
+        //Vector3 worldVelocity = transform.TransformVector(localVelocity);
+        //worldVelocity.y = rb.velocity.y;
+        //rb.velocity = worldVelocity;
 
-        
 
-    } 
+
+    }
 }
