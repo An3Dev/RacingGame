@@ -8,11 +8,12 @@ using UnityEngine;
 public class CarController : MonoBehaviour
 {
     [Header("Car Settings")]
-    [SerializeField] float forwardSpeed;
     [SerializeField] float maxForwardVelocity = 10;
     [SerializeField] float maxReverseVelocity = 10;
 
     [SerializeField] float accelerationMagnitude = 1;
+    [SerializeField] float reverseAccelerationMagnitude = 1;
+
 
     [Tooltip("The higher the friction, the faster the car stops when engine is idle.")]
     [SerializeField] float friction;
@@ -68,7 +69,7 @@ public class CarController : MonoBehaviour
             }
         }
 
-        if (tiresOnGround < 3)
+        if (tiresOnGround < 2)
         {
             // don't add velocity to the car
 
@@ -76,12 +77,10 @@ public class CarController : MonoBehaviour
 
             // do not allow rotation
 
-            Debug.Log("In air");
-
             return;
         }
 
-        float turningMultiplier = (localVelocity.z > speedAtWhichTurningSlows) ? 1 : localVelocity.z / speedAtWhichTurningSlows;
+        float turningMultiplier = (Mathf.Abs(localVelocity.z) > speedAtWhichTurningSlows) ? 1 : Mathf.Abs(localVelocity.z / speedAtWhichTurningSlows);
 
         // if player wants to turn left, but car is turning right, and vice versa
         if ((movementInput.x > 0 && currentTurnValue < 0) || (movementInput.x < 0 && currentTurnValue > 0))
@@ -89,7 +88,8 @@ public class CarController : MonoBehaviour
             //currentTurnValue = 0;
             currentTurnValue += movementInput.x * Time.fixedDeltaTime * 100;
            
-        } else
+        } 
+        else
         {
             if (movementInput.x != 0)
             {
@@ -122,10 +122,57 @@ public class CarController : MonoBehaviour
         } else if (localVelocity.z < -maxReverseVelocity)
         {
             localVelocity.z = -maxReverseVelocity; 
-        } else
+        } 
+        else // if we don't need to limit the velocity
         {
-            // accelerates car  
-            localVelocity += Vector3.forward * movementInput.y * accelerationMagnitude;
+            if (localVelocity.z != 0)
+            {
+                // if this is true, then the input conflicts with the velocity. This means the user wants to brake.
+                float normalizedVelDir = localVelocity.z / localVelocity.z * (localVelocity.z < 0 ? -1 : 1);
+                if (normalizedVelDir - movementInput.y != 0)
+                {
+                    localVelocity.z += brakeForce * -normalizedVelDir * Time.fixedDeltaTime;
+                    Debug.Log("Brake");
+
+                }
+            }
+            else if(localVelocity.z <= 0 && movementInput.y < 0)
+            {                             
+               localVelocity += Vector3.forward * movementInput.y * reverseAccelerationMagnitude * Time.fixedDeltaTime;       
+               Debug.Log("Reverse");
+
+            }
+            else if (movementInput.y > 0)
+            {
+                localVelocity += Vector3.forward * movementInput.y * accelerationMagnitude * Time.fixedDeltaTime;
+                Debug.Log("Forward");
+            }
+
+
+            // if moving forward
+            //if (localVelocity.z > 0)
+            //{
+            //    if (movementInput.y < 0)
+            //    {
+            //        localVelocity.z -= brakeForce * Time.fixedDeltaTime;
+            //        // if car 
+            //        if (localVelocity.z <= 0)
+            //        {
+            //            localVelocity += Vector3.forward * movementInput.y * accelerationMagnitude * Time.fixedDeltaTime;
+            //        }
+            //    }
+            //    else
+            //    {
+            //        localVelocity += Vector3.forward * movementInput.y * reverseAccelerationMagnitude * Time.fixedDeltaTime;
+            //    }
+            //}
+            //else if (localVelocity.z < 0)
+            //{
+            //    if (movementInput.y > 0)
+            //    {
+            //    }
+            //    // if user is pressing on brake/reverse
+            //}
         }
 
         // if there's no input, and the car is not moving downhill, slow down the car
@@ -147,8 +194,5 @@ public class CarController : MonoBehaviour
         Vector3 worldVelocity = transform.TransformVector(localVelocity);
         worldVelocity.y = rb.velocity.y;
         rb.velocity = worldVelocity;
-
-        
-
     } 
 }
