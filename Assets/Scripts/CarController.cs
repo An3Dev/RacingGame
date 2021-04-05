@@ -12,6 +12,8 @@ public class CarController : MonoBehaviour
     [SerializeField] float maxReverseVelocity = 10;
 
     [SerializeField] float accelerationMagnitude = 1;
+    [Tooltip("The acceleration amount based on the current speed")]
+    [SerializeField] AnimationCurve accelerationOverSpeed;
     [SerializeField] float reverseAccelerationMagnitude = 1;
 
 
@@ -22,6 +24,9 @@ public class CarController : MonoBehaviour
     [SerializeField] float turnAmount = 10;
     [SerializeField] float speedAtWhichTurningSlows = 3;
     [SerializeField] float maxTurnValue = 100;
+
+    [SerializeField] Transform centerOfMassTransform;
+
 
     [Range(0, 49.99f)]
     [Tooltip("At 49, it takes the longest time to return to having the steering wheel straight. At 0, the steering wheel is straight instantly.")]
@@ -39,9 +44,12 @@ public class CarController : MonoBehaviour
     Vector2 movementInput;
 
     public int tiresOnGround;
+
+    float accelerationTimer = 0;
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
+        rb.centerOfMass = centerOfMassTransform.position;
     }
 
     public void ReceiveMovementInput(Vector2 moveDir)
@@ -52,8 +60,8 @@ public class CarController : MonoBehaviour
     private void FixedUpdate()
     {
         int turnDir = 1;
-        //if (localVelocity.z < 0)
-        //    turnDir = -1;
+        if (localVelocity.z < 0)
+            turnDir = -1;
 
         tiresOnGround = 0;
         for(int i = 0; i < groundCheck.Length; i++)
@@ -86,8 +94,7 @@ public class CarController : MonoBehaviour
         if ((movementInput.x > 0 && currentTurnValue < 0) || (movementInput.x < 0 && currentTurnValue > 0))
         {
             //currentTurnValue = 0;
-            currentTurnValue += movementInput.x * Time.fixedDeltaTime * 100;
-           
+            currentTurnValue += movementInput.x * Time.fixedDeltaTime * 100;         
         } 
         else
         {
@@ -114,66 +121,78 @@ public class CarController : MonoBehaviour
 
         transform.Rotate(new Vector3(0, currentTurnValue / maxTurnValue, 0) * turnDir * turnAmount * turningMultiplier * Time.fixedDeltaTime, Space.Self);
         
-
-        // limit the velocity
-        if (localVelocity.z > maxForwardVelocity)
+  
+        if (localVelocity.z != 0)
         {
-            localVelocity.z = maxForwardVelocity;
-        } else if (localVelocity.z < -maxReverseVelocity)
-        {
-            localVelocity.z = -maxReverseVelocity; 
-        } 
-        else // if we don't need to limit the velocity
-        {
-            if (localVelocity.z != 0)
+            // if there is input
+            if (movementInput.y != 0)
             {
+                // limit the velocity
+                //if (localVelocity.z > maxForwardVelocity)
+                //{
+                //    localVelocity.z = maxForwardVelocity;
+                //}
+                //else if (localVelocity.z < -maxReverseVelocity)
+                //{
+                //    localVelocity.z = -maxReverseVelocity;
+                //}
+
                 // if this is true, then the input conflicts with the velocity. This means the user wants to brake.
                 float normalizedVelDir = localVelocity.z / localVelocity.z * (localVelocity.z < 0 ? -1 : 1);
                 if (normalizedVelDir - movementInput.y != 0)
                 {
                     localVelocity.z += brakeForce * -normalizedVelDir * Time.fixedDeltaTime;
                     Debug.Log("Brake");
-
                 }
             }
-            else if(localVelocity.z <= 0 && movementInput.y < 0)
-            {                             
-               localVelocity += Vector3.forward * movementInput.y * reverseAccelerationMagnitude * Time.fixedDeltaTime;       
-               Debug.Log("Reverse");
-
-            }
-            else if (movementInput.y > 0)
-            {
-                localVelocity += Vector3.forward * movementInput.y * accelerationMagnitude * Time.fixedDeltaTime;
-                Debug.Log("Forward");
-            }
-
-
-            // if moving forward
-            //if (localVelocity.z > 0)
-            //{
-            //    if (movementInput.y < 0)
-            //    {
-            //        localVelocity.z -= brakeForce * Time.fixedDeltaTime;
-            //        // if car 
-            //        if (localVelocity.z <= 0)
-            //        {
-            //            localVelocity += Vector3.forward * movementInput.y * accelerationMagnitude * Time.fixedDeltaTime;
-            //        }
-            //    }
-            //    else
-            //    {
-            //        localVelocity += Vector3.forward * movementInput.y * reverseAccelerationMagnitude * Time.fixedDeltaTime;
-            //    }
-            //}
-            //else if (localVelocity.z < 0)
-            //{
-            //    if (movementInput.y > 0)
-            //    {
-            //    }
-            //    // if user is pressing on brake/reverse
-            //}
+                
         }
+        else if(localVelocity.z <= 0 && movementInput.y < 0)
+        {         
+            // only add velocity if we're not at max speed
+            if (localVelocity.z > -maxReverseVelocity)
+            {
+                localVelocity += Vector3.forward * movementInput.y * reverseAccelerationMagnitude * Time.fixedDeltaTime;
+            }
+
+            Debug.Log("Reverse");
+
+        }
+        else if (movementInput.y > 0)
+        {
+            if (localVelocity.z < maxForwardVelocity)
+            {
+                localVelocity += Vector3.forward * movementInput.y * accelerationMagnitude * accelerationOverSpeed.Evaluate(localVelocity.z / maxForwardVelocity) * Time.fixedDeltaTime;
+            }
+            Debug.Log("Forward");
+        }
+
+
+        // if moving forward
+        //if (localVelocity.z > 0)
+        //{
+        //    if (movementInput.y < 0)
+        //    {
+        //        localVelocity.z -= brakeForce * Time.fixedDeltaTime;
+        //        // if car 
+        //        if (localVelocity.z <= 0)
+        //        {
+        //            localVelocity += Vector3.forward * movementInput.y * accelerationMagnitude * Time.fixedDeltaTime;
+        //        }
+        //    }
+        //    else
+        //    {
+        //        localVelocity += Vector3.forward * movementInput.y * reverseAccelerationMagnitude * Time.fixedDeltaTime;
+        //    }
+        //}
+        //else if (localVelocity.z < 0)
+        //{
+        //    if (movementInput.y > 0)
+        //    {
+        //    }
+        //    // if user is pressing on brake/reverse
+        //}
+        //}
 
         // if there's no input, and the car is not moving downhill, slow down the car
         if (movementInput.y == 0 && localVelocity.z != 0 && rb.velocity.y > -1)
