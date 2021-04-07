@@ -21,6 +21,7 @@ public class PhysicsCarController : MonoBehaviour
     [SerializeField] float turnAmount = 10;
     [SerializeField] float speedAtWhichTurningSlows = 3;
     [SerializeField] float maxTurnValue = 100;
+    [SerializeField] Transform centerOfMassTransform;
 
     [Range(0, 49.99f)]
     [Tooltip("At 49, it takes the longest time to return to having the steering wheel straight. At 0, the steering wheel is straight instantly.")]
@@ -41,6 +42,7 @@ public class PhysicsCarController : MonoBehaviour
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
+        rb.centerOfMass = centerOfMassTransform.position;
     }
 
     public void ReceiveMovementInput(Vector2 moveDir)
@@ -51,8 +53,8 @@ public class PhysicsCarController : MonoBehaviour
     private void FixedUpdate()
     {
         int turnDir = 1;
-        //if (localVelocity.z < 0)
-        //    turnDir = -1;
+        if (localVelocity.z < 0)
+            turnDir = -1;
 
         tiresOnGround = 0;
         for (int i = 0; i < groundCheck.Length; i++)
@@ -81,7 +83,8 @@ public class PhysicsCarController : MonoBehaviour
             return;
         }
 
-        float turningMultiplier = (transform.InverseTransformDirection(rb.velocity.normalized).z > speedAtWhichTurningSlows) ? 1 : localVelocity.z / speedAtWhichTurningSlows;
+        Vector3 localRbVelocity = transform.InverseTransformDirection(rb.velocity.normalized);
+        float turningMultiplier = (localRbVelocity.z > speedAtWhichTurningSlows) ? 1 : localRbVelocity.z / speedAtWhichTurningSlows;
 
         // if player wants to turn left, but car is turning right, and vice versa
         if ((movementInput.x > 0 && currentTurnValue < 0) || (movementInput.x < 0 && currentTurnValue > 0))
@@ -114,7 +117,6 @@ public class PhysicsCarController : MonoBehaviour
         }
 
         transform.Rotate(new Vector3(0, currentTurnValue / maxTurnValue, 0) * turnDir * turnAmount * turningMultiplier * Time.fixedDeltaTime, Space.Self);
-
 
         rb.AddForce(transform.forward * movementInput.y * forwardForce * Time.fixedDeltaTime);
 
