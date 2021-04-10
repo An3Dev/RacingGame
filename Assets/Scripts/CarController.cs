@@ -7,44 +7,52 @@ using UnityEngine;
 
 public class CarController : MonoBehaviour
 {
-    [Header("Car Settings")]
-    [SerializeField] float maxForwardVelocity = 10;
-    [SerializeField] float maxReverseVelocity = 10;
+    [Header("Objects to Assign")]
+    [SerializeField] Transform frontRightWheel;
+    [SerializeField] Transform frontLeftWheel;
+    [SerializeField] Transform backLeftWheel;
+    [SerializeField] Transform backRightWheel;
 
+    [SerializeField] Transform centerOfMassTransform;
+    [SerializeField] Transform centerOfMassWhileInAirTransform;
+    [Space]
+
+    [Header("Car Settings")]
+    [Space]
+    [Header("Speed")]
+    [SerializeField] float maxForwardVelocity = 10;
+    [SerializeField] float maxReverseVelocity = 10;   
     [SerializeField] float accelerationMagnitude = 1;
     [Tooltip("The acceleration amount based on the time the car has been accelerating")]
     [SerializeField] AnimationCurve accelerationOverSpeed;
     [SerializeField] float reverseAccelerationMagnitude = 1;
 
-
-    [Tooltip("The higher the friction, the faster the car stops when engine is idle.")]
+    [Header("Stop Forces")]
+    [Tooltip("The greater the friction, the faster the car stops when engine is idle.")]
     [SerializeField] float friction = 5;
     [SerializeField] float sideFriction = 20;
+    [SerializeField] float driftSideFriction = 0.01f;
+
     [SerializeField] float brakeForce = 30;
     [SerializeField] float drag = 0;
     [SerializeField] float airDrag = 1;
     [SerializeField] float angularDrag = 1;
     [SerializeField] float postLandingAngularDrag = 1000;
 
-
-
+    [Space]
+    [Header("Steer")]
     [SerializeField] float turnAmount = 10;
     [SerializeField] float speedAtWhichTurningSlows = 3;
     [SerializeField] float maxTurnValue = 100;
     [SerializeField] float turnSlowDownAmount = 10;
-
-    [SerializeField] float sideRotationForce;
-    [SerializeField] float timeInAirBeforeCanAirRoll = 0.2f;
-    [SerializeField] float postLandingRotationLockTime = 0.2f;
-    float timeSinceLeftAirTimer = 0;
-    float postLandingTimer = -1;
-
-    [SerializeField] Transform centerOfMassTransform;
-    [SerializeField] Transform centerOfMassWhileInAirTransform;
-
     [Range(0, 49.99f)]
     [Tooltip("At 49, it takes the longest time to return to having the steering wheel straight. At 0, the steering wheel is straight instantly.")]
     [SerializeField] float straightenOutSteeringWheelMultiplier = 1;
+
+    [Header("Air Roll")]
+    [SerializeField] float sideRotationForce;
+    [SerializeField] float timeInAirBeforeCanAirRoll = 0.2f;
+    [SerializeField] float postLandingRotationLockTime = 0.2f;
 
     Rigidbody rb;
 
@@ -54,18 +62,23 @@ public class CarController : MonoBehaviour
 
     float currentTurnValue = 0;
     bool wasInAirLastFrame = false;
-
+    bool isInAir;
     Vector3 localVelocity = Vector3.zero;
 
     public int numTiresOnGround;
+
+    float timeSinceLeftAirTimer = 0;
+    float postLandingTimer = -1;
 
     // input
     bool isDriftPressed = false;
     float gasInput, brakeInput;
     float steerInput;
     Vector2 airRollInput;
+    float driftDir = 0;
 
-
+    bool isUsingAnalogSteering = false;
+    float lastSteerValue = 0;
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
@@ -104,6 +117,12 @@ public class CarController : MonoBehaviour
 
     private void Update()
     {
+        // detect if controller is using analog or mouse and keyboard.
+        if (!isUsingAnalogSteering && (lastSteerValue != 1 || lastSteerValue != -1))
+        {
+            isUsingAnalogSteering = true;
+        }
+
         numTiresOnGround = 0;
         for (int i = 0; i < groundCheck.Length; i++)
         {
@@ -131,11 +150,11 @@ public class CarController : MonoBehaviour
 
             timeSinceLeftAirTimer += Time.deltaTime;
             wasInAirLastFrame = true;
-
-            return;
+            isInAir = true;
         }
         else // if the car is on the ground
         {
+            isInAir = false;
             //if the car just landed
             if (wasInAirLastFrame)
             {
@@ -163,6 +182,21 @@ public class CarController : MonoBehaviour
         }
 
         Steering();
+
+        if (gasInput != 0 || !isInAir)
+        {
+            // spin back wheels
+
+            backLeftWheel.Rotate(Vector3.up * (localVelocity.z / maxForwardVelocity) * 360, Space.Self);
+            backRightWheel.Rotate(Vector3.up * (localVelocity.z / maxForwardVelocity) * 360, Space.Self);
+
+        }
+
+        if (isInAir)
+        {
+            return;
+        }
+        //--------- This Code Does Not Execute While in the Air ------- //
 
         // if there is input
         if (gasInput != 0 || brakeInput != 0)
@@ -219,15 +253,34 @@ public class CarController : MonoBehaviour
 
 
         }
-        if (!isDriftPressed && localVelocity.x != 0)
+
+        if (isDriftPressed)
+        {
+            // set the drift direction
+            if (driftDir == 0 && steerInput != 0)
+            {
+                driftDir = (steerInput > 0) ? 1 : -1;
+            }
+
+            if (driftDir != 0)
+            {
+                 // turn car toward drift direction
+            }
+
+        } else
+        {
+            driftDir = 0;
+        }
+
+        if (localVelocity.x != 0)
         {
             int slowDownDir = 1;
             if (localVelocity.x < 0)
             {
                 slowDownDir = -1;
             }
-
-            localVelocity.x -= slowDownDir * sideFriction * Time.deltaTime;
+            float f = isDriftPressed ? driftSideFriction : sideFriction;
+            localVelocity.x -= slowDownDir * f * Time.deltaTime;
             if (Mathf.Abs(localVelocity.x) < 0.1f)
             {
                 localVelocity.x = 0;
@@ -282,9 +335,48 @@ public class CarController : MonoBehaviour
         {
             currentTurnValue = -maxTurnValue;
         }
-        Vector3 turningValuePercent = new Vector3(0, currentTurnValue / maxTurnValue, 0);
-        localVelocity.z -= turningMultiplier * Mathf.Abs(turningValuePercent.y) * turnSlowDownAmount * Time.deltaTime;
-        transform.Rotate(turningValuePercent * turnDir * turnAmount * turningMultiplier * Time.deltaTime, Space.Self);
+        float turningValuePercent = currentTurnValue / maxTurnValue;
+
+        float zRot = 90 + 30 * turningValuePercent;
+        frontRightWheel.localRotation = Quaternion.Euler(new Vector3(frontRightWheel.localRotation.x, 0, zRot));
+        frontLeftWheel.localRotation = Quaternion.Euler(new Vector3(frontLeftWheel.localRotation.x, 0, zRot));
+
+        if (!isInAir)
+        {
+            localVelocity.z -= turningMultiplier * Mathf.Abs(turningValuePercent) * turnSlowDownAmount * Time.deltaTime;
+            transform.Rotate(Vector3.up * turningValuePercent * turnDir * turnAmount * turningMultiplier * Time.deltaTime, Space.Self);
+        }
+
+    }
+
+    void WheelTurning()
+    {
+        int turnDir = 1;
+        if (localVelocity.z < 0)
+            turnDir = -1;
+
+        float magnitude = rb.velocity.magnitude;
+        float turningMultiplier = (Mathf.Abs(magnitude) > speedAtWhichTurningSlows) ? 1 : Mathf.Abs(magnitude / speedAtWhichTurningSlows);
+
+        // if player wants to turn left, but car is turning right, and vice versa
+        if ((steerInput > 0 && currentTurnValue < 0) || (steerInput < 0 && currentTurnValue > 0))
+        {
+            //currentTurnValue = 0;
+            currentTurnValue += steerInput * Time.deltaTime * 100;
+        }
+        else
+        {
+            if (steerInput != 0)
+            {
+                currentTurnValue += steerInput * Time.deltaTime * 100;
+            }
+            else
+            {
+                float val = straightenOutSteeringWheelMultiplier * Time.deltaTime;
+                val = Mathf.Clamp(val, 0, 0.99f);
+                currentTurnValue *= val;
+            }
+        }
     }
 
     private void FixedUpdate()

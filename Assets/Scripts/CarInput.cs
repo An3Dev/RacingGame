@@ -8,7 +8,7 @@ public class CarInput : MonoBehaviour
     CarController carController;
     private void Awake()
     {
-        carController = GetComponent<CarController>();    
+        carController = GetComponent<CarController>();       
     }
 
     public void OnSteer(InputAction.CallbackContext context)
