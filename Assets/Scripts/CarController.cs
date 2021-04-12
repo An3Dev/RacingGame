@@ -8,6 +8,7 @@ using UnityEngine;
 public class CarController : MonoBehaviour
 {
     [Header("Objects to Assign")]
+    public CarCamera carCam;
     [SerializeField] Transform frontRightWheel;
     [SerializeField] Transform frontLeftWheel;
     [SerializeField] Transform backLeftWheel;
@@ -15,6 +16,7 @@ public class CarController : MonoBehaviour
 
     [SerializeField] Transform centerOfMassTransform;
     [SerializeField] Transform centerOfMassWhileInAirTransform;
+
     [Space]
 
     [Header("Car Settings")]
@@ -45,9 +47,11 @@ public class CarController : MonoBehaviour
     [SerializeField] float speedAtWhichTurningSlows = 3;
     [SerializeField] float maxTurnValue = 100;
     [SerializeField] float turnSlowDownAmount = 10;
-    [Range(0, 49.99f)]
-    [Tooltip("At 49, it takes the longest time to return to having the steering wheel straight. At 0, the steering wheel is straight instantly.")]
+    [Range(0, 500)]
+    [Tooltip("The higher the value, the faster the steering wheel goes back to position")]
     [SerializeField] float straightenOutSteeringWheelMultiplier = 1;
+    [SerializeField] bool isUsingAnalogSteering = false;
+
 
     [Header("Air Roll")]
     [SerializeField] float sideRotationForce;
@@ -77,8 +81,9 @@ public class CarController : MonoBehaviour
     Vector2 airRollInput;
     float driftDir = 0;
 
-    bool isUsingAnalogSteering = false;
     float lastSteerValue = 0;
+
+    Vector3 worldDriftVelocity;
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
@@ -118,10 +123,23 @@ public class CarController : MonoBehaviour
     private void Update()
     {
         // detect if controller is using analog or mouse and keyboard.
-        if (!isUsingAnalogSteering && (lastSteerValue != 1 || lastSteerValue != -1))
-        {
-            isUsingAnalogSteering = true;
-        }
+        //if (lastSteerValue != 0)
+        //{
+        //    if (!isUsingAnalogSteering)
+        //    {
+        //        if (lastSteerValue != 1 || lastSteerValue != -1)
+        //        {
+        //            isUsingAnalogSteering = true;
+        //        }
+        //    } else
+        //    {
+        //        if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.S))
+        //        {
+        //            isUsingAnalogSteering = false;
+        //        }
+        //    }
+        //}
+        
 
         numTiresOnGround = 0;
         for (int i = 0; i < groundCheck.Length; i++)
@@ -250,8 +268,6 @@ public class CarController : MonoBehaviour
             {
                 localVelocity.z = 0;
             }
-
-
         }
 
         if (isDriftPressed)
@@ -304,80 +320,67 @@ public class CarController : MonoBehaviour
             turnDir = -1;
 
         float magnitude = rb.velocity.magnitude;
-        float turningMultiplier = (Mathf.Abs(magnitude) > speedAtWhichTurningSlows) ? 1 : Mathf.Abs(magnitude / speedAtWhichTurningSlows);
+        float turningMultiplier = (magnitude > speedAtWhichTurningSlows) ? 1 : Mathf.Abs(magnitude / speedAtWhichTurningSlows);
 
-        // if player wants to turn left, but car is turning right, and vice versa
-        if ((steerInput > 0 && currentTurnValue < 0) || (steerInput < 0 && currentTurnValue > 0))
+        float turningValuePercent;
+
+        if (!isUsingAnalogSteering)
         {
-            //currentTurnValue = 0;
-            currentTurnValue += steerInput * Time.deltaTime * 100;
-        }
-        else
-        {
+            // if player wants to turn left, but car is turning right, and vice versa
+            //if ((steerInput > 0 && currentTurnValue < 0) || (steerInput < 0 && currentTurnValue > 0))
+            //{
+            //    //currentTurnValue = 0;
+            //    currentTurnValue += steerInput * Time.deltaTime * 100;
+            //}
+            //else
+            //{
+                
+            //}
+
             if (steerInput != 0)
             {
                 currentTurnValue += steerInput * Time.deltaTime * 100;
             }
             else
             {
-                float val = straightenOutSteeringWheelMultiplier * Time.deltaTime;
-                val = Mathf.Clamp(val, 0, 0.99f);
-                currentTurnValue *= val;
+                if (Mathf.Abs(currentTurnValue) > straightenOutSteeringWheelMultiplier * Time.deltaTime)
+                {
+                    float val = straightenOutSteeringWheelMultiplier * Time.deltaTime;
+                    //val = Mathf.Clamp(val, 0, 0.999f);
+                    currentTurnValue -= val * Mathf.Sign(currentTurnValue);
+                } else
+                {
+                    currentTurnValue = 0;
+                }
             }
-        }
+            // clamp turn value
+            if (currentTurnValue > maxTurnValue)
+            {
+                currentTurnValue = maxTurnValue;
+            }
+            else if (currentTurnValue < -maxTurnValue)
+            {
+                currentTurnValue = -maxTurnValue;
+            }
 
-        // clamp turn value
-        if (currentTurnValue > maxTurnValue)
+            turningValuePercent = currentTurnValue / maxTurnValue;
+        } 
+        // else if user is using analog steering
+        else
         {
-            currentTurnValue = maxTurnValue;
-        }
-        else if (currentTurnValue < -maxTurnValue)
-        {
-            currentTurnValue = -maxTurnValue;
-        }
-        float turningValuePercent = currentTurnValue / maxTurnValue;
+            turningValuePercent = steerInput;
+        }  
 
         float zRot = 90 + 30 * turningValuePercent;
-        frontRightWheel.localRotation = Quaternion.Euler(new Vector3(frontRightWheel.localRotation.x, 0, zRot));
-        frontLeftWheel.localRotation = Quaternion.Euler(new Vector3(frontLeftWheel.localRotation.x, 0, zRot));
+        frontRightWheel.localRotation = Quaternion.Euler(new Vector3(frontRightWheel.localRotation.eulerAngles.x, 0, zRot));
+        frontLeftWheel.localRotation = Quaternion.Euler(new Vector3(frontLeftWheel.localRotation.eulerAngles.x, 0, zRot));
 
         if (!isInAir)
         {
             localVelocity.z -= turningMultiplier * Mathf.Abs(turningValuePercent) * turnSlowDownAmount * Time.deltaTime;
             transform.Rotate(Vector3.up * turningValuePercent * turnDir * turnAmount * turningMultiplier * Time.deltaTime, Space.Self);
         }
-
-    }
-
-    void WheelTurning()
-    {
-        int turnDir = 1;
-        if (localVelocity.z < 0)
-            turnDir = -1;
-
-        float magnitude = rb.velocity.magnitude;
-        float turningMultiplier = (Mathf.Abs(magnitude) > speedAtWhichTurningSlows) ? 1 : Mathf.Abs(magnitude / speedAtWhichTurningSlows);
-
-        // if player wants to turn left, but car is turning right, and vice versa
-        if ((steerInput > 0 && currentTurnValue < 0) || (steerInput < 0 && currentTurnValue > 0))
-        {
-            //currentTurnValue = 0;
-            currentTurnValue += steerInput * Time.deltaTime * 100;
-        }
-        else
-        {
-            if (steerInput != 0)
-            {
-                currentTurnValue += steerInput * Time.deltaTime * 100;
-            }
-            else
-            {
-                float val = straightenOutSteeringWheelMultiplier * Time.deltaTime;
-                val = Mathf.Clamp(val, 0, 0.99f);
-                currentTurnValue *= val;
-            }
-        }
-    }
+    }  
 
     private void FixedUpdate()
     {
