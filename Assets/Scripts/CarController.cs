@@ -16,6 +16,7 @@ public class CarController : MonoBehaviour
 
     [SerializeField] Transform centerOfMassTransform;
     [SerializeField] Transform centerOfMassWhileInAirTransform;
+    public Checkpoints checkpoints;
 
     [Space]
 
@@ -28,12 +29,15 @@ public class CarController : MonoBehaviour
     [Tooltip("The acceleration amount based on the time the car has been accelerating")]
     [SerializeField] AnimationCurve accelerationOverSpeed;
     [SerializeField] float reverseAccelerationMagnitude = 1;
+    [SerializeField] float driftAcceleration = 10;
+    [SerializeField] AnimationCurve driftAccelerationOverSpeed;
+
 
     [Header("Stop Forces")]
     [Tooltip("The greater the friction, the faster the car stops when engine is idle.")]
     [SerializeField] float friction = 5;
     [SerializeField] float sideFriction = 20;
-    [SerializeField] float driftSideFriction = 0.01f;
+    [SerializeField] float driftFriction = 0.01f;
 
     [SerializeField] float brakeForce = 30;
     [SerializeField] float drag = 0;
@@ -50,7 +54,7 @@ public class CarController : MonoBehaviour
     [Range(0, 500)]
     [Tooltip("The higher the value, the faster the steering wheel goes back to position")]
     [SerializeField] float straightenOutSteeringWheelMultiplier = 1;
-    [SerializeField] bool isUsingAnalogSteering = false;
+    [SerializeField] bool isUsingController = false;
 
 
     [Header("Air Roll")]
@@ -73,17 +77,21 @@ public class CarController : MonoBehaviour
 
     float timeSinceLeftAirTimer = 0;
     float postLandingTimer = -1;
+    bool isDrifting = false;
 
     // input
     bool isDriftPressed = false;
     float gasInput, brakeInput;
     float steerInput;
-    Vector2 airRollInput;
+    float airRollInput;
+    Vector2 airRotInput;
     float driftDir = 0;
 
     float lastSteerValue = 0;
 
     Vector3 worldDriftVelocity;
+
+    bool airRollIsPressed = false;
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
@@ -103,10 +111,26 @@ public class CarController : MonoBehaviour
         steerInput = value;
     }
 
-    public void ReceiveAirRollInput(Vector2 value)
+    public void SetIsControllerInput(bool isController)
+    {
+        isUsingController = isController;
+    }
+
+    public void ReceiveAirRollInput(float value)
     {
         airRollInput = value;
     }
+
+    public void ReceiveAirRotInput(Vector2 value)
+    {
+        airRotInput = value;
+    }
+
+    public void ReceiveDoAirRollInput(bool doAirRoll)
+    {
+        this.airRollIsPressed = doAirRoll;
+    }
+
 
     public void ReceiveBrakeInput(float value)
     {
@@ -118,29 +142,19 @@ public class CarController : MonoBehaviour
         isDriftPressed = value;
     }
 
+    public void ResetCarPosition()
+    {
+        Transform t = checkpoints.GetDefaultCheckpoint();
+        transform.position = t.position;
+        transform.rotation = t.rotation;
+        rb.Sleep();
+        rb.WakeUp();
+    }
+
     #endregion
 
     private void Update()
     {
-        // detect if controller is using analog or mouse and keyboard.
-        //if (lastSteerValue != 0)
-        //{
-        //    if (!isUsingAnalogSteering)
-        //    {
-        //        if (lastSteerValue != 1 || lastSteerValue != -1)
-        //        {
-        //            isUsingAnalogSteering = true;
-        //        }
-        //    } else
-        //    {
-        //        if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.S))
-        //        {
-        //            isUsingAnalogSteering = false;
-        //        }
-        //    }
-        //}
-        
-
         numTiresOnGround = 0;
         for (int i = 0; i < groundCheck.Length; i++)
         {
@@ -201,13 +215,14 @@ public class CarController : MonoBehaviour
 
         Steering();
 
-        if (gasInput != 0 || !isInAir)
+        if (!isInAir && isDriftPressed)
         {
-            // spin back wheels
-
-            backLeftWheel.Rotate(Vector3.up * (localVelocity.z / maxForwardVelocity) * 360, Space.Self);
-            backRightWheel.Rotate(Vector3.up * (localVelocity.z / maxForwardVelocity) * 360, Space.Self);
-
+            isDrifting = true;
+            worldDriftVelocity = rb.velocity;
+        }
+        else
+        {
+            isDrifting = false;
         }
 
         if (isInAir)
@@ -216,44 +231,88 @@ public class CarController : MonoBehaviour
         }
         //--------- This Code Does Not Execute While in the Air ------- //
 
+
+        if (!isDrifting)
+        {
+            ApplyFriction();
+        }
+        else // is drifting
+        {
+            Drift();
+        }
+
         // if there is input
         if (gasInput != 0 || brakeInput != 0)
         {
-            // limit the velocity
-            //if (localVelocity.z > maxForwardVelocity)
-            //{
-            //    localVelocity.z = maxForwardVelocity;
-            //}
-            //else if (localVelocity.z < -maxReverseVelocity)
-            //{
-            //    localVelocity.z = -maxReverseVelocity;
-            //}
-
-            // braking
-            if (localVelocity.z > 0 && brakeInput != 0)
+            // if user wants to brake and we're not drifting.
+            if (brakeInput != 0 && !isDrifting)
             {
-                localVelocity.z -= brakeForce * brakeInput * Time.deltaTime;
-                Debug.Log("Brake");
+                // braking
+                if (localVelocity.z > 0 && brakeInput != 0)
+                {
+                    localVelocity.z -= brakeForce * brakeInput * Time.deltaTime;
+                }
+            }
+            else
+            {
+                // spin back wheels
+                backLeftWheel.Rotate(Vector3.up * localVelocity.z * 360, Space.Self);
+                backRightWheel.Rotate(Vector3.up * localVelocity.z * 360, Space.Self);
             }
 
+            // if user wants to move forward
+            if (gasInput > 0)
+            {
+                if (!isDrifting)
+                { 
+                    localVelocity += Vector3.forward * accelerationMagnitude * gasInput * accelerationOverSpeed.Evaluate(localVelocity.z / maxForwardVelocity) * Time.deltaTime;
+                } else
+                {
+                    Vector3 addition = transform.forward * driftAcceleration * driftAccelerationOverSpeed.Evaluate(rb.velocity.magnitude / maxForwardVelocity) * gasInput * Time.deltaTime;
+                    Debug.Log("Forward Drift: " + worldDriftVelocity + " + " + addition + " = " + (worldDriftVelocity + addition));
+
+                    worldDriftVelocity += addition;
+                }
+            }
             // if user wants to go in reverse
-            if (localVelocity.z <= 0 && brakeInput > 0)
+            else if ((localVelocity.z <= 0.1f || isDrifting) && brakeInput > 0)
             {
-                localVelocity -= Vector3.forward * reverseAccelerationMagnitude * brakeInput * accelerationOverSpeed.Evaluate(-localVelocity.z / maxReverseVelocity) * Time.deltaTime;
+                if (!isDrifting)
+                {
+                    localVelocity -= Vector3.forward * reverseAccelerationMagnitude * brakeInput * accelerationOverSpeed.Evaluate(-localVelocity.z / maxReverseVelocity) * Time.deltaTime;
+                }else
+                {
+                    Vector3 addition = -transform.forward * driftAcceleration * driftAccelerationOverSpeed.Evaluate(rb.velocity.magnitude / maxForwardVelocity) * brakeInput * Time.deltaTime;
 
-                Debug.Log("Reverse");
+                    Debug.Log("Reversing: " + worldDriftVelocity + " + " + addition + " = " + (worldDriftVelocity + addition));
 
-            }
-            else if (gasInput > 0)
-            {
-                //if (localVelocity.z < maxForwardVelocity)
-                //{
-                localVelocity += Vector3.forward * accelerationMagnitude * gasInput * accelerationOverSpeed.Evaluate(localVelocity.z / maxForwardVelocity) * Time.deltaTime;
-                //}
-                Debug.Log("Forward");
+                    worldDriftVelocity += addition;                    
+                }
             }
         }
 
+
+
+        ApplyVelocityToRigidbody();
+    }
+
+    void ApplyVelocityToRigidbody()
+    {
+        if (!isDrifting)
+        {
+            Vector3 worldVelocity = transform.TransformVector(localVelocity);
+            worldVelocity.y = rb.velocity.y;
+            rb.velocity = worldVelocity;
+        } else
+        {
+            // use the world drift velocity that is set in the Drift method
+            rb.velocity = worldDriftVelocity;
+        }
+    }
+
+    void ApplyFriction()
+    {
+        worldDriftVelocity = Vector3.zero;
         // if there's no input, and the car is not moving downhill, slow down the car
         if (gasInput == 0 && localVelocity.z != 0 && rb.velocity.y > -1)
         {
@@ -270,24 +329,6 @@ public class CarController : MonoBehaviour
             }
         }
 
-        if (isDriftPressed)
-        {
-            // set the drift direction
-            if (driftDir == 0 && steerInput != 0)
-            {
-                driftDir = (steerInput > 0) ? 1 : -1;
-            }
-
-            if (driftDir != 0)
-            {
-                 // turn car toward drift direction
-            }
-
-        } else
-        {
-            driftDir = 0;
-        }
-
         if (localVelocity.x != 0)
         {
             int slowDownDir = 1;
@@ -295,28 +336,64 @@ public class CarController : MonoBehaviour
             {
                 slowDownDir = -1;
             }
-            float f = isDriftPressed ? driftSideFriction : sideFriction;
-            localVelocity.x -= slowDownDir * f * Time.deltaTime;
+            //float f = isDriftPressed ? driftFriction : sideFriction;
+            localVelocity.x -= slowDownDir * sideFriction * Time.deltaTime;
             if (Mathf.Abs(localVelocity.x) < 0.1f)
             {
                 localVelocity.x = 0;
             }
         }
-        else if (isDriftPressed)
+    }
+
+    void Drift()
+    {
+        Vector3 localDriftVelocity = transform.InverseTransformVector(worldDriftVelocity);
+        Vector2 slowDownDir = Vector2.one;
+
+        if (localDriftVelocity.x > 0)
         {
-            Debug.Log("Drift");
+            slowDownDir.x = -1;
+        }
+        if (localDriftVelocity.z > 0)
+        {
+            slowDownDir.y = -1;
+        }
+
+        localDriftVelocity.x -= slowDownDir.x * driftFriction * Time.deltaTime;
+        localDriftVelocity.z -= slowDownDir.y * driftFriction * Time.deltaTime;
+
+
+        if (Mathf.Abs(localDriftVelocity.x) < 0.1f)
+        {
+            localDriftVelocity.x = 0;
+        }
+        if (Mathf.Abs(localDriftVelocity.z) < 0.1f)
+        {
+            localDriftVelocity.z = 0;
         }
 
 
-        Vector3 worldVelocity = transform.TransformVector(localVelocity);
-        worldVelocity.y = rb.velocity.y;
-        rb.velocity = worldVelocity;
+        localVelocity = localDriftVelocity;
+        worldDriftVelocity = transform.TransformVector(localDriftVelocity);
     }
+
+    #region Getters
+    public bool GetIsInAir()
+    {
+        return isInAir;
+    }
+
+    public float GetSpeed()
+    {
+        return rb.velocity.magnitude;
+    }
+
+    #endregion
 
     private void Steering()
     {
         int turnDir = 1;
-        if (localVelocity.z < 0)
+        if (localVelocity.z < 0 && !isDrifting)
             turnDir = -1;
 
         float magnitude = rb.velocity.magnitude;
@@ -324,18 +401,9 @@ public class CarController : MonoBehaviour
 
         float turningValuePercent;
 
-        if (!isUsingAnalogSteering)
+        if (!isUsingController)
         {
             // if player wants to turn left, but car is turning right, and vice versa
-            //if ((steerInput > 0 && currentTurnValue < 0) || (steerInput < 0 && currentTurnValue > 0))
-            //{
-            //    //currentTurnValue = 0;
-            //    currentTurnValue += steerInput * Time.deltaTime * 100;
-            //}
-            //else
-            //{
-                
-            //}
 
             if (steerInput != 0)
             {
@@ -378,19 +446,31 @@ public class CarController : MonoBehaviour
         if (!isInAir)
         {
             localVelocity.z -= turningMultiplier * Mathf.Abs(turningValuePercent) * turnSlowDownAmount * Time.deltaTime;
-            transform.Rotate(Vector3.up * turningValuePercent * turnDir * turnAmount * turningMultiplier * Time.deltaTime, Space.Self);
+            rb.MoveRotation(transform.rotation * Quaternion.AngleAxis(turningValuePercent * turnDir * turnAmount * turningMultiplier * Time.deltaTime, transform.up));
         }
     }  
 
     private void FixedUpdate()
     {
+        // if in the air
         if (numTiresOnGround <= numWheelsOnGroundConsideredInAir)
         {
-            if (airRollInput != Vector2.zero && timeSinceLeftAirTimer > timeInAirBeforeCanAirRoll)
+            if (timeSinceLeftAirTimer > timeInAirBeforeCanAirRoll)
             {
-                rb.AddRelativeTorque(Vector3.forward * -airRollInput.x * sideRotationForce, ForceMode.Acceleration);
-                rb.AddRelativeTorque(Vector3.right * airRollInput.y * sideRotationForce, ForceMode.Acceleration);
-            }
+                isInAir = true;
+                // if on keyboard and mouse, you can air roll without holding air roll button. On controller you have to hold air roll(drift) button to air roll.
+                if ((!isUsingController || airRollIsPressed) && airRollInput != 0)
+                {
+                    rb.AddRelativeTorque(Vector3.forward * -airRollInput * sideRotationForce, ForceMode.Acceleration);
+
+                }
+
+                if (airRotInput != Vector2.zero)
+                {
+                    rb.AddRelativeTorque(Vector3.right * airRotInput.y * sideRotationForce, ForceMode.Acceleration);
+                    rb.AddRelativeTorque(Vector3.up * airRotInput.x * sideRotationForce, ForceMode.Acceleration);
+                }
+            }          
         }
     }
 }
