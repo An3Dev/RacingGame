@@ -5,6 +5,8 @@ using UnityEngine.InputSystem;
 
 public class CarInput : MonoBehaviour
 {
+    
+    public CarCamera carCam;
     CarController carController;
     PlayerInput playerInput;
 

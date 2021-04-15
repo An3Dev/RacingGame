@@ -21,6 +21,8 @@ public class CarCamera : MonoBehaviour
     Vector3 desiredPos;
 
     Vector3 offset;
+
+    bool isInDriftCam = false;
     private void Awake()
     {
         carRb = carTarget.GetComponent<Rigidbody>();
@@ -42,12 +44,22 @@ public class CarCamera : MonoBehaviour
         {
             Time.timeScale = 1;
         }
-        Vector3 point = carTarget.TransformPoint(defaultDistanceFromCar);
-        if (carController.GetIsInAir())
+
+        if (carController.GetIsDrifting() && carController.GetWorldVelocity().sqrMagnitude > 0.1f)
         {
-            point.y = carTarget.position.y + defaultDistanceFromCar.y;
+            // make camera follow behind the direction of velocity;
+            Vector3 velocity = carController.GetWorldVelocity();
+            desiredPos = carTarget.position + velocity.normalized * defaultDistanceFromCar.z;
+            desiredPos.y = carTarget.position.y + defaultDistanceFromCar.y;
+        } else
+        {
+            Vector3 point = carTarget.TransformPoint(defaultDistanceFromCar);
+            if (carController.GetIsInAir())
+            {
+                point.y = carTarget.position.y + defaultDistanceFromCar.y;
+            }
+            desiredPos = point;
         }
-        desiredPos = point;
 
         Vector3 dirToTarget = (carTarget.position - transform.position).normalized;
         desiredRot = Quaternion.LookRotation(dirToTarget).eulerAngles;
