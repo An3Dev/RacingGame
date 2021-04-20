@@ -28,6 +28,8 @@ public class CarController : MonoBehaviour
 
     [Header("Car Settings")]
 
+    [SerializeField] CarSettings carSettings;
+
     [SerializeField] float maxForwardVelocity = 10;
     [SerializeField] float maxReverseVelocity = 10;   
     [SerializeField] float accelerationMagnitude = 1;
@@ -617,6 +619,7 @@ public class CarController : MonoBehaviour
             if (timeSinceLeftAirTimer > timeInAirBeforeCanAirRoll)
             {
                 carMesh.SetBlendShapeWeight(0, Mathf.Clamp(carMesh.GetBlendShapeWeight(0) + Time.deltaTime * 300, 0, 100));
+                carMesh.SetBlendShapeWeight(2, Mathf.Clamp(carMesh.GetBlendShapeWeight(2) + Time.deltaTime * 300, 0, 100));
                 isInAir = true;
                 // if on keyboard and mouse, you can air roll without holding air roll button. On controller you have to hold air roll(drift) button to air roll.
                 if ((!isUsingController || airRollIsPressed) && airRollInput != 0)
@@ -633,6 +636,7 @@ public class CarController : MonoBehaviour
         } else
         {
             carMesh.SetBlendShapeWeight(0, Mathf.Clamp(carMesh.GetBlendShapeWeight(0) - Time.deltaTime * 200, 0, 100));
+            carMesh.SetBlendShapeWeight(2, Mathf.Clamp(carMesh.GetBlendShapeWeight(2) - Time.deltaTime * 200, 0, 100));
         }
     }
 }
