@@ -22,7 +22,7 @@ public class CarController : MonoBehaviour
 
     [SerializeField] Transform centerOfMassTransform;
     [SerializeField] Transform centerOfMassWhileInAirTransform;
-    public Checkpoints checkpoints;
+    public CheckpointManager checkpoints;
 
     [Space]
 
@@ -128,8 +128,45 @@ public class CarController : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         rb.centerOfMass = centerOfMassTransform.localPosition;
+
+        maxForwardVelocity = carSettings.maxForwardVelocity;
+        maxReverseVelocity = carSettings.maxReverseVelocity;
+        accelerationMagnitude = carSettings.accelerationMagnitude;
+        accelerationOverSpeed = carSettings.accelerationOverSpeed;
+        reverseAccelerationMagnitude = carSettings.reverseAccelerationMagnitude;
+        tireSpinAmount = carSettings.tireSpinAmount;
+
+        driftAcceleration = carSettings.driftAcceleration;
+        driftAccelerationOverSpeed = carSettings.driftAccelerationOverSpeed;
+        driftFriction = carSettings.driftFriction;
+        lateralDriftFriction = carSettings.lateralDriftFriction;
+        driftingTurnAmount = carSettings.driftingTurnAmount;
+        speedWhereWheelsStartSpinningWhenDrifting = carSettings.speedWhereWheelsStartSpinningWhenDrifting;
+        angleBelowNoDriftForceIsAdded = carSettings.angleBelowNoDriftForceIsAdded;
+        angleWhereFullDriftForceIsAdded = carSettings.angleWhereFullDriftForceIsAdded;
+        speedAtWhichDriftAccelerationStops = carSettings.speedAtWhichDriftAccelerationStops;
+
+        driftTireSpinAmount = carSettings.driftTireSpinAmount;
+
+        friction = carSettings.friction;
+        lateralFriction = carSettings.lateralFriction;
+        brakeForce = carSettings.brakeForce;
+        drag = carSettings.drag;
+        airDrag = carSettings.airDrag;
+        angularDrag = carSettings.angularDrag;
+        postLandingAngularDrag = carSettings.postLandingAngularDrag;
+
+        turnAmount = carSettings.turnAmount;
+        speedAtWhichTurningSlows = carSettings.speedAtWhichTurningSlows;
+        maxTurnValue = carSettings.maxTurnValue;
+        turnSlowDownAmount = carSettings.turnSlowDownAmount;
+        straightenOutSteeringWheelMultiplier = carSettings.straightenOutSteeringWheelMultiplier;
+
+        sideRotationForce = carSettings.sideRotationForce;
+
         rb.drag = drag;
         rb.angularDrag = angularDrag;
+
     }
 
     #region Receive Input
@@ -176,7 +213,7 @@ public class CarController : MonoBehaviour
 
     public void ResetCarPosition()
     {
-        Transform t = checkpoints.GetDefaultCheckpoint();
+        Transform t = checkpoints.GetMostRecentCheckpoint();
         transform.position = t.position;
         transform.rotation = t.rotation;
         rb.Sleep();
@@ -619,7 +656,7 @@ public class CarController : MonoBehaviour
             if (timeSinceLeftAirTimer > timeInAirBeforeCanAirRoll)
             {
                 carMesh.SetBlendShapeWeight(0, Mathf.Clamp(carMesh.GetBlendShapeWeight(0) + Time.deltaTime * 300, 0, 100));
-                carMesh.SetBlendShapeWeight(2, Mathf.Clamp(carMesh.GetBlendShapeWeight(2) + Time.deltaTime * 300, 0, 100));
+                carMesh.SetBlendShapeWeight(1, Mathf.Clamp(carMesh.GetBlendShapeWeight(1) + Time.deltaTime * 300, 0, 100));
                 isInAir = true;
                 // if on keyboard and mouse, you can air roll without holding air roll button. On controller you have to hold air roll(drift) button to air roll.
                 if ((!isUsingController || airRollIsPressed) && airRollInput != 0)
@@ -636,7 +673,7 @@ public class CarController : MonoBehaviour
         } else
         {
             carMesh.SetBlendShapeWeight(0, Mathf.Clamp(carMesh.GetBlendShapeWeight(0) - Time.deltaTime * 200, 0, 100));
-            carMesh.SetBlendShapeWeight(2, Mathf.Clamp(carMesh.GetBlendShapeWeight(2) - Time.deltaTime * 200, 0, 100));
+            carMesh.SetBlendShapeWeight(1, Mathf.Clamp(carMesh.GetBlendShapeWeight(1) - Time.deltaTime * 200, 0, 100));
         }
     }
 }

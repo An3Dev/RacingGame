@@ -12,4 +12,105 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bac188279807729409556473efe8f669, type: 3}
   m_Name: CyberTrueno
   m_EditorClassIdentifier: 
-  carName: 
+  maxForwardVelocity: 70
+  maxReverseVelocity: 30
+  accelerationMagnitude: 30
+  accelerationOverSpeed:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0.006774076
+      value: 0.84889823
+      inSlope: 1.0537134
+      outSlope: 1.0537134
+      tangentMode: 0
+      weightedMode: 2
+      inWeight: 0.33333334
+      outWeight: 0.26981205
+    - serializedVersion: 3
+      time: 0.10183397
+      value: 0.97907853
+      inSlope: -0.17580006
+      outSlope: -0.17580006
+      tangentMode: 0
+      weightedMode: 3
+      inWeight: 0.7000353
+      outWeight: 0.5985195
+    - serializedVersion: 3
+      time: 0.33322817
+      value: 0.48474592
+      inSlope: -8.891203
+      outSlope: -8.891203
+      tangentMode: 0
+      weightedMode: 3
+      inWeight: 0.2038763
+      outWeight: 0.07687697
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: -0.25299424
+      outSlope: -0.6614513
+      tangentMode: 1
+      weightedMode: 1
+      inWeight: 0.56074095
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverseAccelerationMagnitude: 30
+  tireSpinAmount: 360
+  driftAcceleration: 15
+  driftAccelerationOverSpeed:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: -0.00012289686
+      value: 0.80078727
+      inSlope: 1.0537134
+      outSlope: 1.0537134
+      tangentMode: 0
+      weightedMode: 2
+      inWeight: 0.33333334
+      outWeight: 0.26981205
+    - serializedVersion: 3
+      time: 0.10355821
+      value: 0.9107077
+      inSlope: 0.13321407
+      outSlope: 0.13321407
+      tangentMode: 0
+      weightedMode: 3
+      inWeight: 0.7000353
+      outWeight: 0.093608245
+    - serializedVersion: 3
+      time: 1.0060785
+      value: 1.0007021
+      inSlope: 0.005179666
+      outSlope: 0.005179666
+      tangentMode: 0
+      weightedMode: 3
+      inWeight: 0.21609803
+      outWeight: 0.532468
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  driftFriction: 3
+  lateralDriftFriction: 1
+  driftingTurnAmount: 115
+  speedWhereWheelsStartSpinningWhenDrifting: 5
+  angleBelowNoDriftForceIsAdded: 10
+  angleWhereFullDriftForceIsAdded: 20
+  speedAtWhichDriftAccelerationStops: 20
+  driftTireSpinAmount: 1440
+  friction: 5
+  lateralFriction: 20
+  brakeForce: 20
+  drag: 0
+  airDrag: 0.05
+  angularDrag: 1
+  postLandingAngularDrag: 1
+  turnAmount: 45
+  speedAtWhichTurningSlows: 1
+  maxTurnValue: 10
+  turnSlowDownAmount: 3
+  straightenOutSteeringWheelMultiplier: 100
+  sideRotationForce: 7
