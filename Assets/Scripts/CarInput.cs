@@ -9,8 +9,6 @@ public class CarInput : MonoBehaviour
     public CarCamera carCam;
     CarController carController;
     PlayerInput playerInput;
-
-    bool usingController = false;
     private void Awake()
     {
         carController = GetComponent<CarController>();

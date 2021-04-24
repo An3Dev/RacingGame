@@ -132,7 +132,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 34397459}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: GroundChecks (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -146,13 +146,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 34397458}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.93, y: 0.5, z: -1.167}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 0.93, y: 0.81, z: -1.152}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 595452810}
   m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!1 &52842332
 GameObject:
   m_ObjectHideFlags: 0
@@ -314,7 +314,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 132046159}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: FrontWheel.R_TurnParent
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -545,7 +545,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 234536915}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: FrontWheel.L_TurnParent
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -567,6 +567,82 @@ Transform:
   m_Father: {fileID: 1390530152458820899}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &369621158
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 515c345e2885cb14e872c83de82e2db5, type: 3}
+      propertyPath: m_RootOrder
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 515c345e2885cb14e872c83de82e2db5, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 515c345e2885cb14e872c83de82e2db5, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -77.4
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 515c345e2885cb14e872c83de82e2db5, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -9.8
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 515c345e2885cb14e872c83de82e2db5, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 515c345e2885cb14e872c83de82e2db5, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 515c345e2885cb14e872c83de82e2db5, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 515c345e2885cb14e872c83de82e2db5, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 515c345e2885cb14e872c83de82e2db5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 515c345e2885cb14e872c83de82e2db5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 515c345e2885cb14e872c83de82e2db5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 515c345e2885cb14e872c83de82e2db5, type: 3}
+      propertyPath: m_Name
+      value: VerySimpleTrack
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 515c345e2885cb14e872c83de82e2db5, type: 3}
+--- !u!1 &369621159 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 515c345e2885cb14e872c83de82e2db5, type: 3}
+  m_PrefabInstance: {fileID: 369621158}
+  m_PrefabAsset: {fileID: 0}
+--- !u!64 &369621160
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 369621159}
+  m_Material: {fileID: 13400000, guid: c4514c9c4106d284194693447c869183, type: 2}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: -1
+  m_Mesh: {fileID: 5955289469506171922, guid: 515c345e2885cb14e872c83de82e2db5, type: 3}
 --- !u!1001 &410338985
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -686,7 +762,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 527949750}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: GroundChecks (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -700,13 +776,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 527949749}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.93, y: 0.5, z: -1.167}
+  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: -0.93, y: 0.8100014, z: -1.1520007}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 595452810}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
 --- !u!1 &541515454
 GameObject:
   m_ObjectHideFlags: 0
@@ -716,7 +792,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 541515455}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: CenterOfMassInAir
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -746,7 +822,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 595452810}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: GroundChecks
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -803,7 +879,7 @@ GameObject:
   - component: {fileID: 1007960321}
   - component: {fileID: 1007960320}
   - component: {fileID: 1007960319}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: WheelColliders
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -889,7 +965,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1023595373}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: GroundChecks (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -903,13 +979,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1023595372}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.93, y: 0.5, z: 1.571}
+  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: -0.93, y: 0.8100014, z: 1.5859994}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 595452810}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
 --- !u!1001 &1040078954
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1197,7 +1273,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1271262255}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: GFX and Colliders
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -1501,7 +1577,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1519546917}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: FlippedOverChecker
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1531,7 +1607,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1557320829}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: CenterOfMass
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -1658,7 +1734,7 @@ GameObject:
   - component: {fileID: 1594902335}
   - component: {fileID: 1594902337}
   - component: {fileID: 1594902336}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: WheelColliders
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -1881,7 +1957,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1618006415}
   m_LocalRotation: {x: 0.116582796, y: 0.69742996, z: -0.116582826, w: 0.69742996}
-  m_LocalPosition: {x: -112.8, y: -21.3, z: 121.99}
+  m_LocalPosition: {x: -77.2, y: -51.77, z: -9.909996}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -2198,7 +2274,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1739386801}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: GroundChecks (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2212,13 +2288,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1739386800}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.93, y: 0.5, z: 1.571}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 0.93, y: 0.8100014, z: 1.5859994}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 595452810}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!1 &1742771223
 GameObject:
   m_ObjectHideFlags: 0
@@ -2232,7 +2308,7 @@ GameObject:
   - component: {fileID: 1742771226}
   - component: {fileID: 1742771225}
   - component: {fileID: 1742771224}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Car
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -2493,6 +2569,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eef2de7291b7c1a46a87b8a0ff2bb528, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  carSettings: {fileID: 11400000, guid: 7644a7b0565c40640949a9a9f8940fd0, type: 2}
   carCam: {fileID: 1618006421}
   carMesh: {fileID: 4506929912507117201}
   frontRightWheel: {fileID: 2694852612212325586}
@@ -2505,119 +2582,18 @@ MonoBehaviour:
   centerOfMassTransform: {fileID: 1557320829}
   centerOfMassWhileInAirTransform: {fileID: 541515455}
   checkpoints: {fileID: 459636612}
-  carSettings: {fileID: 11400000, guid: 7644a7b0565c40640949a9a9f8940fd0, type: 2}
-  maxForwardVelocity: 70
-  maxReverseVelocity: 30
-  accelerationMagnitude: 30
-  accelerationOverSpeed:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0.006774076
-      value: 0.84889823
-      inSlope: 1.0537134
-      outSlope: 1.0537134
-      tangentMode: 0
-      weightedMode: 2
-      inWeight: 0.33333334
-      outWeight: 0.26981205
-    - serializedVersion: 3
-      time: 0.10183397
-      value: 0.97907853
-      inSlope: -0.17580006
-      outSlope: -0.17580006
-      tangentMode: 0
-      weightedMode: 3
-      inWeight: 0.7000353
-      outWeight: 0.5985195
-    - serializedVersion: 3
-      time: 0.33322817
-      value: 0.48474592
-      inSlope: -8.891203
-      outSlope: -8.891203
-      tangentMode: 0
-      weightedMode: 3
-      inWeight: 0.2038763
-      outWeight: 0.07687697
-    - serializedVersion: 3
-      time: 1
-      value: 0
-      inSlope: -0.25299424
-      outSlope: -0.6614513
-      tangentMode: 1
-      weightedMode: 1
-      inWeight: 0.56074095
-      outWeight: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  reverseAccelerationMagnitude: 30
-  tireSpinAmount: 360
-  driftAcceleration: 15
-  driftAccelerationOverSpeed:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0.00012505846
-      value: 0.8029235
-      inSlope: 1.0537134
-      outSlope: 1.0537134
-      tangentMode: 0
-      weightedMode: 2
-      inWeight: 0.33333334
-      outWeight: 0.26981205
-    - serializedVersion: 3
-      time: 0.19729295
-      value: 0.8972113
-      inSlope: 0.13321407
-      outSlope: 0.13321407
-      tangentMode: 0
-      weightedMode: 3
-      inWeight: 0.7000353
-      outWeight: 0.093608245
-    - serializedVersion: 3
-      time: 1.0060785
-      value: 1.0007021
-      inSlope: 0.005179666
-      outSlope: 0.005179666
-      tangentMode: 0
-      weightedMode: 3
-      inWeight: 0.21609803
-      outWeight: 0.532468
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  driftFriction: 3
-  lateralDriftFriction: 1
-  driftingTurnAmount: 115
-  speedWhereWheelsStartSpinningWhenDrifting: 5
-  angleBelowNoDriftForceIsAdded: 10
-  angleWhereFullDriftForceIsAdded: 20
-  speedAtWhichDriftAccelerationStops: 20
-  driftTireSpinAmount: 1440
-  friction: 5
-  lateralFriction: 20
-  brakeForce: 20
-  drag: 0
-  airDrag: 0.05
-  angularDrag: 1
-  postLandingAngularDrag: 10
-  turnAmount: 45
-  speedAtWhichTurningSlows: 1
-  maxTurnValue: 10
-  turnSlowDownAmount: 3
-  straightenOutSteeringWheelMultiplier: 100
-  isUsingController: 0
-  sideRotationForce: 7
-  timeInAirBeforeCanAirRoll: 0.75
-  postLandingRotationLockTime: 0.2
+  rotForceWhenOnSide: 30
   groundCheck:
   - {fileID: 1023595373}
   - {fileID: 527949750}
   - {fileID: 1739386801}
   - {fileID: 34397459}
-  groundCheckRadius: 0.15
+  groundCheckRadius: 0.4
   numWheelsOnGroundConsideredInAir: 2
+  groundMask:
+    serializedVersion: 2
+    m_Bits: 55
+  sideCheckDistance: 0.5
 --- !u!114 &1742771227
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2638,8 +2614,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1742771223}
-  m_LocalRotation: {x: -0.035578873, y: 0.7062111, z: 0.03557888, w: 0.7062111}
-  m_LocalPosition: {x: -71.23, y: -37.53, z: 121.8}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: -71.23, y: -54.7, z: -10.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1271262255}
@@ -2649,7 +2625,7 @@ Transform:
   - {fileID: 1519546917}
   m_Father: {fileID: 0}
   m_RootOrder: 8
-  m_LocalEulerAnglesHint: {x: -5.768, y: 90, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!1 &1746304434
 GameObject:
   m_ObjectHideFlags: 0
@@ -2831,7 +2807,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2008187790}
   - component: {fileID: 2008187791}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Collider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2875,7 +2851,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2046839821}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: AirCollider
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -2920,7 +2896,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2694852612212325586}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: FrontWheel.R
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -2983,7 +2959,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2302838794022728456}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: CyberTruenoArmature
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -2999,7 +2975,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8368485020635015582}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: FrontWheel.R_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3045,7 +3021,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 848900893288105164}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: BackWheel.R
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -3061,7 +3037,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8186886400317365872}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: FrontWheel.L
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -3142,7 +3118,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1468150328799381630}
   - component: {fileID: 4506929912507117201}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: CyberTrueno
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -3186,7 +3162,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5338703295636462224}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: BackWheel.L_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3202,7 +3178,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5874503267361168676}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: FrontWheel.L_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3232,7 +3208,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7552921170221055955}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: CyberTrueno
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -3248,7 +3224,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7084523611639443162}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: BackWheel.R_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3281,7 +3257,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1390530152458820899}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Body
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -3326,7 +3302,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 398737261355433560}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: BackWheel.L
   m_TagString: Player
   m_Icon: {fileID: 0}

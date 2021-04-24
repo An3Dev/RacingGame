@@ -7,6 +7,11 @@ using UnityEngine;
 
 public class CarController : MonoBehaviour
 {
+    [Header("Car")]
+    [SerializeField] CarSettings carSettings;
+
+    [Space]
+
     [Header("Objects to Assign")]
     public CarCamera carCam;
     [SerializeField] SkinnedMeshRenderer carMesh;
@@ -17,87 +22,70 @@ public class CarController : MonoBehaviour
     [SerializeField] Transform wheelColliders;
 
 
+
     [SerializeField] Transform frontRightWheelTurnParent;
     [SerializeField] Transform frontLeftWheelTurnParent;
 
     [SerializeField] Transform centerOfMassTransform;
     [SerializeField] Transform centerOfMassWhileInAirTransform;
     public CheckpointManager checkpoints;
-
+    
     [Space]
-
-    [Header("Car Settings")]
-
-    [SerializeField] CarSettings carSettings;
-
-    [SerializeField] float maxForwardVelocity = 10;
-    [SerializeField] float maxReverseVelocity = 10;   
-    [SerializeField] float accelerationMagnitude = 1;
-    [Tooltip("The acceleration amount based on the time the car has been accelerating")]
-    [SerializeField] AnimationCurve accelerationOverSpeed;
-    [SerializeField] float reverseAccelerationMagnitude = 1;
-    [Tooltip("Degrees the tires spin per second at 1 meter per second. At 2 meters per second, the tires will spin twice as fast.")]
-    [SerializeField] float tireSpinAmount = 360;
-
-    [Space]
-    [Header("Drifting")]
-    [Tooltip("This only applies when the user is not pressing the gas or the brake/reverse. " +
-        "If the forward speed of the car is bigger than this value, then the wheels will start spinning. " +
-        "This is so that the wheels don't spin when the car is perpendicular to its velocity vector.")]
-
-    [SerializeField] float driftAcceleration = 10;
-    [SerializeField] AnimationCurve driftAccelerationOverSpeed;
-    [SerializeField] float driftFriction = 0.01f;
-    [SerializeField] float lateralDriftFriction = 0.01f;
-    [SerializeField] float driftingTurnAmount = 70;
-    [SerializeField] float speedWhereWheelsStartSpinningWhenDrifting = 5;
-
-    [Tooltip("If the angle between the car forward direction and the car velocity direction is less than this value, then no force will be added at all.")]
-    [SerializeField] float angleBelowNoDriftForceIsAdded = 10;
-
-    [Tooltip("If the angle between the car forward direction and the car velocity direction is greater than or equal to this value, then full drift force will be added." +
-        " If the angle is less than this value, then a fraction of the full drift force will be added. If the angle is equal to the angleBelowNoDriftForceIsAdded value, then the smallest amount of drift force will be added. " +
-        " If the angle is halfway between the angleBelowNoDriftForceIsAdded value and between this value, the half of the full drift force is added. ")]
-    [SerializeField] float angleWhereFullDriftForceIsAdded = 20;
-    [SerializeField] float speedAtWhichDriftAccelerationStops = 20;
-
-
-    [Tooltip("How fast the tires spin when drifting in degrees per second.")]
-    [SerializeField] float driftTireSpinAmount = 1440; // degrees per second
-
-    [Header("Stop Forces")]
-    [Tooltip("The greater the friction, the faster the car stops when engine is idle.")]
-    [SerializeField] float friction = 5;
-    [SerializeField] float lateralFriction = 20;
-
-    [SerializeField] float brakeForce = 30;
-    [SerializeField] float drag = 0;
-    [SerializeField] float airDrag = 1;
-    [SerializeField] float angularDrag = 1;
-    [SerializeField] float postLandingAngularDrag = 1000;
-
-    [Space]
-    [Header("Steer")]
-    [SerializeField] float turnAmount = 10;
-    [SerializeField] float speedAtWhichTurningSlows = 3;
-    [SerializeField] float maxTurnValue = 100;
-    [SerializeField] float turnSlowDownAmount = 10;
-    [Range(0, 500)]
-    [Tooltip("The higher the value, the faster the steering wheel goes back to position")]
-    [SerializeField] float straightenOutSteeringWheelMultiplier = 1;
-    [SerializeField] bool isUsingController = false;
-
-
-    [Header("Air Roll")]
-    [SerializeField] float sideRotationForce = 70;
-    [SerializeField] float timeInAirBeforeCanAirRoll = 0.2f;
-    [SerializeField] float postLandingRotationLockTime = 0.2f;
-
-    Rigidbody rb;
+    [Header("Car Properties")]
+    [SerializeField] float rotForceWhenOnSide = 50;
 
     [SerializeField] Transform[] groundCheck;
     [SerializeField] float groundCheckRadius = 0.1f;
     [SerializeField] int numWheelsOnGroundConsideredInAir = 2;
+
+    [SerializeField] LayerMask groundMask;
+    [SerializeField] float sideCheckDistance = 0.1f;
+
+
+    float maxForwardVelocity = 10;
+    float maxReverseVelocity = 10;   
+    float accelerationMagnitude = 1;
+    AnimationCurve accelerationOverSpeed;
+    float reverseAccelerationMagnitude = 1;
+    float tireSpinAmount = 360;
+
+    float driftAcceleration = 10;
+    AnimationCurve driftAccelerationOverSpeed;
+    float driftFriction = 0.01f;
+    float lateralDriftFriction = 0.01f;
+    float driftingTurnAmount = 70;
+    float speedWhereWheelsStartSpinningWhenDrifting = 5;
+
+    float angleBelowNoDriftForceIsAdded = 10;
+
+    
+    float angleWhereFullDriftForceIsAdded = 20;
+    float speedAtWhichDriftAccelerationStops = 20;
+
+
+    float driftTireSpinAmount = 1440; // degrees per second
+    float friction = 5;
+    float lateralFriction = 20;
+
+    float brakeForce = 30;
+    float drag = 0;
+    float airDrag = 1;
+    float angularDrag = 1;
+    float postLandingAngularDrag = 1000;
+
+    float turnAmount = 10;
+    float speedAtWhichTurningSlows = 3;
+    float maxTurnValue = 100;
+    float turnSlowDownAmount = 10;
+    float straightenOutSteeringWheelMultiplier = 1;
+    bool isUsingController = false;
+
+    float sideRotationForce = 70;
+    float timeInAirBeforeCanAirRoll = 0.2f;
+    float postLandingRotationLockTime = 0.2f;
+
+    Rigidbody rb;
+
 
     float currentTurnValue = 0;
     bool wasInAirLastFrame = false;
@@ -124,11 +112,22 @@ public class CarController : MonoBehaviour
     float startTime, endTime;
 
     float velocitySquareMagnitude;
+
+    bool isOnSide = false;
+
+    float groundCheckRate = 0.05f;
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
         rb.centerOfMass = centerOfMassTransform.localPosition;
 
+        SetVariablesFromScriptableObject();
+
+        InvokeRepeating(nameof(GroundCheck), 0.00001f, groundCheckRate);
+    }
+
+    void SetVariablesFromScriptableObject()
+    {
         maxForwardVelocity = carSettings.maxForwardVelocity;
         maxReverseVelocity = carSettings.maxReverseVelocity;
         accelerationMagnitude = carSettings.accelerationMagnitude;
@@ -166,7 +165,6 @@ public class CarController : MonoBehaviour
 
         rb.drag = drag;
         rb.angularDrag = angularDrag;
-
     }
 
     #region Receive Input
@@ -222,7 +220,7 @@ public class CarController : MonoBehaviour
 
     #endregion
 
-    private void Update()
+    void GroundCheck()
     {
         numTiresOnGround = 0;
         for (int i = 0; i < groundCheck.Length; i++)
@@ -237,15 +235,29 @@ public class CarController : MonoBehaviour
                 }
             }
         }
-        //if (numTiresOnGround >= 1)
-        //{
-        //    wheelColliders.gameObject.SetActive(true);
-        //}
-        //else
-        //{
-        //    wheelColliders.gameObject.SetActive(false);
-        //}
+    }
 
+    void SideCheck()
+    {
+        int numTires = 0;
+        for (int i = 0; i < groundCheck.Length; i++)
+        {
+            //Debug.DrawRay(groundCheck[i].position, groundCheck[i].forward * sideCheckDistance);
+            if (Physics.Raycast(groundCheck[i].position, groundCheck[i].forward, sideCheckDistance, groundMask))
+            {
+                numTires++;
+                if (numTires > 1)
+                {
+                    isOnSide = true;
+                    return;
+                }
+            }
+        }
+        isOnSide = false;
+    }
+
+    private void Update()
+    {   
         // if car is in the air
         if (numTiresOnGround <= numWheelsOnGroundConsideredInAir)
         {   
@@ -255,12 +267,12 @@ public class CarController : MonoBehaviour
                 rb.centerOfMass = centerOfMassWhileInAirTransform.localPosition;
                 rb.drag = airDrag;
                 localVelocity = Vector3.zero;
+                InvokeRepeating(nameof(SideCheck), 0.0001f, groundCheckRate);
             }
 
             timeSinceLeftAirTimer += Time.deltaTime;
             wasInAirLastFrame = true;
             isInAir = true;
-
         }
         else // if the car is on the ground
         {
@@ -269,6 +281,9 @@ public class CarController : MonoBehaviour
             //if the car just landed
             if (wasInAirLastFrame)
             {
+                // stop checking for side 
+                CancelInvoke(nameof(SideCheck));
+
                 //Debug.Log("Set velocity from air");
                 localVelocity = transform.InverseTransformVector(rb.velocity);
                 localVelocity.y = 0;
@@ -658,16 +673,18 @@ public class CarController : MonoBehaviour
                 carMesh.SetBlendShapeWeight(0, Mathf.Clamp(carMesh.GetBlendShapeWeight(0) + Time.deltaTime * 300, 0, 100));
                 carMesh.SetBlendShapeWeight(1, Mathf.Clamp(carMesh.GetBlendShapeWeight(1) + Time.deltaTime * 300, 0, 100));
                 isInAir = true;
+
+                float rotForce = isOnSide ? rotForceWhenOnSide : sideRotationForce;
                 // if on keyboard and mouse, you can air roll without holding air roll button. On controller you have to hold air roll(drift) button to air roll.
                 if ((!isUsingController || airRollIsPressed) && airRollInput != 0)
                 {
-                    rb.AddRelativeTorque(Vector3.forward * -airRollInput * sideRotationForce, ForceMode.Acceleration);
+                    rb.AddRelativeTorque(Vector3.forward * -airRollInput * rotForce, ForceMode.Acceleration);
                 }
 
                 if (airRotInput != Vector2.zero)
                 {
-                    rb.AddRelativeTorque(Vector3.right * airRotInput.y * sideRotationForce, ForceMode.Acceleration);
-                    rb.AddRelativeTorque(Vector3.up * airRotInput.x * sideRotationForce, ForceMode.Acceleration);
+                    rb.AddRelativeTorque(Vector3.right * airRotInput.y * rotForce, ForceMode.Acceleration);
+                    rb.AddRelativeTorque(Vector3.up * airRotInput.x * rotForce, ForceMode.Acceleration);
                 }
             }          
         } else

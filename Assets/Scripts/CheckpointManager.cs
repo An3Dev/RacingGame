@@ -23,6 +23,7 @@ public class CheckpointManager : MonoBehaviour
         {
             checkpoints.Add(transform.GetChild(i));
         }
+        SetCheckpoint(0);
     }
 
     public void SetCheckpoint(int index)
