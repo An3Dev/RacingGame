@@ -37,6 +37,8 @@ public class CarController : MonoBehaviour
     [SerializeField] Transform[] groundCheck;
     [SerializeField] float groundCheckRadius = 0.1f;
     [SerializeField] int numWheelsOnGroundConsideredInAir = 2;
+    [Tooltip("Angle between the car's forward direction and its velocity direction at which full acceleration is applied when going full speed")]
+    [SerializeField] float fullAccelerationAngle = 91;
 
     [SerializeField] LayerMask groundMask;
     [SerializeField] float sideCheckDistance = 0.1f;
@@ -366,9 +368,30 @@ public class CarController : MonoBehaviour
                     startTime = Time.time;
                 }
 
+                // angle between direction in which the car wants to move forward, and the direction of velocity.
+                float angle = Vector3.Angle(transform.forward, rb.velocity.normalized);
+
                 if (!isDrifting)
                 {
-                    localVelocity += Vector3.forward * accelerationMagnitude * gasInput * accelerationOverSpeed.Evaluate(localVelocity.z / maxForwardVelocity) * Time.deltaTime;
+                    float accelerationMultiplier;
+                    // if user wants to accelerate against the current velocity, apply full accleration force regardless of velocity;
+                    if (angle > fullAccelerationAngle)
+                    {
+                        accelerationMultiplier = 1;
+                    } else
+                    {
+                        accelerationMultiplier = accelerationOverSpeed.Evaluate(localVelocity.z / maxForwardVelocity);
+                    }
+                    localVelocity += Vector3.forward * accelerationMagnitude * accelerationMultiplier * gasInput * accelerationMultiplier * Time.deltaTime;
+                    // clamps the x and axes
+                    for(int i = 0; i < 3; i+= 2)
+                    {
+                        // clamps velocities of 
+                        if (localVelocity[i] > maxForwardVelocity)
+                        {
+                            localVelocity[i] = maxForwardVelocity;
+                        }
+                    }
                 }
                 else
                 {
