@@ -45,6 +45,7 @@ public class CarSettings : ScriptableObject
     public float friction = 5;
     public float lateralFriction = 20;
     public float brakeForce = 20;
+    public float driftBrakeForce = 10;
     public float drag = 0;
     public float airDrag = 0.05f;
     public float angularDrag = 1;

@@ -6,11 +6,12 @@ public class CheckpointManager : MonoBehaviour
 {
     public static CheckpointManager Instance;
 
+    public Transform checkpointContainer;
+
     List<Checkpoint> checkpoints = new List<Checkpoint>();
 
     Checkpoint currentCheckpoint;
 
-    int numCheckpointsReached = 0;
 
     private void Awake()
     {
@@ -22,9 +23,9 @@ public class CheckpointManager : MonoBehaviour
             Destroy(this);
         }
 
-        for(int i = 0; i < transform.childCount; i++)
+        for(int i = 0; i < checkpointContainer.childCount; i++)
         {
-            checkpoints.Add(transform.GetChild(i).GetComponent<Checkpoint>());
+            checkpoints.Add(checkpointContainer.GetChild(i).GetComponent<Checkpoint>());
         }
         SetCheckpoint(0);
     }
@@ -32,8 +33,8 @@ public class CheckpointManager : MonoBehaviour
     public void SetCheckpoint(int index)
     {
         currentCheckpoint = checkpoints[index];
-        if (index == checkpoints.Count - 1)
-        {
+        Debug.Log("Current checkpoint index: " + index);
+        if (index == checkpoints.Count - 1){
             // user completed a lap
             if (checkpoints[(checkpoints.Count - 1) / 2].WasPassed() && checkpoints[checkpoints.Count - 2].WasPassed())
             {

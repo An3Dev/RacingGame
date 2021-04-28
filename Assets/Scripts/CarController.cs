@@ -70,6 +70,7 @@ public class CarController : MonoBehaviour
     float lateralFriction = 20;
 
     float brakeForce = 30;
+    float driftBrakeForce = 10;
     float drag = 0;
     float airDrag = 1;
     float angularDrag = 1;
@@ -150,6 +151,7 @@ public class CarController : MonoBehaviour
         driftTireSpinAmount = carSettings.driftTireSpinAmount;
 
         friction = carSettings.friction;
+        driftBrakeForce = carSettings.driftBrakeForce;
         lateralFriction = carSettings.lateralFriction;
         brakeForce = carSettings.brakeForce;
         drag = carSettings.drag;
@@ -259,7 +261,8 @@ public class CarController : MonoBehaviour
     }
 
     private void Update()
-    {   
+    {
+        //Debug.LogError("Error: Chris is a dummy.");
         // if car is in the air
         if (numTiresOnGround <= numWheelsOnGroundConsideredInAir)
         {   
@@ -307,9 +310,7 @@ public class CarController : MonoBehaviour
                 rb.angularDrag = angularDrag + (postLandingTimer / postLandingRotationLockTime) * (postLandingAngularDrag - angularDrag);
                 postLandingTimer += Time.deltaTime;
             }
-
         }
-
 
         if (!isInAir && isDriftPressed)
         {
@@ -378,18 +379,27 @@ public class CarController : MonoBehaviour
                     if (angle > fullAccelerationAngle)
                     {
                         accelerationMultiplier = 1;
+                        Debug.Log("Full acceleration");
                     } else
                     {
                         accelerationMultiplier = accelerationOverSpeed.Evaluate(localVelocity.z / maxForwardVelocity);
+                        //Debug.Log("Acceleration from graph: " + accelerationMultiplier);
+
                     }
                     localVelocity += Vector3.forward * accelerationMagnitude * accelerationMultiplier * gasInput * accelerationMultiplier * Time.deltaTime;
-                    // clamps the x and axes
+                    // clamps the x and z axes
                     for(int i = 0; i < 3; i+= 2)
                     {
                         // clamps velocities of 
                         if (localVelocity[i] > maxForwardVelocity)
                         {
                             localVelocity[i] = maxForwardVelocity;
+                            Debug.Log("Clamp " + i + "axis to max speed");
+                        } else if (localVelocity[i] < -maxForwardVelocity)
+                        {
+                            localVelocity[i] = -maxForwardVelocity;
+                            Debug.Log("Clamp " + i + "axis to negative max speed");
+
                         }
                     }
                 }
@@ -407,7 +417,11 @@ public class CarController : MonoBehaviour
                 }
                 else
                 {
-                    AddWorldDriftVelocity(-transform.forward, brakeInput);                    
+                    //if (transform.InverseTransformDirection(worldDriftVelocity).z > 0)
+                    //{
+                    //    worldDriftVelocity -= transform.TransformDirection(Vector3.forward * driftBrakeForce * Time.deltaTime);
+                    //    //AddWorldDriftVelocity(-transform.forward, brakeInput);
+                    //}
                 }
             }
         }
@@ -592,8 +606,10 @@ public class CarController : MonoBehaviour
 
         float thisTurnAmount = isDrifting ? driftingTurnAmount : turnAmount;
         if (!isInAir)
-        {   
-            localVelocity.z -= turningMultiplier * Mathf.Abs(turningValuePercent) * turnSlowDownAmount * Time.deltaTime;
+        {
+            float slowDownDir = localVelocity.z < 0 ? -1 : 1;
+            //Debug.Log("Slow down dir: " + slowDownDir);
+            localVelocity.z -= turningMultiplier * slowDownDir * Mathf.Abs(turningValuePercent) * turnSlowDownAmount * Time.deltaTime;
             rb.MoveRotation(transform.rotation * Quaternion.AngleAxis(turningValuePercent * turnDir * thisTurnAmount * turningMultiplier * Time.deltaTime, transform.up));
         }
     }

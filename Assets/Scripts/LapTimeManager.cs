@@ -7,8 +7,13 @@ public class LapTimeManager : MonoBehaviour
     public static LapTimeManager Instance;
     bool isTimeRunning = false;
 
-    float time = 0;
-    float laps = 0;
+    float timeInSeconds = 55;
+    float numLaps = 0;
+
+
+    int minutes;
+    int seconds;
+    int milliseconds;
 
     private void Awake()
     {
@@ -24,12 +29,12 @@ public class LapTimeManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        StartTimer();
     }
 
     public float GetTime()
     {
-        return time;
+        return timeInSeconds;
     }
 
     public void StartTimer()
@@ -46,7 +51,8 @@ public class LapTimeManager : MonoBehaviour
 
     public void OnCompletedLap()
     {
-        Debug.Log("Completed lap in: " + time);
+        Debug.Log("Completed lap in: " + timeInSeconds);
+        numLaps++;
     }
 
     IEnumerator RunTimer()
@@ -54,9 +60,27 @@ public class LapTimeManager : MonoBehaviour
         while(isTimeRunning)
         {
             yield return new WaitForEndOfFrame();
-            time += Time.deltaTime;
+            timeInSeconds += Time.deltaTime;
             // update text
-            Debug.Log(time);
+            //Debug.Log(time);
+            seconds = (int)(timeInSeconds % 60);
+
+            if (seconds >= 59)
+            {
+            }
+
+            minutes = (int)timeInSeconds / 60;
+            milliseconds = (int)(timeInSeconds % 1 * 100);
+
+            //Debug.Log("B4: " + milliseconds);
+            //if (milliseconds >= 100)
+            //{
+            //    milliseconds /= 10;
+            //}
+            //Debug.Log("After: " + milliseconds);
+            //string m = milliseconds.ToString("00");
+
+            RacingUIManager.Instance.SetTimerText($"{minutes.ToString("0")}:{seconds.ToString("00")}.{milliseconds.ToString("00")}");
         }       
     }
 

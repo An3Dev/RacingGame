@@ -12,15 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bac188279807729409556473efe8f669, type: 3}
   m_Name: CyberTrueno
   m_EditorClassIdentifier: 
-  maxForwardVelocity: 70
+  maxForwardVelocity: 89.76463
   maxReverseVelocity: 30
   accelerationMagnitude: 30
   accelerationOverSpeed:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
-      time: 0.006774076
-      value: 0.84889823
+      time: 0.0020667394
+      value: 0.7952636
       inSlope: 1.0537134
       outSlope: 1.0537134
       tangentMode: 0
@@ -37,14 +37,23 @@ MonoBehaviour:
       inWeight: 0.7000353
       outWeight: 0.5985195
     - serializedVersion: 3
-      time: 0.33322817
-      value: 0.48474592
-      inSlope: -8.891203
-      outSlope: -8.891203
+      time: 0.38737172
+      value: 0.5032693
+      inSlope: -1.653853
+      outSlope: -1.653853
       tangentMode: 0
       weightedMode: 3
       inWeight: 0.2038763
-      outWeight: 0.07687697
+      outWeight: 0.1713652
+    - serializedVersion: 3
+      time: 0.9840949
+      value: 0.1902977
+      inSlope: -0.4230407
+      outSlope: -0.4230407
+      tangentMode: 1
+      weightedMode: 3
+      inWeight: 0.53709036
+      outWeight: 0.3112869
     - serializedVersion: 3
       time: 1
       value: 0
@@ -52,35 +61,35 @@ MonoBehaviour:
       outSlope: -0.6614513
       tangentMode: 1
       weightedMode: 1
-      inWeight: 0.56074095
+      inWeight: 0.35592926
       outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
   reverseAccelerationMagnitude: 30
   tireSpinAmount: 360
-  driftAcceleration: 15
+  driftAcceleration: 24
   driftAccelerationOverSpeed:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
       time: -0.00012289686
       value: 0.80078727
-      inSlope: 1.0537134
-      outSlope: 1.0537134
+      inSlope: 0.17480525
+      outSlope: 0.17480525
       tangentMode: 0
       weightedMode: 2
       inWeight: 0.33333334
-      outWeight: 0.26981205
+      outWeight: 0.705066
     - serializedVersion: 3
-      time: 0.10355821
-      value: 0.9107077
-      inSlope: 0.13321407
-      outSlope: 0.13321407
+      time: 0.5867295
+      value: 0.89562136
+      inSlope: 0.1501158
+      outSlope: 0.1501158
       tangentMode: 0
       weightedMode: 3
       inWeight: 0.7000353
-      outWeight: 0.093608245
+      outWeight: 0.6332897
     - serializedVersion: 3
       time: 1.0060785
       value: 1.0007021

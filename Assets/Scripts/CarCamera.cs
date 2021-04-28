@@ -17,9 +17,6 @@ public class CarCamera : MonoBehaviour
     [SerializeField] float rotationStiffness = 1;
     [SerializeField] float airRotationStiffness = 10;
 
-    [SerializeField] float driftTransitionRotationStiffness = 1;
-    [SerializeField] float positionStiffnessReturnTime = 1;
-
     Rigidbody carRb;
 
     Vector3 desiredRot;
