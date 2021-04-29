@@ -7,7 +7,7 @@ public class LapTimeManager : MonoBehaviour
     public static LapTimeManager Instance;
     bool isTimeRunning = false;
 
-    float timeInSeconds = 55;
+    float timeInSeconds = 0;
     float numLaps = 0;
 
 
