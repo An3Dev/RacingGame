@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bac188279807729409556473efe8f669, type: 3}
   m_Name: CyberTrueno
   m_EditorClassIdentifier: 
-  maxForwardVelocity: 89.76463
-  maxReverseVelocity: 30
+  maxForwardVelocity: 80
+  maxReverseVelocity: 10
   accelerationMagnitude: 30
   accelerationOverSpeed:
     serializedVersion: 2
@@ -37,8 +37,8 @@ MonoBehaviour:
       inWeight: 0.7000353
       outWeight: 0.5985195
     - serializedVersion: 3
-      time: 0.38737172
-      value: 0.5032693
+      time: 0.6364562
+      value: 0.69275296
       inSlope: -1.653853
       outSlope: -1.653853
       tangentMode: 0
@@ -66,9 +66,9 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  reverseAccelerationMagnitude: 30
+  reverseAccelerationMagnitude: 50
   tireSpinAmount: 360
-  driftAcceleration: 24
+  driftAcceleration: 10
   driftAccelerationOverSpeed:
     serializedVersion: 2
     m_Curve:
@@ -102,24 +102,22 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  driftFriction: 3
-  lateralDriftFriction: 1
-  driftingTurnAmount: 115
-  speedWhereWheelsStartSpinningWhenDrifting: 5
-  angleBelowNoDriftForceIsAdded: 10
-  angleWhereFullDriftForceIsAdded: 20
-  speedAtWhichDriftAccelerationStops: 20
+  driftFriction: 10
+  lateralDriftFriction: 5
+  driftingTurnAmount: 135
   driftTireSpinAmount: 1440
-  friction: 5
-  lateralFriction: 20
-  brakeForce: 20
+  friction: 30
+  lateralFriction: 25
+  brakeForce: 25
+  driftBrakeForce: 18
   drag: 0
   airDrag: 0.05
   angularDrag: 1
   postLandingAngularDrag: 1
-  turnAmount: 45
+  downForce: 30
+  turnAmount: 75
   speedAtWhichTurningSlows: 1
-  maxTurnValue: 10
-  turnSlowDownAmount: 3
-  straightenOutSteeringWheelMultiplier: 100
+  fullSteerTime: 0.1
+  straightenOutWheelTime: 0.1
+  turnSlowDownAmount: 5
   sideRotationForce: 7

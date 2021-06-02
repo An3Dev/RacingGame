@@ -7,33 +7,52 @@ public class Checkpoint : MonoBehaviour
     int index;
     bool wasPassed = false;
     BoxCollider trigger;
+    public bool isFinishCheckpoint = false;
     private void Awake()
     {
         index = transform.GetSiblingIndex();
         trigger = GetComponent<BoxCollider>();
     }
 
+    public bool GetIsFinishCheckpoint()
+    {
+        return isFinishCheckpoint;
+    }
+
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
-        {
-            CheckpointManager.Instance.SetCheckpoint(index);
+        if (!RaceManager.Instance.startedRace) return;
+
+        if (other.transform.root.CompareTag("Player"))
+        {          
+            wasPassed = true;
+            
             // disable trigger temporarily
             DisableCollider();
-            Invoke(nameof(EnableCollider), 1f);
-
-            wasPassed = true;
+            //Invoke(nameof(EnableCollider), 1f);
+            CheckpointManager.Instance.SetCheckpoint(index);
         }
     }
 
-    void DisableCollider()
+    public void DisableTriggerTemporarily()
+    {
+        trigger.enabled = false;
+        Invoke(nameof(EnableCollider), 3);
+    }
+
+    public void DisableCollider()
     {
         trigger.enabled = false;
 
     }
-    void EnableCollider()
+    public void EnableCollider()
     {
         trigger.enabled = true;
+    }
+
+    public int GetIndex()
+    {
+        return index;
     }
 
     public bool WasPassed()

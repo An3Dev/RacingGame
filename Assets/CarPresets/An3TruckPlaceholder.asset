@@ -1,0 +1,123 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bac188279807729409556473efe8f669, type: 3}
+  m_Name: An3TruckPlaceholder
+  m_EditorClassIdentifier: 
+  maxForwardVelocity: 55
+  maxReverseVelocity: 10
+  accelerationMagnitude: 20
+  accelerationOverSpeed:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: -0.001585686
+      value: 0.70355606
+      inSlope: 1.4612303
+      outSlope: 1.4612303
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.19840214
+      value: 0.99578434
+      inSlope: -0.036568597
+      outSlope: -0.036568597
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 1
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.40161103
+      value: 0.9840851
+      inSlope: -0.30506742
+      outSlope: -0.30506742
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.15982099
+      outWeight: 0.16304702
+    - serializedVersion: 3
+      time: 0.71556234
+      value: 0.7464634
+      inSlope: -1.3458977
+      outSlope: -1.3458977
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.07922377
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1.0015869
+      value: 0.4081685
+      inSlope: -1.1827477
+      outSlope: -1.1827477
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverseAccelerationMagnitude: 50
+  tireSpinAmount: 360
+  driftAcceleration: 10
+  driftAccelerationOverSpeed:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 1.4015774
+      outSlope: 1.4015774
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.41709262
+      value: 0.5845876
+      inSlope: -0.17864189
+      outSlope: -0.17864189
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.6525056
+      outWeight: 0.03196455
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0.71265596
+      outSlope: 0.71265596
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  driftFriction: 15
+  lateralDriftFriction: 5
+  driftingTurnAmount: 90
+  driftTireSpinAmount: 1440
+  friction: 10
+  lateralFriction: 10
+  brakeForce: 50
+  driftBrakeForce: 30
+  drag: 0
+  airDrag: 0.05
+  angularDrag: 1
+  postLandingAngularDrag: 1
+  downForce: 20
+  turnAmount: 45
+  speedAtWhichTurningSlows: 1
+  fullSteerTime: 0.25
+  straightenOutWheelTime: 0.25
+  turnSlowDownAmount: 10
+  sideRotationForce: 7

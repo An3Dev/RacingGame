@@ -6,15 +6,21 @@ using UnityEngine.InputSystem;
 public class CarInput : MonoBehaviour
 {
     
-    public CarCamera carCam;
     CarController carController;
     PlayerInput playerInput;
+
+    bool inputEnabled = true;
     private void Awake()
     {
         carController = GetComponent<CarController>();
         playerInput = GetComponent<PlayerInput>();
 
         InputSystem.onDeviceChange += OnDeviceChanged;
+    }
+
+    public void EnableInput(bool enable)
+    {
+        inputEnabled = enable;
     }
 
     void OnDeviceChanged(InputDevice device, InputDeviceChange change)
@@ -64,8 +70,12 @@ public class CarInput : MonoBehaviour
 
     public void OnResetCarPosition(InputAction.CallbackContext context)
     {
+        if (!inputEnabled)
+        {
+            return;
+        }
         CheckCurrentInput(context);
-        carController.ResetCarPosition();
+        carController.SpawnAtCheckpoint();
     }
     public void OnSteer(InputAction.CallbackContext context)
     {
@@ -76,30 +86,50 @@ public class CarInput : MonoBehaviour
 
     public void OnAirRoll(InputAction.CallbackContext context)
     {
+        if (!inputEnabled)
+        {
+            return;
+        }
         CheckCurrentInput(context);
         carController.ReceiveAirRollInput(context.ReadValue<float>());
     }
 
     public void OnAirRotation(InputAction.CallbackContext context)
     {
+        if (!inputEnabled)
+        {
+            return;
+        }
         CheckCurrentInput(context);
         carController.ReceiveAirRotInput(context.ReadValue<Vector2>());
     }
 
     public void OnDoAirRoll(InputAction.CallbackContext context)
     {
+        if (!inputEnabled)
+        {
+            return;
+        }
         CheckCurrentInput(context);
         carController.ReceiveDoAirRollInput(context.ReadValue<float>() == 1 ? true : false);
     }
 
     public void OnGas(InputAction.CallbackContext context)
     {
+        if (!inputEnabled)
+        {
+            return;
+        }
         CheckCurrentInput(context);
         carController.ReceiveGasInput(context.ReadValue<float>());
     }
 
     public void OnBrake(InputAction.CallbackContext context)
     {
+        if (!inputEnabled)
+        {
+            return;
+        }
         CheckCurrentInput(context);
 
         carController.ReceiveBrakeInput(context.ReadValue<float>());
@@ -107,6 +137,10 @@ public class CarInput : MonoBehaviour
 
     public void OnDrift(InputAction.CallbackContext context)
     {
+        if (!inputEnabled)
+        {
+            return;
+        }
         CheckCurrentInput(context);
 
         carController.ReceiveDriftInput(context.ReadValue<float>() == 1 ? true : false);

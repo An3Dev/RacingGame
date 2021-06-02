@@ -8,11 +8,11 @@ public class MemeAudio : MonoBehaviour
     bool entered = false;
     private void OnTriggerEnter(Collider other)
     {
-        if (entered)
+        if (entered || other.CompareTag("Player"))
             return;
         entered = true;
         Memes.Instance.SetClip(clipToPlayOnTrigger);
-        Memes.Instance.PlayClipOneShot();
+        Memes.Instance.PlayClip();
     }
 
     private void OnTriggerExit(Collider other)

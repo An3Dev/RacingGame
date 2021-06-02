@@ -9,6 +9,8 @@ public class Memes : MonoBehaviour
 
     AudioClip currentClip;
 
+    public AudioClip breakingCarAudioClip;
+
     private void Awake()
     {
         if (Instance)
@@ -20,6 +22,14 @@ public class Memes : MonoBehaviour
         }
     }
 
+    public void PlayBreakingCar()
+    {
+        if (!audioSource.isPlaying || !breakingCarAudioClip.Equals(audioSource.clip))
+        {
+            audioSource.clip = breakingCarAudioClip;
+            audioSource.PlayOneShot(breakingCarAudioClip);
+        }
+    }
     public void SetClip(AudioClip clip)
     {
         currentClip = clip;
@@ -31,5 +41,10 @@ public class Memes : MonoBehaviour
         audioSource.PlayOneShot(currentClip);
     }
 
-    
+    public void PlayClip()
+    {
+        audioSource.Play();
+    }
+
+
 }

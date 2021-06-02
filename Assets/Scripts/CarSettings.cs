@@ -26,18 +26,14 @@ public class CarSettings : ScriptableObject
     public float driftFriction = 3;
     public float lateralDriftFriction = 1;
     public float driftingTurnAmount = 115;
-    public float speedWhereWheelsStartSpinningWhenDrifting = 5;
-    [Tooltip("If the angle between the car forward direction and the car velocity direction is less than this value, then no force will be added at all.")]
+    //public float speedWhereWheelsStartSpinningWhenDrifting = 5;
 
-    public float angleBelowNoDriftForceIsAdded = 10;
-    [Tooltip("If the angle between the car forward direction and the car velocity direction is greater than or equal to this value, then full drift force will be added." +
-        " If the angle is less than this value, then a fraction of the full drift force will be added. If the angle is equal to the angleBelowNoDriftForceIsAdded value, then the smallest amount of drift force will be added. " +
-        " If the angle is halfway between the angleBelowNoDriftForceIsAdded value and between this value, the half of the full drift force is added. ")]
-    public float angleWhereFullDriftForceIsAdded = 20;
-    public float speedAtWhichDriftAccelerationStops = 20;
+    //public float angleBelowNoDriftForceIsAdded = 10;
+    
+    //public float angleWhereFullDriftForceIsAdded = 20;
+    //public float speedAtWhichDriftAccelerationStops = 20;
 
 
-    [Tooltip("How fast the tires spin when drifting in degrees per second.")]
     public float driftTireSpinAmount = 1440;
 
     [Header("Stop Forces")]
@@ -50,14 +46,22 @@ public class CarSettings : ScriptableObject
     public float airDrag = 0.05f;
     public float angularDrag = 1;
     public float postLandingAngularDrag = 1;
+    public float downForce = 1000;
 
     [Header("Steer")]
     public float turnAmount = 45;
     public float speedAtWhichTurningSlows = 1;
-    public float maxTurnValue = 10;
+    //public float maxTurnValue = 10;
+    [Tooltip("The time it takes to fully turn to turnAmount. This only applies to PC because it is digital input. Controller players can control how much the car turns by the amount that they move their joystick.")]
+    public float fullSteerTime = 0.5f;
+    [Tooltip("The time it takes for the wheels to go to normal rotation after player releases steering wheel. This is the time it takes from full turn to 0 turn. Only for Keyboard and Mouse.")]
+    public float straightenOutWheelTime = 0.1f;
+    [Tooltip("How much the car slows down every second that full steering is applied. If steering is not at max, a fraction of this value will be used to slow down the car.")]
     public float turnSlowDownAmount = 3;
-    [Tooltip("The higher the value, the faster the steering wheel goes back to position")]
-    public float straightenOutSteeringWheelMultiplier = 100;
+    //[Tooltip("The higher the value, the faster the steering wheel goes back to position")]
+    //public float straightenOutSteeringWheelMultiplier = 100;
+
+
 
     [Header("Air Roll")]
     public float sideRotationForce = 7;
