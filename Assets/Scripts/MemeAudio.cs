@@ -8,7 +8,7 @@ public class MemeAudio : MonoBehaviour
     bool entered = false;
     private void OnTriggerEnter(Collider other)
     {
-        if (entered || other.CompareTag("Player"))
+        if (entered || !other.CompareTag("Player"))
             return;
         entered = true;
         Memes.Instance.SetClip(clipToPlayOnTrigger);

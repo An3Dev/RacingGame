@@ -75,14 +75,21 @@ public class SettingsUI : MonoBehaviour
         userNameErrorText.gameObject.SetActive(false);
     }
 
+    public void OnEscapePressed()
+    {
+        if(isOpen)
+        {
+            Open(false);
+        }
+    }
+
     private void Update()
     {
         // if escape is pressed, close this screen
-        if (isOpen && Keyboard.current.escapeKey.wasPressedThisFrame)
-        {
-            Open(false);
-
-        }
+        //if (isOpen && Keyboard.current.escapeKey.wasPressedThisFrame)
+        //{
+        //    Open(false);
+        //}
     }
 
 
@@ -96,9 +103,14 @@ public class SettingsUI : MonoBehaviour
         if (!open)
         {
             canvas.gameObject.SetActive(false);
+            // i don't want you in my program no more dawg
             if (RacingUIManager.Instance != null)
             {
-                RacingUIManager.Instance.OnUnpause();
+                RacingUIManager.Instance.OnReturnToPausePressed();
+            } 
+            if (MainMenu.Instance != null)
+            {
+                MainMenu.Instance.OpenSettings(false);
             }
             SavePreferences();
         }
@@ -114,7 +126,7 @@ public class SettingsUI : MonoBehaviour
     {
         if (userNameInputField.text.Length < 3)
         {
-            Debug.Log("Your username must be longer than 2 characters and shorter than 21 characters.");
+            //Debug.Log("Your username must be longer than 2 characters and shorter than 21 characters.");
             userNameErrorText.text = "Your username must be longer than 2 characters and shorter than 21 characters.";
             userNameErrorText.gameObject.SetActive(true);
 
@@ -133,7 +145,7 @@ public class SettingsUI : MonoBehaviour
 
     public void OnUserNameSuccessfullyUpdated(UpdateUserTitleDisplayNameResult result)
     {
-        Debug.Log("Successfully changed username to " + result.DisplayName);
+        //Debug.Log("Successfully changed username to " + result.DisplayName);
         userNameText.text =  result.DisplayName;
         userNameErrorText.gameObject.SetActive(false);
     }
@@ -197,7 +209,7 @@ public class SettingsUI : MonoBehaviour
         master = PlayerPrefs.GetFloat(masterVolumeKey, 0.5f);
         bg = PlayerPrefs.GetFloat(bgMusicKey, 0.5f);
         sfx = PlayerPrefs.GetFloat(soundFXKey, 0.5f);
-        meme = PlayerPrefs.GetFloat(memeAudioKey, 0.5f);
+        meme = PlayerPrefs.GetFloat(memeAudioKey, 0f);
 
         showFps = bool.Parse(PlayerPrefs.GetString(showFpsKey, "false"));
         useMiles = bool.Parse(PlayerPrefs.GetString(useMilesKey, "false"));

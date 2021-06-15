@@ -28,7 +28,8 @@ public class LeaderboardUIManager : MonoBehaviour
         if (Instance != null)
         {
             Destroy(gameObject);
-        } else
+        }
+        else
         {
             Instance = this;
         }
@@ -36,24 +37,7 @@ public class LeaderboardUIManager : MonoBehaviour
 
     private void Start()
     {
-        carButtons = carButtonParent.GetComponentsInChildren<ObjectSelectButton>();
-        mapButtons = mapButtonParent.GetComponentsInChildren<ObjectSelectButton>();
-
-        leaderboardEntries = new Transform[leaderboardEntryContainer.childCount];
-        for(int i = 0; i < leaderboardEntries.Length; i++)
-        {
-            leaderboardEntries[i] = leaderboardEntryContainer.GetChild(i);
-        }
-
-        if (!PlayFabClientAPI.IsClientLoggedIn())
-        {
-            PlayfabManager.Instance.OnUserLoggedIn += OnPlayerLoggedIn;
-        } else
-        {
-            OnPlayerLoggedIn(true);
-        }
         
-
     }
 
     void OnPlayerLoggedIn(bool loggedIn)
@@ -67,7 +51,7 @@ public class LeaderboardUIManager : MonoBehaviour
         // disable all entries
         for (int i = 0; i < leaderboardEntries.Length; i++)
         {
-            leaderboardEntries[i].gameObject.SetActive(false);
+            leaderboardEntries[i].gameObject.SetActive(false); //disables visual studio
         }
 
         PlayfabManager.Instance.GetLeaderboard(mapButtons[mapIndex].objectName, carButtons[currentCarIndex].objectName);
@@ -99,7 +83,8 @@ public class LeaderboardUIManager : MonoBehaviour
                 leaderboardEntries[i].gameObject.SetActive(false);
             }
             return;
-        } else
+        }
+        else
         {
             infoText.gameObject.SetActive(false);
         }
@@ -114,22 +99,31 @@ public class LeaderboardUIManager : MonoBehaviour
             if (leaderboardResult.Leaderboard[i].DisplayName != null && leaderboardResult.Leaderboard[i].DisplayName.Length > 0)
             {
                 text[1].text = leaderboardResult.Leaderboard[i].DisplayName;
-            } else
+            }
+            else
             {
                 text[1].text = "No Username";
             }
 
             string time = LapTimeManager.GetLapTimeString(PlayfabManager.ScoreToSeconds(leaderboardResult.Leaderboard[i].StatValue));
 
-            text[2].text = time;
-            
+            if (leaderboardResult.Leaderboard[i].StatValue == 0)
+            {
+                text[2].text = "N/A";
+            }
+            else
+            {
+                text[2].text = time;
+            }
+
             if (leaderboardResult.Leaderboard[i].PlayFabId.Equals(playfabID))
             {
                 isPlayerInTop10 = true;
                 text[0].color = thisPlayerScoreTextColor;
                 text[1].color = thisPlayerScoreTextColor;
                 text[2].color = thisPlayerScoreTextColor;
-            } else
+            }
+            else
             {
                 text[0].color = otherPlayerTextColor;
                 text[1].color = otherPlayerTextColor;
@@ -160,15 +154,36 @@ public class LeaderboardUIManager : MonoBehaviour
     {
         //Debug.Log(result.Leaderboard[0].Position + " " + result.Leaderboard[0].DisplayName + " " + result.Leaderboard[0].StatValue);
         // sets the last entry UI to the current player's stats
+
+        if (result.Leaderboard[0].StatValue == 0)
+        {
+            return;
+        }
         Transform entry = leaderboardEntries[leaderboardEntries.Length - 1];
+        entry.gameObject.SetActive(true);
         TextMeshProUGUI[] text = entry.GetComponentsInChildren<TextMeshProUGUI>();
 
         text[0].text = (result.Leaderboard[0].Position + 1).ToString();
         text[1].text = result.Leaderboard[0].DisplayName;
 
-        string time = LapTimeManager.GetLapTimeString(PlayfabManager.ScoreToSeconds(leaderboardResult.Leaderboard[0].StatValue));
+        string time = LapTimeManager.GetLapTimeString(PlayfabManager.ScoreToSeconds(result.Leaderboard[0].StatValue));
+        if (result.Leaderboard[0].StatValue == 0)
+        {
+            text[2].text = "N/A";
+        }
+        else
+        {
+            text[2].text = time;
+        }
 
-        text[2].text = time;
+        if (result.Leaderboard[0].DisplayName != null && result.Leaderboard[0].DisplayName.Length > 0)
+        {
+            text[1].text = result.Leaderboard[0].DisplayName;
+        }
+        else
+        {
+            text[1].text = "No Username";
+        }
 
         // set this color to red
         text[0].color = thisPlayerScoreTextColor;
@@ -191,5 +206,27 @@ public class LeaderboardUIManager : MonoBehaviour
 
         // show leaderboard based on the car name and map
         GetLeaderboard();
+    }
+
+    private void OnEnable()
+    {
+        carButtons = carButtonParent.GetComponentsInChildren<ObjectSelectButton>();
+        mapButtons = mapButtonParent.GetComponentsInChildren<ObjectSelectButton>();
+
+        leaderboardEntries = new Transform[leaderboardEntryContainer.childCount];
+        for (int i = 0; i < leaderboardEntries.Length; i++)
+        {
+            leaderboardEntries[i] = leaderboardEntryContainer.GetChild(i);
+        }
+
+        if (!PlayFabClientAPI.IsClientLoggedIn())
+        {
+            PlayfabManager.Instance.OnUserLoggedIn += OnPlayerLoggedIn; //like and subscribe
+        }
+        else
+        {
+            OnPlayerLoggedIn(true);
+        }
+        // toggle pause
     }
 }

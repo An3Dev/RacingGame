@@ -17,8 +17,8 @@ public class CarSpawner : MonoBehaviour
         {
             Instance = this;
         }
-        Debug.Log(CarModelManager.Instance.GetCurrentCar());
-        currentCar = Instantiate(CarModelManager.Instance.GetCurrentCar());
+        Debug.Log(CarModelManager.Instance.GetCurrentCarGameObject());
+        currentCar = Instantiate(CarModelManager.Instance.GetCurrentCarGameObject());
         currentCar.transform.position = startingSpot.position;
         currentCar.transform.rotation = startingSpot.rotation;
     }

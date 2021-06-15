@@ -29,25 +29,25 @@ public class CarInput : MonoBehaviour
         {
             case InputDeviceChange.Added:
                 // New Device.
-                Debug.Log(device.displayName + " was connected.");
+                //Debug.Log(device.displayName + " was connected.");
                 break;
             case InputDeviceChange.Disconnected:
                 // Device got unplugged.
-                Debug.Log(device.displayName + " was disconnected.");
+                //Debug.Log(device.displayName + " was disconnected.");
                 break;
             case InputDeviceChange.Reconnected:
                 // Plugged back in.
-                Debug.Log(device.displayName + " was reconnected.");
+                //Debug.Log(device.displayName + " was reconnected.");
                 break;
             case InputDeviceChange.Removed:
                 // Remove from Input System entirely; by default, Devices stay in the system once discovered.
-                Debug.Log(device.displayName + " was removed.");
+                //Debug.Log(device.displayName + " was removed.");
                 break;
             case InputDeviceChange.UsageChanged:
-                Debug.Log(device.displayName + " usage changed.");
+                ////Debug.Log(device.displayName + " usage changed.");
                 break;
             case InputDeviceChange.ConfigurationChanged:
-                Debug.Log(device.displayName + " configuration changed.");
+                //Debug.Log(device.displayName + " configuration changed.");
                 break;
             default:
                 // See InputDeviceChange reference for other event types.
@@ -77,6 +77,32 @@ public class CarInput : MonoBehaviour
         CheckCurrentInput(context);
         carController.SpawnAtCheckpoint();
     }
+
+    public void OnRestartGame(InputAction.CallbackContext context)
+    {
+        CheckCurrentInput(context);
+
+        if (!inputEnabled)
+        {
+            return;
+        }
+
+        Debug.Log("Restart game");
+        RaceManager.Instance.OnRestartGamePressed();
+    }
+
+    public void OnEscape(InputAction.CallbackContext context)
+    {
+        Debug.Log("Escaped from Chris the Dummy");
+        CheckCurrentInput(context);
+        // if in the main menu
+        if (RacingUIManager.Instance == null)
+            return;
+
+        RacingUIManager.Instance.OnEscapeInputPressed();
+        SettingsUI.Instance.OnEscapePressed();
+    }
+
     public void OnSteer(InputAction.CallbackContext context)
     {
         CheckCurrentInput(context);
@@ -146,9 +172,9 @@ public class CarInput : MonoBehaviour
         carController.ReceiveDriftInput(context.ReadValue<float>() == 1 ? true : false);
     }
 
-    public void OnLook(InputAction.CallbackContext context)
-    {
-        //Debug.Log(context.action.ToString() + ": " + context.ReadValue<Vector2>().ToString());
-    }
+    //public void OnLook(InputAction.CallbackContext context)
+    //{
+    //    //Debug.Log(context.action.ToString() + ": " + context.ReadValue<Vector2>().ToString());
+    //}
 
 }

@@ -83,36 +83,18 @@ public class NewCarCam : MonoBehaviour
         Vector3 desiredCamPos = Vector3.zero;
 
         float cameraAngleFromCarForward = Vector3.Angle(car.forward, transform.forward);
-        //Debug.Log(cameraAngleFromCarForward);
         // if moving backward
         if (!carController.GetIsDrifting() && cameraAngleFromCarForward < 25 && carController.GetRelativeDirection().z < 0)
         {
-            Debug.Log(cameraAngleFromCarForward);
             desiredCamPos = car.TransformPoint(reverseOffsetFromCar);
             currentMaxDistance = maxReverseDistanceFromCar;
-            //Debug.Log("Reverse");
         } else // if moving forward
         {
             desiredCamPos = car.TransformPoint(defaultOffsetFromCar);
             currentMaxDistance = maxDistanceFromCar;
-            //Debug.Log("Forward");
-            
         }
 
         carCloseToGround = carController.GetIsCloseToGround();
-
-        //if (!carCloseToGround)
-        //{
-        //    //camState = CamState.Air;
-        //    //carCloseToGround = false;
-        //    //desiredCamPos = car.position + carController.GetWorldVelocity().normalized * defaultOffsetFromCar.z + Vector3.up * (defaultOffsetFromCar.y + 1);           
-        //} else if (carController.GetIsDrifting())
-        //{
-        //    //camState = CamState.Drift;
-        //} else
-        //{
-        //    //camState = CamState.Regular;
-        //}
 
         Vector3 newPos = Vector3.SmoothDamp(transform.position, desiredCamPos, ref cameraVelocity, Mathf.Lerp(minCamMoveTime, camMoveTime, distanceFromCarBasedOnSpeed.Evaluate(carSpeed / carMaxSpeed)));
         float distanceFromCar = Vector3.Distance(car.position, newPos);
@@ -120,7 +102,6 @@ public class NewCarCam : MonoBehaviour
         // if camera is slightly further away than the max distance from car
         if (!smoothTeleport && distanceFromCar > currentMaxDistance && distanceFromCar < smoothTeleportDistance)
         {
-            //Debug.Log("camera slightly away");
             // this is the direction to the desired cam pos
             Vector3 dirFromCarToCam = -(car.position - newPos).normalized;
 

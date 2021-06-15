@@ -25,6 +25,7 @@ public class RaceManager : MonoBehaviour
     int lapsToFinish = 1;
     int currentLaps;
     bool playerFinished = false;
+    bool ghostFinished = false;
 
     public Animator countdownAnimator;
     //bool ghostFinished = false;
@@ -65,11 +66,17 @@ public class RaceManager : MonoBehaviour
 
     public void OnGhostFinished()
     {
+        ghostFinished = true;
         if (!playerFinished)
         {
             RacingUIManager.Instance.OnPlayerLost();
             Debug.Log("Player lost");
         }
+    }
+
+    public void OnRestartGamePressed()
+    {
+        SceneChangeManager.Instance.RestartScene();
     }
 
     private void Update()
@@ -114,10 +121,11 @@ public class RaceManager : MonoBehaviour
         {
             QualitySettings.vSyncCount = (QualitySettings.vSyncCount == 0) ? 1 : 0;
         }
-        if (Keyboard.current[Key.G].wasPressedThisFrame)
-        {
-            SceneChangeManager.Instance.RestartScene();
-        }
+
+        //if (Keyboard.current[Key.G].wasPressedThisFrame)
+        //{
+            
+        //}
 
         if (Time.timeScale == 0)
         {
@@ -155,7 +163,15 @@ public class RaceManager : MonoBehaviour
 
         PlayfabManager.Instance.SendScore(LapTimeManager.Instance.GetTime());
 
-        // tell racing UI to show race against better ghost level button
-        // send times to high score
-    }
-}
+        bool isUsingCybertrueno = CarModelManager.Instance.GetCarNumber() == 0;
+
+        // if the player beat the ghost in hard or insane mode
+        if (playerFinished && !ghostFinished 
+            && (GhostModeManager.currentDifficulty == Difficulty.Hard || GhostModeManager.currentDifficulty == Difficulty.Insane 
+            || (isUsingCybertrueno && GhostModeManager.currentDifficulty == Difficulty.Medium)))
+        {
+            CarInventoryManager.Instance.TryUnlockCar(CarModelManager.Instance.GetCarNumber());
+            //Debug.Log("Try unlock car");
+        }
+    } // end of method
+} // end of class

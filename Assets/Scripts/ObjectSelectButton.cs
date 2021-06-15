@@ -11,16 +11,19 @@ public class ObjectSelectButton : MonoBehaviour
     public TextMeshProUGUI objectNameText;
     public Image objectImage;
     public string objectName;
+    public Button button;
 
     public void OnClick()
     {
         LeaderboardUIManager.Instance.OnCarButtonClicked(transform.GetSiblingIndex());
-        selectedBg.SetActive(true);
+        button.Select();
+        //selectedBg.SetActive(true);
     }
 
     public void SetSelected(bool selected)
     {
-        bg.SetActive(!selected);
-        selectedBg.SetActive(selected);
+        //bg.SetActive(!selected);
+        //selectedBg.SetActive(selected);
+        button.Select();
     }
 }

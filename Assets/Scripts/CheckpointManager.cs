@@ -69,7 +69,7 @@ public class CheckpointManager : MonoBehaviour
     {
         // this is true if the current checkpoint was already passed
         checkpointsHit++;
-        Debug.Log("Checkpoints hit: " + checkpointsHit);
+        //Debug.Log("Checkpoints hit: " + checkpointsHit);
 
         currentCheckpoint = checkpoints[index];
         checkpointAudioSource.transform.position = checkpoints[index].transform.position;

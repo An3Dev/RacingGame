@@ -11,13 +11,15 @@ public class GarageManager : MonoBehaviour
     public Transform spawnPosition;
 
     public GameObject leftArrowButton, rightArrowButton;
-    public TextMeshProUGUI carNameText;
+    public TextMeshProUGUI carNameText, unlockCarInstructionsTxt;
 
     public Slider speedSlider, brakeSlider, handlingSlider, stabilitySlider;
 
     int currentCarIndex = 0;
 
     GameObject car;
+
+    int lastUnlockedCarIndex;
 
     const string currentCarIndexKey = "CurrentCarIndex";
 
@@ -61,8 +63,13 @@ public class GarageManager : MonoBehaviour
 
     public void OpenGarage(bool open)
     {
+        if (!open && currentCarIndex != lastUnlockedCarIndex)
+        {
+            ChangeCarToIndex(lastUnlockedCarIndex);
+        }
         garageUI.SetActive(open);
         MainMenu.Instance.ShowMainButtons(!open);
+
     }
 
     void DisableCurrentCar()
@@ -88,7 +95,55 @@ public class GarageManager : MonoBehaviour
         
         CheckIndexUnderOrOverflow();
         CarModelManager.Instance.SetCurrentIndex(currentCarIndex);
-        PlayerPrefs.SetInt(currentCarIndexKey, currentCarIndex);
+        
+
+        if (CarInventoryManager.Instance.IsCarUnlocked(currentCarIndex))
+        {
+            Debug.Log("Car is unlocked");
+            lastUnlockedCarIndex = currentCarIndex;
+            PlayerPrefs.SetInt(currentCarIndexKey, currentCarIndex);
+            unlockCarInstructionsTxt.gameObject.SetActive(false);
+
+        }
+        else
+        {
+            unlockCarInstructionsTxt.gameObject.SetActive(true);
+            unlockCarInstructionsTxt.text = "To unlock this car, you have to beat the " + CarModelManager.Instance.GetCarName(currentCarIndex - 1) + " in Hard or Insane mode!";
+            carNameText.text = "LOCKED";
+
+            //Debug.Log("Car is not unlocked");
+
+            //Debug.Log("To unlock the " + CarModelManager.Instance.GetCurrentCarName() + ", you have to beat the " + CarModelManager.Instance.GetCarName(currentCarIndex - 1) + " in Hard or Insane mode");
+        }
+
+        UpdateShownCar();
+    }
+
+    void ChangeCarToIndex(int index)
+    {
+        DisableCurrentCar();
+
+        currentCarIndex = index;
+
+        CheckIndexUnderOrOverflow();
+        CarModelManager.Instance.SetCurrentIndex(currentCarIndex);
+
+        if (CarInventoryManager.Instance.IsCarUnlocked(currentCarIndex))
+        {
+            unlockCarInstructionsTxt.gameObject.SetActive(false);
+            lastUnlockedCarIndex = currentCarIndex;
+            PlayerPrefs.SetInt(currentCarIndexKey, currentCarIndex);
+        }
+        else
+        {
+            unlockCarInstructionsTxt.gameObject.SetActive(true);
+            unlockCarInstructionsTxt.text = "To unlock this car, you have to beat the " + CarModelManager.Instance.GetCarName(currentCarIndex - 1) + " in Hard or Insane mode!";
+            carNameText.text = "LOCKED";
+            //Debug.Log("Car is not unlocked");
+
+            //Debug.Log("To unlock the " + CarModelManager.Instance.GetCurrentCarName() + ", you have to beat the " + CarModelManager.Instance.GetCarName(currentCarIndex - 1) + " in Hard or Insane mode");
+        }
+
         UpdateShownCar();
     }
 

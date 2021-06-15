@@ -14,6 +14,8 @@ public class PlayfabManager : MonoBehaviour
     public event Action<bool> OnUserLoggedIn;
 
     public const int largeNumToSubtract = 1000;
+
+    private const string customIDKey = "CustomID";
     private void Awake()
     {
         if (Instance != null)
@@ -38,9 +40,25 @@ public class PlayfabManager : MonoBehaviour
     
     void Login()
     {
-        var request = new LoginWithCustomIDRequest
+        LoginWithCustomIDRequest request;
+        string customID;
+
+        #if UNITY_WEBGL
+            if(!PlayerPrefs.HasKey(customIDKey))
+            {
+                customID = Guid.NewGuid().ToString();
+                PlayerPrefs.SetString(customIDKey, customID);
+            }
+            else
+            {
+                customID = PlayerPrefs.GetString(customIDKey);
+            }
+        #else
+            customID = SystemInfo.deviceUniqueIdentifier;
+        #endif
+        request = new LoginWithCustomIDRequest
         {
-            CustomId = SystemInfo.deviceUniqueIdentifier,
+            CustomId = customID,
             CreateAccount = true,
             InfoRequestParameters = new GetPlayerCombinedInfoRequestParams
             {
@@ -208,7 +226,7 @@ public class PlayfabManager : MonoBehaviour
             StartPosition = 0,
             MaxResultsCount = 10
         };
-        PlayFabClientAPI.GetLeaderboard(request, OnLeaderboardGet, OnLeaderboardError);
+        PlayFabClientAPI.GetLeaderboard(request, OnLeaderboardGet, OnLeaderboardError);    
     }
 
     public void OnLeaderboardGet(GetLeaderboardResult result)

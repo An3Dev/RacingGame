@@ -546,6 +546,9 @@ MonoBehaviour:
   - {fileID: 2515266967300561643}
   - {fileID: 2515266965566810860}
   - {fileID: 2515266965612357705}
+  brakesOnMat: {fileID: 0}
+  brakesOffMat: {fileID: 0}
+  brakesMaterialIndex: 0
   camMoveTime: 0.2
   minCamMoveTime: 0.2
   distanceFromCarBasedOnSpeed:
@@ -619,7 +622,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Actions: {fileID: -944628639613478452, guid: a5524268afb07764c9088760911b1a0a, type: 3}
-  m_NotificationBehavior: 2
+  m_NotificationBehavior: 0
   m_UIInputModule: {fileID: 0}
   m_DeviceLostEvent:
     m_PersistentCalls:
@@ -827,6 +830,14 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: 73f2d4b0-1839-4aad-8def-1c9e5c370ea3
     m_ActionName: Player/Boost[/Keyboard/space]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: dcb03669-bee8-4d26-afe6-02053d71a18a
+    m_ActionName: Player/Escape[/Keyboard/escape]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 4db66643-a235-4420-84aa-057b1fe5b18e
+    m_ActionName: Player/RestartGame[/Keyboard/g]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: Keyboard&Mouse
   m_DefaultActionMap: Player

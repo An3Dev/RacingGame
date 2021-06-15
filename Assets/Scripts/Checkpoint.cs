@@ -31,6 +31,9 @@ public class Checkpoint : MonoBehaviour
             DisableCollider();
             //Invoke(nameof(EnableCollider), 1f);
             CheckpointManager.Instance.SetCheckpoint(index);
+        } else if (other.transform.root.CompareTag("Ghost"))
+        {
+            Debug.Log("Ghost hit checkpoint");
         }
     }
 

@@ -10,6 +10,8 @@ public class MainMenu : MonoBehaviour
     [SerializeField] GameObject mainScreenUI;
     [SerializeField] GameObject ghostModeUI;
     [SerializeField] GameObject leaderboardUI;
+    [SerializeField] GameObject controlsUI;
+
     private void Awake()
     {
         if (Instance != null)
@@ -40,7 +42,23 @@ public class MainMenu : MonoBehaviour
 
     public void OpenSettings(bool open)
     {
-        settingsUI.Open(open);
+        if (!open)
+        {
+            settingsUI.transform.GetChild(0).gameObject.SetActive(false);
+        } else
+        {
+            settingsUI.Open(open);
+
+        }
+        ShowMainButtons(!open);
+
+        
+    }
+
+    public void OpenControls(bool open)
+    {
+        controlsUI.SetActive(open);
+        ShowMainButtons(!open);
     }
 
     public void OnClickLeaderboard()
@@ -55,7 +73,21 @@ public class MainMenu : MonoBehaviour
         {
             leaderboardUI.SetActive(false);
             ShowMainButtons(true);
+        } else if (ghostModeUI.activeInHierarchy)
+        {
+            ghostModeUI.SetActive(false);
+            ShowMainButtons(true);
+        } else if (controlsUI.activeInHierarchy)
+        {
+            controlsUI.SetActive(false);
+            ShowMainButtons(true);
         }
+        //else if (settingsUI.gameObject.activeInHierarchy)
+        //{
+        //    //settingsUI.Open(false);
+        //    //OpenSettings(false);
+        //    //ShowMainButtons(true);
+        //}
     }
 
     public void OnClickGarage()

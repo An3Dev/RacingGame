@@ -10,6 +10,7 @@ using PlayFab.ClientModels;
 public class RacingUIManager : MonoBehaviour
 {
     public static RacingUIManager Instance;
+
     public TextMeshProUGUI timer;
     public TextMeshProUGUI speed;
     public TextMeshProUGUI resultsMessageText;
@@ -43,11 +44,20 @@ public class RacingUIManager : MonoBehaviour
         //SetTimerText(61.5f);
 
         InvokeRepeating(nameof(UpdateSpeedText), 0.001f, 0.05f);
-        PlayfabManager.Instance.OnUserLoggedIn += GetLeaderboardTime;
+
+        
     }
 
     private void Start()
     {
+        if (!PlayFabClientAPI.IsClientLoggedIn())
+        {
+            PlayfabManager.Instance.OnUserLoggedIn += GetLeaderboardTime;
+        }
+        else
+        {
+            GetLeaderboardTime(true);
+        }
         carController = CarSpawner.Instance.GetCurrentCar().GetComponent<CarController>();
 
         // when the miles change, change the boolean
@@ -72,9 +82,20 @@ public class RacingUIManager : MonoBehaviour
     public void SetPersonalBestTime(float seconds)
     {
         personalBestTime = seconds;
-        personalBestText.text = "PB: " + LapTimeManager.GetLapTimeString(seconds);
+        string text = "PB: ";
+        if (personalBestTime > 60 * 30)
+        {
+            text = "PB: N/A";
+        } 
+        else
+        {
+            text = "PB: " + LapTimeManager.GetLapTimeString(seconds);
+        }
+        personalBestText.text = text;
 
-        endScreenPersonalBestText.text = "PB: " + LapTimeManager.GetLapTimeString(seconds);
+        endScreenPanel.SetActive(true);
+        endScreenPersonalBestText.text = text;
+        endScreenPanel.SetActive(false);
     }
 
     void UpdateUseMiles(bool use)
@@ -95,6 +116,15 @@ public class RacingUIManager : MonoBehaviour
         countdownText.text = text;
     }
 
+    public void OnEscapeInputPressed()
+    {
+        if (!SettingsUI.Instance.IsOpen)
+        {
+            // toggle pause
+            OpenPausePanel(!pausedPanel.activeInHierarchy);
+        }
+    }
+
 
     private void Update()
     {
@@ -111,15 +141,16 @@ public class RacingUIManager : MonoBehaviour
         }
 
         // if the user presses escape
-        if (Keyboard.current.escapeKey.wasPressedThisFrame)
-        {
+        //if (Keyboard.current.escapeKey.wasPressedThisFrame)
+        //{
             // if settings isn't open
-            if (!SettingsUI.Instance.IsOpen)
-            {
-                // toggle pause
-                OpenPausePanel(!pausedPanel.activeInHierarchy);
-            }
-        }
+            
+        //}
+    }
+
+    public void UnlockedCar(int carNumber)
+    {
+        Debug.Log("Unlocked car: " + CarModelManager.Instance.GetCarName(CarModelManager.Instance.GetCarIndexByCarNumber(carNumber)));
     }
 
     public void OnUnpause()
@@ -132,6 +163,11 @@ public class RacingUIManager : MonoBehaviour
     {
         lostRacePanel.SetActive(true);
         resultsMessageText.text = GhostModeManager.currentDifficulty.ToString() + " Ghost Beat You!";
+    }
+
+    public void TestMethod()
+    {
+
     }
 
     void OpenPausePanel(bool open)
@@ -163,7 +199,27 @@ public class RacingUIManager : MonoBehaviour
 
     public void OnSettingsButtonPressed()
     {
+        if (pausedPanel.activeInHierarchy)
+        {
+            pausedPanel.SetActive(false);
+        } 
+        else if (endScreenPanel.activeInHierarchy)
+        {
+            endScreenPanel.SetActive(false);
+        }
         SettingsUI.Instance.Open(true);
+    }
+
+    public void OnReturnToPausePressed()
+    {
+        if (isPaused)
+        {
+            pausedPanel.SetActive(true);
+        } 
+        else 
+        {
+            endScreenPanel.SetActive(true);
+        }
     }
 
     void UpdateSpeedText()
@@ -193,10 +249,12 @@ public class RacingUIManager : MonoBehaviour
         ShowEndScreen(true);
         ShowRacingScreen(false);
         isPaused = true;
-        if (PlayfabManager.Instance.GetUsername() == null || PlayfabManager.Instance.GetUsername().Length < 5)
+
+        if (PlayfabManager.Instance.GetUsername() == null || PlayfabManager.Instance.GetUsername().Length < 3)
         {
             Debug.Log("Show popup");
             userNamePopup.SetActive(true);
+            carController.PausedGame(true);
         }
     }
 
@@ -209,6 +267,8 @@ public class RacingUIManager : MonoBehaviour
             return;
         }
         PlayfabManager.Instance.TryUpdatingUsername(usernameInputField.text);
+        carController.PausedGame(false);
+
     }
 
     public void OnUpdateUsernameFailed(PlayFabError error)
@@ -231,7 +291,16 @@ public class RacingUIManager : MonoBehaviour
     public void ShowRacingScreen(bool show)
     {
         racingPanel.SetActive(show);
-        endScreenPersonalBestText.text = "PB: " + LapTimeManager.GetLapTimeString(personalBestTime);
+        string time = "";
+        if (personalBestTime > 60 * 59)
+        {
+            time = "N/A";
+        } 
+        else 
+        {
+            time = LapTimeManager.GetLapTimeString(personalBestTime);
 
+        }
+        endScreenPersonalBestText.text = "PB: " + time;
     }
 }
