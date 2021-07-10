@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64bb37cd9e1fcdc4c996736934613669, type: 3}
+  m_Name: BetterCarsList
+  m_EditorClassIdentifier: 
+  uniqueObjects:
+  - {fileID: 11400000, guid: 56689e5c5be31b644951dda07b50eb40, type: 2}
+  - {fileID: 11400000, guid: 2dd2fac8a51448647b12faf8af80e39b, type: 2}
+  - {fileID: 11400000, guid: 7ba19ed6a88c0cc4a8a68705df2eb3f5, type: 2}
+  - {fileID: 11400000, guid: fc73c8b9ead3f974d8c7724b48036fb3, type: 2}

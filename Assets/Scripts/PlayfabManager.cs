@@ -11,7 +11,7 @@ public class PlayfabManager : MonoBehaviour
     string username;
     string playfabID;
 
-    public event Action<bool> OnUserLoggedIn;
+    public static event Action<bool> OnUserLoggedIn;
 
     public const int largeNumToSubtract = 1000;
 
@@ -28,6 +28,7 @@ public class PlayfabManager : MonoBehaviour
         }
     }
 
+
     private void Start()
     {
         Login();
@@ -43,7 +44,7 @@ public class PlayfabManager : MonoBehaviour
         LoginWithCustomIDRequest request;
         string customID;
 
-        #if UNITY_WEBGL
+        //#if UNITY_WEBGL
             if(!PlayerPrefs.HasKey(customIDKey))
             {
                 customID = Guid.NewGuid().ToString();
@@ -53,9 +54,9 @@ public class PlayfabManager : MonoBehaviour
             {
                 customID = PlayerPrefs.GetString(customIDKey);
             }
-        #else
-            customID = SystemInfo.deviceUniqueIdentifier;
-        #endif
+        //#else
+        //    customID = SystemInfo.deviceUniqueIdentifier;
+        //#endif
         request = new LoginWithCustomIDRequest
         {
             CustomId = customID,
@@ -77,7 +78,6 @@ public class PlayfabManager : MonoBehaviour
             Debug.Log("Successfuly created new account. ID: " + result.PlayFabId);
         } else
         {
-            Debug.Log("Successfully logged in player with playfab ID of: " + result.PlayFabId);
         }
 
         playfabID = result.PlayFabId;
@@ -89,7 +89,6 @@ public class PlayfabManager : MonoBehaviour
 
         if (name != null)
         {
-            Debug.Log("Player username: " + name);
             username = name;
         } else
         {
@@ -97,7 +96,8 @@ public class PlayfabManager : MonoBehaviour
             username = null;
         }
 
-        SettingsUI.Instance.SetUsername(username);
+        if (SettingsUI.Instance != null)
+            SettingsUI.Instance.SetUsername(username);
 
         // invoke the event if it has been subscribed to
         OnUserLoggedIn?.Invoke(true);

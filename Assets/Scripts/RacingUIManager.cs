@@ -43,16 +43,26 @@ public class RacingUIManager : MonoBehaviour
         }
         //SetTimerText(61.5f);
 
-        InvokeRepeating(nameof(UpdateSpeedText), 0.001f, 0.05f);
+        InvokeRepeating(nameof(UpdateSpeedText), 0.001f, 0.05f);    
+    }
 
-        
+    private void OnEnable()
+    {
+        CheckpointManager.OnCompletedLap += OnCompletedLap;
+        CheckpointManager.OnFinishedRace += OnFinishedRace;
+    }
+
+    private void OnDisable()
+    {
+        CheckpointManager.OnCompletedLap -= OnCompletedLap;
+        CheckpointManager.OnFinishedRace -= OnFinishedRace;
     }
 
     private void Start()
     {
         if (!PlayFabClientAPI.IsClientLoggedIn())
         {
-            PlayfabManager.Instance.OnUserLoggedIn += GetLeaderboardTime;
+            PlayfabManager.OnUserLoggedIn += GetLeaderboardTime;
         }
         else
         {
@@ -162,7 +172,7 @@ public class RacingUIManager : MonoBehaviour
     public void OnPlayerLost()
     {
         lostRacePanel.SetActive(true);
-        resultsMessageText.text = GhostModeManager.currentDifficulty.ToString() + " Ghost Beat You!";
+        resultsMessageText.text = ReferenceManager.Instance.GetRaceInformation().ghostDifficulty.ToString() + " Ghost Beat You!";
     }
 
     public void TestMethod()
@@ -244,7 +254,25 @@ public class RacingUIManager : MonoBehaviour
         SceneChangeManager.Instance.RestartScene();
     }
 
+
     public void OnCompletedLap()
+    {
+
+        // show this lap time text animation
+        
+        //ShowEndScreen(true);
+        //ShowRacingScreen(false);
+        //isPaused = true;
+
+        //if (PlayfabManager.Instance.GetUsername() == null || PlayfabManager.Instance.GetUsername().Length < 3)
+        //{
+        //    Debug.Log("Show popup");
+        //    userNamePopup.SetActive(true);
+        //    carController.PausedGame(true);
+        //}
+    }
+
+    public void OnFinishedRace()
     {
         ShowEndScreen(true);
         ShowRacingScreen(false);
@@ -284,6 +312,7 @@ public class RacingUIManager : MonoBehaviour
 
     public void ShowEndScreen(bool show)
     {
+        Debug.Log(endScreenPanel.gameObject);
         endScreenPanel.SetActive(show);
         endScreenTime.text = timer.text;
     }

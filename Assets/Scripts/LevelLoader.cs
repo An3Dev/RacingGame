@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class LevelLoader : MonoBehaviour
 {
     public static LevelLoader Instance;
+    public RaceInformation raceInfo;
     //public GameObject loadingScreenPrefab;
 
     GameObject currentLoadingScreen;
@@ -26,12 +27,13 @@ public class LevelLoader : MonoBehaviour
 
     public void LoadScene(int index)
     {
-        LoadingScreen.sceneToLoadBuildIndex = index;
-        LoadingScreen.didSetSceneIndex = true;
+        //LoadingScreen.buildIndexForSceneToLoad = index;
+        //LoadingScreen.didSetSceneIndex = true;
+        raceInfo.selectedMapIndex = 0;
         SceneManager.LoadScene("LoadingScreen");     
     }
-    public void LoadScene(string name)
-    {
-        LoadScene(SceneManager.GetSceneByName(name).buildIndex);
-    }
+    //public void LoadScene(string name)
+    //{
+    //    LoadScene(SceneManager.GetSceneByName(name).buildIndex);
+    //}
 }

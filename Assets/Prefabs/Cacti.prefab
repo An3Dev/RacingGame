@@ -11,7 +11,8 @@ GameObject:
   - component: {fileID: 4794423631070739946}
   - component: {fileID: 5813090624271737407}
   - component: {fileID: 8487140669163481445}
-  m_Layer: 0
+  - component: {fileID: 736923722}
+  m_Layer: 7
   m_Name: CurvyCactus.043
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -59,8 +60,8 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -8751555780163154282, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
-  - {fileID: -8668040885160614049, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
+  - {fileID: 2100000, guid: 7f2a3f7994af1d94e8d38be88f0fa69b, type: 2}
+  - {fileID: 2100000, guid: f94db0f1a5669954da56127aa2ffec94, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -82,6 +83,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &736923722
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 122267792891532167}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.016280644, y: 0.034131207, z: 0.04422325}
+  m_Center: {x: 0.00086415705, y: 0.00022073775, z: 0.020760592}
 --- !u!1 &439721499605327727
 GameObject:
   m_ObjectHideFlags: 0
@@ -93,7 +107,8 @@ GameObject:
   - component: {fileID: 383971038723955735}
   - component: {fileID: 6790410917173600770}
   - component: {fileID: 5099207497402123721}
-  m_Layer: 0
+  - component: {fileID: 1138000332}
+  m_Layer: 7
   m_Name: StubyCactus.021
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -141,10 +156,10 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -9030366640998279740, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
-  - {fileID: 4874126678125670354, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
-  - {fileID: -3846018093981099296, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
-  - {fileID: -632848821830877677, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
+  - {fileID: 2100000, guid: 7f2a3f7994af1d94e8d38be88f0fa69b, type: 2}
+  - {fileID: 2100000, guid: 7f2a3f7994af1d94e8d38be88f0fa69b, type: 2}
+  - {fileID: 2100000, guid: 7f2a3f7994af1d94e8d38be88f0fa69b, type: 2}
+  - {fileID: 2100000, guid: f94db0f1a5669954da56127aa2ffec94, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -166,6 +181,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &1138000332
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 439721499605327727}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.021152824, y: 0.030100083, z: 0.033282198}
+  m_Center: {x: -0.0025607788, y: 0.00043913833, z: 0.014332841}
 --- !u!1 &452007620221703953
 GameObject:
   m_ObjectHideFlags: 0
@@ -177,7 +205,8 @@ GameObject:
   - component: {fileID: 6956285965839088932}
   - component: {fileID: 4423985380501791688}
   - component: {fileID: 8846409198943699258}
-  m_Layer: 0
+  - component: {fileID: 1463646398}
+  m_Layer: 7
   m_Name: StubyCactus.023
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -225,10 +254,10 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -9030366640998279740, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
-  - {fileID: 4874126678125670354, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
-  - {fileID: -3846018093981099296, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
-  - {fileID: -632848821830877677, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
+  - {fileID: 2100000, guid: 7f2a3f7994af1d94e8d38be88f0fa69b, type: 2}
+  - {fileID: 2100000, guid: 7f2a3f7994af1d94e8d38be88f0fa69b, type: 2}
+  - {fileID: 2100000, guid: 7f2a3f7994af1d94e8d38be88f0fa69b, type: 2}
+  - {fileID: 2100000, guid: f94db0f1a5669954da56127aa2ffec94, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -250,6 +279,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &1463646398
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 452007620221703953}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.021152826, y: 0.030100074, z: 0.033282198}
+  m_Center: {x: -0.0025620311, y: 0.0004390931, z: 0.014332703}
 --- !u!1 &497707573274730480
 GameObject:
   m_ObjectHideFlags: 0
@@ -261,7 +303,8 @@ GameObject:
   - component: {fileID: 228812640919774376}
   - component: {fileID: 8989031296065040651}
   - component: {fileID: 8676568561463939907}
-  m_Layer: 0
+  - component: {fileID: 108766705}
+  m_Layer: 7
   m_Name: StubyCactus.027
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -309,10 +352,10 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -9030366640998279740, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
-  - {fileID: 4874126678125670354, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
-  - {fileID: -3846018093981099296, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
-  - {fileID: -632848821830877677, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
+  - {fileID: 2100000, guid: 7f2a3f7994af1d94e8d38be88f0fa69b, type: 2}
+  - {fileID: 2100000, guid: 7f2a3f7994af1d94e8d38be88f0fa69b, type: 2}
+  - {fileID: 2100000, guid: 7f2a3f7994af1d94e8d38be88f0fa69b, type: 2}
+  - {fileID: 2100000, guid: f94db0f1a5669954da56127aa2ffec94, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -334,6 +377,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &108766705
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 497707573274730480}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.021152826, y: 0.030100081, z: 0.033282194}
+  m_Center: {x: -0.0025611373, y: 0.00043909313, z: 0.014332668}
 --- !u!1 &581727137922989650
 GameObject:
   m_ObjectHideFlags: 0
@@ -345,7 +401,8 @@ GameObject:
   - component: {fileID: 7338702974241109611}
   - component: {fileID: 4200402557321110254}
   - component: {fileID: 1558804513273921354}
-  m_Layer: 0
+  - component: {fileID: 1977236190}
+  m_Layer: 7
   m_Name: StubyCactus.029
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -359,13 +416,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 581727137922989650}
-  m_LocalRotation: {x: 0.09698911, y: 0.034149587, z: 0.99469733, w: 0.0020389024}
-  m_LocalPosition: {x: -0.3578, y: 0.6836, z: -0.2409}
+  m_LocalRotation: {x: 0.07624679, y: 0.03593051, z: 0.9964371, w: 0.0029282493}
+  m_LocalPosition: {x: -0.3555911, y: 0.683, z: -0.247}
   m_LocalScale: {x: 3.8807693, y: 3.880769, z: 3.8807685}
   m_Children: []
   m_Father: {fileID: 73391793282416629}
   m_RootOrder: 91
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -4.081, y: 8.775, z: 179.35}
 --- !u!33 &4200402557321110254
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -393,10 +450,10 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -9030366640998279740, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
-  - {fileID: 4874126678125670354, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
-  - {fileID: -3846018093981099296, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
-  - {fileID: -632848821830877677, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
+  - {fileID: 2100000, guid: 7f2a3f7994af1d94e8d38be88f0fa69b, type: 2}
+  - {fileID: 2100000, guid: 7f2a3f7994af1d94e8d38be88f0fa69b, type: 2}
+  - {fileID: 2100000, guid: 7f2a3f7994af1d94e8d38be88f0fa69b, type: 2}
+  - {fileID: 2100000, guid: f94db0f1a5669954da56127aa2ffec94, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -418,6 +475,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &1977236190
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 581727137922989650}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.02115282, y: 0.030100077, z: 0.033282198}
+  m_Center: {x: -0.002561427, y: 0.00043900326, z: 0.014332629}
 --- !u!1 &687279760540123498
 GameObject:
   m_ObjectHideFlags: 0
@@ -429,7 +499,8 @@ GameObject:
   - component: {fileID: 6372288254901986261}
   - component: {fileID: 2198897354139571394}
   - component: {fileID: 5264893524852785629}
-  m_Layer: 0
+  - component: {fileID: 1363425582}
+  m_Layer: 7
   m_Name: QuadArmCactus.026
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -477,8 +548,8 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -5475968888143051468, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
-  - {fileID: 8444260790681818259, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
+  - {fileID: 2100000, guid: 7f2a3f7994af1d94e8d38be88f0fa69b, type: 2}
+  - {fileID: 2100000, guid: f94db0f1a5669954da56127aa2ffec94, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -500,6 +571,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &1363425582
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 687279760540123498}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.02691386, y: 0.038907193, z: 0.05693412}
+  m_Center: {x: -0.002386307, y: -0.003171477, z: 0.02627411}
 --- !u!1 &693224383867445969
 GameObject:
   m_ObjectHideFlags: 0
@@ -511,7 +595,8 @@ GameObject:
   - component: {fileID: 2131515281996043133}
   - component: {fileID: 7066122991680491828}
   - component: {fileID: 6295567209755906378}
-  m_Layer: 0
+  - component: {fileID: 708579449}
+  m_Layer: 7
   m_Name: QuadArmCactus.024
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -559,8 +644,8 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -5475968888143051468, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
-  - {fileID: 8444260790681818259, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
+  - {fileID: 2100000, guid: 7f2a3f7994af1d94e8d38be88f0fa69b, type: 2}
+  - {fileID: 2100000, guid: f94db0f1a5669954da56127aa2ffec94, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -582,6 +667,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &708579449
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 693224383867445969}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.026913853, y: 0.038907178, z: 0.05693412}
+  m_Center: {x: -0.0023868585, y: -0.0031713566, z: 0.026274191}
 --- !u!1 &728795624815381683
 GameObject:
   m_ObjectHideFlags: 0
@@ -593,7 +691,8 @@ GameObject:
   - component: {fileID: 3162391036105028213}
   - component: {fileID: 5551022235278303180}
   - component: {fileID: 3494643102993602108}
-  m_Layer: 0
+  - component: {fileID: 2122633904}
+  m_Layer: 7
   m_Name: CurvyCactus.049
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -641,8 +740,8 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -8751555780163154282, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
-  - {fileID: -8668040885160614049, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
+  - {fileID: 2100000, guid: 7f2a3f7994af1d94e8d38be88f0fa69b, type: 2}
+  - {fileID: 2100000, guid: f94db0f1a5669954da56127aa2ffec94, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -664,6 +763,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &2122633904
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 728795624815381683}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.016280646, y: 0.03413121, z: 0.044223253}
+  m_Center: {x: 0.00086412695, y: 0.00022169147, z: 0.020761497}
 --- !u!1 &742933267593209167
 GameObject:
   m_ObjectHideFlags: 0
@@ -673,7 +785,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 73391793282416629}
-  m_Layer: 0
+  - component: {fileID: 647057966}
+  m_Layer: 7
   m_Name: Cacti
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -803,6 +916,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: -90, y: 185.05, z: 0}
+--- !u!65 &647057966
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 742933267593209167}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &818423071507298035
 GameObject:
   m_ObjectHideFlags: 0
@@ -814,7 +940,8 @@ GameObject:
   - component: {fileID: 194567928567615298}
   - component: {fileID: 5910493443514193942}
   - component: {fileID: 2190270645005380712}
-  m_Layer: 0
+  - component: {fileID: 2061705563}
+  m_Layer: 7
   m_Name: CurvyCactus.057
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -862,8 +989,8 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -8751555780163154282, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
-  - {fileID: -8668040885160614049, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
+  - {fileID: 2100000, guid: 7f2a3f7994af1d94e8d38be88f0fa69b, type: 2}
+  - {fileID: 2100000, guid: f94db0f1a5669954da56127aa2ffec94, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -885,6 +1012,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &2061705563
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 818423071507298035}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.01628064, y: 0.0341312, z: 0.04422325}
+  m_Center: {x: 0.00086511055, y: 0.0002216914, z: 0.020761456}
 --- !u!1 &832562802756917070
 GameObject:
   m_ObjectHideFlags: 0
@@ -896,7 +1036,8 @@ GameObject:
   - component: {fileID: 6480536774316126106}
   - component: {fileID: 5945318365937930924}
   - component: {fileID: 5126164215761717351}
-  m_Layer: 0
+  - component: {fileID: 544587242}
+  m_Layer: 7
   m_Name: CurvyCactus.037
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -944,8 +1085,8 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -8751555780163154282, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
-  - {fileID: -8668040885160614049, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
+  - {fileID: 2100000, guid: 7f2a3f7994af1d94e8d38be88f0fa69b, type: 2}
+  - {fileID: 2100000, guid: f94db0f1a5669954da56127aa2ffec94, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -967,6 +1108,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &544587242
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 832562802756917070}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.016280642, y: 0.034131207, z: 0.04422325}
+  m_Center: {x: 0.0008646934, y: 0.0002210954, z: 0.020761084}
 --- !u!1 &918980875839501154
 GameObject:
   m_ObjectHideFlags: 0
@@ -978,7 +1132,8 @@ GameObject:
   - component: {fileID: 3879653164684188978}
   - component: {fileID: 7405899236920680174}
   - component: {fileID: 8153776813173421898}
-  m_Layer: 0
+  - component: {fileID: 634074607}
+  m_Layer: 7
   m_Name: StubyCactus.041
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1026,10 +1181,10 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -9030366640998279740, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
-  - {fileID: 4874126678125670354, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
-  - {fileID: -3846018093981099296, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
-  - {fileID: -632848821830877677, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
+  - {fileID: 2100000, guid: 7f2a3f7994af1d94e8d38be88f0fa69b, type: 2}
+  - {fileID: 2100000, guid: 7f2a3f7994af1d94e8d38be88f0fa69b, type: 2}
+  - {fileID: 2100000, guid: 7f2a3f7994af1d94e8d38be88f0fa69b, type: 2}
+  - {fileID: 2100000, guid: f94db0f1a5669954da56127aa2ffec94, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1051,6 +1206,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &634074607
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 918980875839501154}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.021152824, y: 0.030100081, z: 0.0332822}
+  m_Center: {x: -0.0025607191, y: 0.00043878044, z: 0.014332456}
 --- !u!1 &940579943724801944
 GameObject:
   m_ObjectHideFlags: 0
@@ -1062,7 +1230,8 @@ GameObject:
   - component: {fileID: 7613391650020946659}
   - component: {fileID: 7958702450114389936}
   - component: {fileID: 6775473460698104294}
-  m_Layer: 0
+  - component: {fileID: 49406440}
+  m_Layer: 7
   m_Name: StubyCactus.035
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1110,10 +1279,10 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -9030366640998279740, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
-  - {fileID: 4874126678125670354, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
-  - {fileID: -3846018093981099296, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
-  - {fileID: -632848821830877677, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
+  - {fileID: 2100000, guid: 7f2a3f7994af1d94e8d38be88f0fa69b, type: 2}
+  - {fileID: 2100000, guid: 7f2a3f7994af1d94e8d38be88f0fa69b, type: 2}
+  - {fileID: 2100000, guid: 7f2a3f7994af1d94e8d38be88f0fa69b, type: 2}
+  - {fileID: 2100000, guid: f94db0f1a5669954da56127aa2ffec94, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1135,6 +1304,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &49406440
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 940579943724801944}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.021152822, y: 0.030100077, z: 0.033282194}
+  m_Center: {x: -0.0025611958, y: 0.0004386016, z: 0.014332392}
 --- !u!1 &978829219087055538
 GameObject:
   m_ObjectHideFlags: 0
@@ -1146,7 +1328,8 @@ GameObject:
   - component: {fileID: 415136721332960225}
   - component: {fileID: 1375851452037115919}
   - component: {fileID: 5025581698160638335}
-  m_Layer: 0
+  - component: {fileID: 1555924191}
+  m_Layer: 7
   m_Name: QuadArmCactus.016
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1194,8 +1377,8 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -5475968888143051468, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
-  - {fileID: 8444260790681818259, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
+  - {fileID: 2100000, guid: 7f2a3f7994af1d94e8d38be88f0fa69b, type: 2}
+  - {fileID: 2100000, guid: f94db0f1a5669954da56127aa2ffec94, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1217,6 +1400,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &1555924191
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 978829219087055538}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.026913859, y: 0.03890718, z: 0.05693411}
+  m_Center: {x: -0.0023860848, y: -0.0031708805, z: 0.026274769}
 --- !u!1 &1308746473314328321
 GameObject:
   m_ObjectHideFlags: 0
@@ -1228,7 +1424,8 @@ GameObject:
   - component: {fileID: 5414872560530270864}
   - component: {fileID: 508025794194150560}
   - component: {fileID: 2022721018692113545}
-  m_Layer: 0
+  - component: {fileID: 436883883}
+  m_Layer: 7
   m_Name: QuadArmCactus.055
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1276,8 +1473,8 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -5475968888143051468, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
-  - {fileID: 8444260790681818259, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
+  - {fileID: 2100000, guid: 7f2a3f7994af1d94e8d38be88f0fa69b, type: 2}
+  - {fileID: 2100000, guid: f94db0f1a5669954da56127aa2ffec94, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1299,6 +1496,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &436883883
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1308746473314328321}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.026913853, y: 0.038907193, z: 0.056934122}
+  m_Center: {x: -0.002386501, y: -0.0031707617, z: 0.02627477}
 --- !u!1 &1309939237610154628
 GameObject:
   m_ObjectHideFlags: 0
@@ -1310,7 +1520,8 @@ GameObject:
   - component: {fileID: 9017445810746922341}
   - component: {fileID: 1167880969560434282}
   - component: {fileID: 5587943260931357572}
-  m_Layer: 0
+  - component: {fileID: 436615283}
+  m_Layer: 7
   m_Name: QuadArmCactus.022
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1358,8 +1569,8 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -5475968888143051468, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
-  - {fileID: 8444260790681818259, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
+  - {fileID: 2100000, guid: 7f2a3f7994af1d94e8d38be88f0fa69b, type: 2}
+  - {fileID: 2100000, guid: f94db0f1a5669954da56127aa2ffec94, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1381,6 +1592,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &436615283
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1309939237610154628}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.026913866, y: 0.038907196, z: 0.056934126}
+  m_Center: {x: -0.0023865015, y: -0.0031712987, z: 0.026274305}
 --- !u!1 &1463932619711091036
 GameObject:
   m_ObjectHideFlags: 0
@@ -1392,7 +1616,8 @@ GameObject:
   - component: {fileID: 5822759497745329712}
   - component: {fileID: 5578826155357956580}
   - component: {fileID: 5552266226649118132}
-  m_Layer: 0
+  - component: {fileID: 942856281}
+  m_Layer: 7
   m_Name: CurvyCactus.038
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1440,8 +1665,8 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -8751555780163154282, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
-  - {fileID: -8668040885160614049, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
+  - {fileID: 2100000, guid: 7f2a3f7994af1d94e8d38be88f0fa69b, type: 2}
+  - {fileID: 2100000, guid: f94db0f1a5669954da56127aa2ffec94, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1463,6 +1688,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &942856281
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1463932619711091036}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.016280644, y: 0.03413121, z: 0.04422324}
+  m_Center: {x: 0.0008644402, y: 0.00022109543, z: 0.020760946}
 --- !u!1 &1467095438632798993
 GameObject:
   m_ObjectHideFlags: 0
@@ -1474,7 +1712,8 @@ GameObject:
   - component: {fileID: 8106353779217930939}
   - component: {fileID: 7802631525370363421}
   - component: {fileID: 1946673166034175032}
-  m_Layer: 0
+  - component: {fileID: 557673200}
+  m_Layer: 7
   m_Name: CurvyCactus.020
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1522,8 +1761,8 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -8751555780163154282, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
-  - {fileID: -8668040885160614049, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
+  - {fileID: 2100000, guid: 7f2a3f7994af1d94e8d38be88f0fa69b, type: 2}
+  - {fileID: 2100000, guid: f94db0f1a5669954da56127aa2ffec94, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1545,6 +1784,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &557673200
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1467095438632798993}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.016280651, y: 0.034131207, z: 0.04422325}
+  m_Center: {x: 0.00086499215, y: 0.00022145332, z: 0.020761441}
 --- !u!1 &1482111306189139929
 GameObject:
   m_ObjectHideFlags: 0
@@ -1556,7 +1808,8 @@ GameObject:
   - component: {fileID: 3034182604082294238}
   - component: {fileID: 6733055414721260379}
   - component: {fileID: 4225100950520209161}
-  m_Layer: 0
+  - component: {fileID: 415902674}
+  m_Layer: 7
   m_Name: CurvyCactus.007
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1604,8 +1857,8 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -8751555780163154282, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
-  - {fileID: -8668040885160614049, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
+  - {fileID: 2100000, guid: 7f2a3f7994af1d94e8d38be88f0fa69b, type: 2}
+  - {fileID: 2100000, guid: f94db0f1a5669954da56127aa2ffec94, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1627,6 +1880,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &415902674
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1482111306189139929}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.016280644, y: 0.034131207, z: 0.04422324}
+  m_Center: {x: 0.00086455944, y: 0.00022049935, z: 0.020760633}
 --- !u!1 &1528034027811637428
 GameObject:
   m_ObjectHideFlags: 0
@@ -1638,7 +1904,8 @@ GameObject:
   - component: {fileID: 1666806864579844957}
   - component: {fileID: 8636429820226341959}
   - component: {fileID: 5094253521105498345}
-  m_Layer: 0
+  - component: {fileID: 1192428077}
+  m_Layer: 7
   m_Name: QuadArmCactus.044
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1686,8 +1953,8 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -5475968888143051468, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
-  - {fileID: 8444260790681818259, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
+  - {fileID: 2100000, guid: 7f2a3f7994af1d94e8d38be88f0fa69b, type: 2}
+  - {fileID: 2100000, guid: f94db0f1a5669954da56127aa2ffec94, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1709,6 +1976,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &1192428077
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1528034027811637428}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.026913863, y: 0.038907193, z: 0.056934126}
+  m_Center: {x: -0.0023862624, y: -0.0031717154, z: 0.026274111}
 --- !u!1 &1665373000447242743
 GameObject:
   m_ObjectHideFlags: 0
@@ -1720,7 +2000,8 @@ GameObject:
   - component: {fileID: 8186124257468466075}
   - component: {fileID: 1158509237226331708}
   - component: {fileID: 115287750508055474}
-  m_Layer: 0
+  - component: {fileID: 91489994}
+  m_Layer: 7
   m_Name: StubyCactus.026
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1768,10 +2049,10 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -9030366640998279740, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
-  - {fileID: 4874126678125670354, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
-  - {fileID: -3846018093981099296, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
-  - {fileID: -632848821830877677, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
+  - {fileID: 2100000, guid: 7f2a3f7994af1d94e8d38be88f0fa69b, type: 2}
+  - {fileID: 2100000, guid: 7f2a3f7994af1d94e8d38be88f0fa69b, type: 2}
+  - {fileID: 2100000, guid: 7f2a3f7994af1d94e8d38be88f0fa69b, type: 2}
+  - {fileID: 2100000, guid: f94db0f1a5669954da56127aa2ffec94, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1793,6 +2074,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &91489994
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1665373000447242743}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.021152832, y: 0.03010009, z: 0.0332822}
+  m_Center: {x: -0.002561673, y: 0.00043901868, z: 0.014332649}
 --- !u!1 &1703451598654664013
 GameObject:
   m_ObjectHideFlags: 0
@@ -1804,7 +2098,8 @@ GameObject:
   - component: {fileID: 8033241717149288661}
   - component: {fileID: 4632549419144215951}
   - component: {fileID: 3330354052592000208}
-  m_Layer: 0
+  - component: {fileID: 1959285300}
+  m_Layer: 7
   m_Name: CurvyCactus.061
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1852,8 +2147,8 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -8751555780163154282, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
-  - {fileID: -8668040885160614049, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
+  - {fileID: 2100000, guid: 7f2a3f7994af1d94e8d38be88f0fa69b, type: 2}
+  - {fileID: 2100000, guid: f94db0f1a5669954da56127aa2ffec94, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1875,6 +2170,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &1959285300
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1703451598654664013}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.016280644, y: 0.03413121, z: 0.044223253}
+  m_Center: {x: 0.0008645743, y: 0.0002209762, z: 0.020760922}
 --- !u!1 &1774958186079360801
 GameObject:
   m_ObjectHideFlags: 0
@@ -1886,7 +2194,8 @@ GameObject:
   - component: {fileID: 4295017048656092997}
   - component: {fileID: 3473289483864490749}
   - component: {fileID: 913951087397231461}
-  m_Layer: 0
+  - component: {fileID: 874190793}
+  m_Layer: 7
   m_Name: QuadArmCactus.012
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1934,8 +2243,8 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -5475968888143051468, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
-  - {fileID: 8444260790681818259, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
+  - {fileID: 2100000, guid: 7f2a3f7994af1d94e8d38be88f0fa69b, type: 2}
+  - {fileID: 2100000, guid: f94db0f1a5669954da56127aa2ffec94, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1957,6 +2266,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &874190793
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1774958186079360801}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.026913857, y: 0.038907185, z: 0.056934122}
+  m_Center: {x: -0.0023875742, y: -0.0031712381, z: 0.026274476}
 --- !u!1 &1897500071917195815
 GameObject:
   m_ObjectHideFlags: 0
@@ -1968,7 +2290,8 @@ GameObject:
   - component: {fileID: 3058986310760449772}
   - component: {fileID: 5580578647163548962}
   - component: {fileID: 1297642177634449745}
-  m_Layer: 0
+  - component: {fileID: 1138358258}
+  m_Layer: 7
   m_Name: CurvyCactus.039
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2016,8 +2339,8 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -8751555780163154282, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
-  - {fileID: -8668040885160614049, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
+  - {fileID: 2100000, guid: 7f2a3f7994af1d94e8d38be88f0fa69b, type: 2}
+  - {fileID: 2100000, guid: f94db0f1a5669954da56127aa2ffec94, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2039,6 +2362,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &1138358258
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1897500071917195815}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.016280646, y: 0.034131207, z: 0.04422324}
+  m_Center: {x: 0.00086451485, y: 0.00022121459, z: 0.020760946}
 --- !u!1 &1898138075829306016
 GameObject:
   m_ObjectHideFlags: 0
@@ -2050,7 +2386,8 @@ GameObject:
   - component: {fileID: 448761861587602487}
   - component: {fileID: 4925084896191287983}
   - component: {fileID: 8122466276167732406}
-  m_Layer: 0
+  - component: {fileID: 1616380060}
+  m_Layer: 7
   m_Name: CurvyCactus.034
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2098,8 +2435,8 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -8751555780163154282, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
-  - {fileID: -8668040885160614049, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
+  - {fileID: 2100000, guid: 7f2a3f7994af1d94e8d38be88f0fa69b, type: 2}
+  - {fileID: 2100000, guid: f94db0f1a5669954da56127aa2ffec94, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2121,6 +2458,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &1616380060
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1898138075829306016}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.01628065, y: 0.03413121, z: 0.04422324}
+  m_Center: {x: 0.0008644555, y: 0.0002212144, z: 0.02076111}
 --- !u!1 &2084550924732987971
 GameObject:
   m_ObjectHideFlags: 0
@@ -2132,7 +2482,8 @@ GameObject:
   - component: {fileID: 6078783981595894662}
   - component: {fileID: 7646925450719132549}
   - component: {fileID: 8309081095622895081}
-  m_Layer: 0
+  - component: {fileID: 1433110490}
+  m_Layer: 7
   m_Name: CurvyCactus.027
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2147,7 +2498,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2084550924732987971}
   m_LocalRotation: {x: 0.047974177, y: -0.09075666, z: 0.9947008, w: -0.0056641153}
-  m_LocalPosition: {x: 2.153148, y: 0.7211703, z: -0.26886204}
+  m_LocalPosition: {x: 2.1517, y: 0.724, z: -0.284}
   m_LocalScale: {x: 3.0961647, y: 3.0961652, z: 3.096165}
   m_Children: []
   m_Father: {fileID: 73391793282416629}
@@ -2180,8 +2531,8 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -8751555780163154282, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
-  - {fileID: -8668040885160614049, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
+  - {fileID: 2100000, guid: 7f2a3f7994af1d94e8d38be88f0fa69b, type: 2}
+  - {fileID: 2100000, guid: f94db0f1a5669954da56127aa2ffec94, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2203,6 +2554,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &1433110490
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2084550924732987971}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.016280642, y: 0.03413121, z: 0.044223253}
+  m_Center: {x: 0.00086385827, y: 0.00022140869, z: 0.020761246}
 --- !u!1 &2142690603418188986
 GameObject:
   m_ObjectHideFlags: 0
@@ -2214,7 +2578,8 @@ GameObject:
   - component: {fileID: 1124493648957836349}
   - component: {fileID: 121853252131579703}
   - component: {fileID: 74974233816664120}
-  m_Layer: 0
+  - component: {fileID: 1662265766}
+  m_Layer: 7
   m_Name: CurvyCactus.041
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2262,8 +2627,8 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -8751555780163154282, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
-  - {fileID: -8668040885160614049, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
+  - {fileID: 2100000, guid: 7f2a3f7994af1d94e8d38be88f0fa69b, type: 2}
+  - {fileID: 2100000, guid: f94db0f1a5669954da56127aa2ffec94, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2285,6 +2650,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &1662265766
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2142690603418188986}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.016280646, y: 0.0341312, z: 0.04422325}
+  m_Center: {x: 0.0008637997, y: 0.00022121517, z: 0.020760838}
 --- !u!1 &2202680437649965210
 GameObject:
   m_ObjectHideFlags: 0
@@ -2296,7 +2674,8 @@ GameObject:
   - component: {fileID: 7551354080791127099}
   - component: {fileID: 6649364714702870493}
   - component: {fileID: 3121651192996674281}
-  m_Layer: 0
+  - component: {fileID: 638631656}
+  m_Layer: 7
   m_Name: StubyCactus.015
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2344,10 +2723,10 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -9030366640998279740, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
-  - {fileID: 4874126678125670354, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
-  - {fileID: -3846018093981099296, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
-  - {fileID: -632848821830877677, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
+  - {fileID: 2100000, guid: 7f2a3f7994af1d94e8d38be88f0fa69b, type: 2}
+  - {fileID: 2100000, guid: 7f2a3f7994af1d94e8d38be88f0fa69b, type: 2}
+  - {fileID: 2100000, guid: 7f2a3f7994af1d94e8d38be88f0fa69b, type: 2}
+  - {fileID: 2100000, guid: f94db0f1a5669954da56127aa2ffec94, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2369,6 +2748,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &638631656
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2202680437649965210}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.021152826, y: 0.030100089, z: 0.033282194}
+  m_Center: {x: -0.002561614, y: 0.00043925698, z: 0.0143328095}
 --- !u!1 &2283476333270338892
 GameObject:
   m_ObjectHideFlags: 0
@@ -2380,7 +2772,8 @@ GameObject:
   - component: {fileID: 6342831334894080899}
   - component: {fileID: 694064603691167655}
   - component: {fileID: 8470355887647115943}
-  m_Layer: 0
+  - component: {fileID: 707338820}
+  m_Layer: 7
   m_Name: StubyCactus.012
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2428,10 +2821,10 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -9030366640998279740, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
-  - {fileID: 4874126678125670354, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
-  - {fileID: -3846018093981099296, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
-  - {fileID: -632848821830877677, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
+  - {fileID: 2100000, guid: 7f2a3f7994af1d94e8d38be88f0fa69b, type: 2}
+  - {fileID: 2100000, guid: 7f2a3f7994af1d94e8d38be88f0fa69b, type: 2}
+  - {fileID: 2100000, guid: 7f2a3f7994af1d94e8d38be88f0fa69b, type: 2}
+  - {fileID: 2100000, guid: f94db0f1a5669954da56127aa2ffec94, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2453,6 +2846,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &707338820
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2283476333270338892}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.02115283, y: 0.030100077, z: 0.033282194}
+  m_Center: {x: -0.0025609594, y: 0.00043904808, z: 0.014332586}
 --- !u!1 &2531166164310528088
 GameObject:
   m_ObjectHideFlags: 0
@@ -2464,7 +2870,8 @@ GameObject:
   - component: {fileID: 5316794998137203633}
   - component: {fileID: 7770284038425626764}
   - component: {fileID: 1393820083401046135}
-  m_Layer: 0
+  - component: {fileID: 1027605233}
+  m_Layer: 7
   m_Name: StubyCactus.047
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2512,10 +2919,10 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -9030366640998279740, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
-  - {fileID: 4874126678125670354, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
-  - {fileID: -3846018093981099296, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
-  - {fileID: -632848821830877677, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
+  - {fileID: 2100000, guid: 7f2a3f7994af1d94e8d38be88f0fa69b, type: 2}
+  - {fileID: 2100000, guid: 7f2a3f7994af1d94e8d38be88f0fa69b, type: 2}
+  - {fileID: 2100000, guid: 7f2a3f7994af1d94e8d38be88f0fa69b, type: 2}
+  - {fileID: 2100000, guid: f94db0f1a5669954da56127aa2ffec94, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2537,6 +2944,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &1027605233
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2531166164310528088}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.021152824, y: 0.030100081, z: 0.033282198}
+  m_Center: {x: -0.002560719, y: 0.00043898865, z: 0.014332689}
 --- !u!1 &2640043410965463339
 GameObject:
   m_ObjectHideFlags: 0
@@ -2548,7 +2968,8 @@ GameObject:
   - component: {fileID: 7848570147651483478}
   - component: {fileID: 8141590383033169350}
   - component: {fileID: 313982497557376626}
-  m_Layer: 0
+  - component: {fileID: 1065234183}
+  m_Layer: 7
   m_Name: CurvyCactus.073
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2596,8 +3017,8 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -8751555780163154282, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
-  - {fileID: -8668040885160614049, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
+  - {fileID: 2100000, guid: 7f2a3f7994af1d94e8d38be88f0fa69b, type: 2}
+  - {fileID: 2100000, guid: f94db0f1a5669954da56127aa2ffec94, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2619,6 +3040,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &1065234183
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2640043410965463339}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.016280646, y: 0.03413121, z: 0.04422325}
+  m_Center: {x: 0.00086424657, y: 0.00022049937, z: 0.020760622}
 --- !u!1 &2743154475819116563
 GameObject:
   m_ObjectHideFlags: 0
@@ -2630,7 +3064,8 @@ GameObject:
   - component: {fileID: 7289466669190116363}
   - component: {fileID: 3334806133981709255}
   - component: {fileID: 1157528353160869219}
-  m_Layer: 0
+  - component: {fileID: 1559098041}
+  m_Layer: 7
   m_Name: StubyCactus.040
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2678,10 +3113,10 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -9030366640998279740, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
-  - {fileID: 4874126678125670354, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
-  - {fileID: -3846018093981099296, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
-  - {fileID: -632848821830877677, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
+  - {fileID: 2100000, guid: 7f2a3f7994af1d94e8d38be88f0fa69b, type: 2}
+  - {fileID: 2100000, guid: 7f2a3f7994af1d94e8d38be88f0fa69b, type: 2}
+  - {fileID: 2100000, guid: 7f2a3f7994af1d94e8d38be88f0fa69b, type: 2}
+  - {fileID: 2100000, guid: f94db0f1a5669954da56127aa2ffec94, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2703,6 +3138,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &1559098041
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2743154475819116563}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.021152819, y: 0.030100077, z: 0.033282194}
+  m_Center: {x: -0.0025609569, y: 0.00043872074, z: 0.014332333}
 --- !u!1 &2822761976326294404
 GameObject:
   m_ObjectHideFlags: 0
@@ -2714,7 +3162,8 @@ GameObject:
   - component: {fileID: 5796423411605561741}
   - component: {fileID: 2797652624551752727}
   - component: {fileID: 2188329694394953535}
-  m_Layer: 0
+  - component: {fileID: 85992356}
+  m_Layer: 7
   m_Name: StubyCactus.018
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2762,10 +3211,10 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -9030366640998279740, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
-  - {fileID: 4874126678125670354, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
-  - {fileID: -3846018093981099296, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
-  - {fileID: -632848821830877677, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
+  - {fileID: 2100000, guid: 7f2a3f7994af1d94e8d38be88f0fa69b, type: 2}
+  - {fileID: 2100000, guid: 7f2a3f7994af1d94e8d38be88f0fa69b, type: 2}
+  - {fileID: 2100000, guid: 7f2a3f7994af1d94e8d38be88f0fa69b, type: 2}
+  - {fileID: 2100000, guid: f94db0f1a5669954da56127aa2ffec94, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2787,6 +3236,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &85992356
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2822761976326294404}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.021152815, y: 0.03010007, z: 0.033282198}
+  m_Center: {x: -0.0025612097, y: 0.0004395551, z: 0.01433302}
 --- !u!1 &2848423072359159915
 GameObject:
   m_ObjectHideFlags: 0
@@ -2798,7 +3260,8 @@ GameObject:
   - component: {fileID: 306628469804293013}
   - component: {fileID: 2622973002077609114}
   - component: {fileID: 4099992086422166129}
-  m_Layer: 0
+  - component: {fileID: 1808772048}
+  m_Layer: 7
   m_Name: CurvyCactus.062
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2846,8 +3309,8 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -8751555780163154282, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
-  - {fileID: -8668040885160614049, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
+  - {fileID: 2100000, guid: 7f2a3f7994af1d94e8d38be88f0fa69b, type: 2}
+  - {fileID: 2100000, guid: f94db0f1a5669954da56127aa2ffec94, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2869,6 +3332,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &1808772048
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2848423072359159915}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.016280647, y: 0.034131207, z: 0.04422325}
+  m_Center: {x: 0.0008648128, y: 0.00022097617, z: 0.02076092}
 --- !u!1 &2854216032625212336
 GameObject:
   m_ObjectHideFlags: 0
@@ -2880,7 +3356,8 @@ GameObject:
   - component: {fileID: 686253824699627253}
   - component: {fileID: 2505751285958978519}
   - component: {fileID: 118345758571558136}
-  m_Layer: 0
+  - component: {fileID: 344633108}
+  m_Layer: 7
   m_Name: StubyCactus.033
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2928,10 +3405,10 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -9030366640998279740, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
-  - {fileID: 4874126678125670354, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
-  - {fileID: -3846018093981099296, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
-  - {fileID: -632848821830877677, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
+  - {fileID: 2100000, guid: 7f2a3f7994af1d94e8d38be88f0fa69b, type: 2}
+  - {fileID: 2100000, guid: 7f2a3f7994af1d94e8d38be88f0fa69b, type: 2}
+  - {fileID: 2100000, guid: 7f2a3f7994af1d94e8d38be88f0fa69b, type: 2}
+  - {fileID: 2100000, guid: f94db0f1a5669954da56127aa2ffec94, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2953,6 +3430,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &344633108
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2854216032625212336}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.021152824, y: 0.030100081, z: 0.033282198}
+  m_Center: {x: -0.0025621504, y: 0.0004388401, z: 0.014332394}
 --- !u!1 &2889874470884690690
 GameObject:
   m_ObjectHideFlags: 0
@@ -2964,7 +3454,8 @@ GameObject:
   - component: {fileID: 3546880339498451995}
   - component: {fileID: 4764080987607534275}
   - component: {fileID: 3626103070850843378}
-  m_Layer: 0
+  - component: {fileID: 735269923}
+  m_Layer: 7
   m_Name: QuadArmCactus.053
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3012,8 +3503,8 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -5475968888143051468, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
-  - {fileID: 8444260790681818259, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
+  - {fileID: 2100000, guid: 7f2a3f7994af1d94e8d38be88f0fa69b, type: 2}
+  - {fileID: 2100000, guid: f94db0f1a5669954da56127aa2ffec94, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3035,6 +3526,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &735269923
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2889874470884690690}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.026913857, y: 0.038907196, z: 0.05693412}
+  m_Center: {x: -0.002385547, y: -0.0031715964, z: 0.026274169}
 --- !u!1 &2943317864418996497
 GameObject:
   m_ObjectHideFlags: 0
@@ -3046,7 +3550,8 @@ GameObject:
   - component: {fileID: 1251869407464428010}
   - component: {fileID: 5277111955789256577}
   - component: {fileID: 8610434913874331723}
-  m_Layer: 0
+  - component: {fileID: 1207236136}
+  m_Layer: 7
   m_Name: StubyCactus.046
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3094,10 +3599,10 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -9030366640998279740, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
-  - {fileID: 4874126678125670354, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
-  - {fileID: -3846018093981099296, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
-  - {fileID: -632848821830877677, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
+  - {fileID: 2100000, guid: 7f2a3f7994af1d94e8d38be88f0fa69b, type: 2}
+  - {fileID: 2100000, guid: 7f2a3f7994af1d94e8d38be88f0fa69b, type: 2}
+  - {fileID: 2100000, guid: 7f2a3f7994af1d94e8d38be88f0fa69b, type: 2}
+  - {fileID: 2100000, guid: f94db0f1a5669954da56127aa2ffec94, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3119,6 +3624,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &1207236136
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2943317864418996497}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.021152824, y: 0.030100081, z: 0.033282198}
+  m_Center: {x: -0.0025604807, y: 0.00043904883, z: 0.014332804}
 --- !u!1 &3314932455963353307
 GameObject:
   m_ObjectHideFlags: 0
@@ -3130,7 +3648,8 @@ GameObject:
   - component: {fileID: 6944266921987574197}
   - component: {fileID: 5319938795769826803}
   - component: {fileID: 8399579158632733798}
-  m_Layer: 0
+  - component: {fileID: 315590437}
+  m_Layer: 7
   m_Name: StubyCactus.032
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3178,10 +3697,10 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -9030366640998279740, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
-  - {fileID: 4874126678125670354, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
-  - {fileID: -3846018093981099296, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
-  - {fileID: -632848821830877677, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
+  - {fileID: 2100000, guid: 7f2a3f7994af1d94e8d38be88f0fa69b, type: 2}
+  - {fileID: 2100000, guid: 7f2a3f7994af1d94e8d38be88f0fa69b, type: 2}
+  - {fileID: 2100000, guid: 7f2a3f7994af1d94e8d38be88f0fa69b, type: 2}
+  - {fileID: 2100000, guid: f94db0f1a5669954da56127aa2ffec94, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3203,6 +3722,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &315590437
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3314932455963353307}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.021152822, y: 0.030100072, z: 0.033282198}
+  m_Center: {x: -0.0025605988, y: 0.00043883937, z: 0.014332707}
 --- !u!1 &3337203246143894265
 GameObject:
   m_ObjectHideFlags: 0
@@ -3214,7 +3746,8 @@ GameObject:
   - component: {fileID: 4203966893311296174}
   - component: {fileID: 5054237847357834305}
   - component: {fileID: 2858380251868839944}
-  m_Layer: 0
+  - component: {fileID: 24203179}
+  m_Layer: 7
   m_Name: CurvyCactus.028
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3262,8 +3795,8 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -8751555780163154282, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
-  - {fileID: -8668040885160614049, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
+  - {fileID: 2100000, guid: 7f2a3f7994af1d94e8d38be88f0fa69b, type: 2}
+  - {fileID: 2100000, guid: f94db0f1a5669954da56127aa2ffec94, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3285,6 +3818,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &24203179
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3337203246143894265}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.016280651, y: 0.034131203, z: 0.044223238}
+  m_Center: {x: 0.0008648739, y: 0.00022134568, z: 0.020761346}
 --- !u!1 &3345313653421552390
 GameObject:
   m_ObjectHideFlags: 0
@@ -3296,7 +3842,8 @@ GameObject:
   - component: {fileID: 1189931673968569837}
   - component: {fileID: 6167375705410814407}
   - component: {fileID: 1750351703199642956}
-  m_Layer: 0
+  - component: {fileID: 1695517319}
+  m_Layer: 7
   m_Name: CurvyCactus.016
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3344,8 +3891,8 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -8751555780163154282, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
-  - {fileID: -8668040885160614049, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
+  - {fileID: 2100000, guid: 7f2a3f7994af1d94e8d38be88f0fa69b, type: 2}
+  - {fileID: 2100000, guid: f94db0f1a5669954da56127aa2ffec94, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3367,6 +3914,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &1695517319
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3345313653421552390}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.016280646, y: 0.034131214, z: 0.04422324}
+  m_Center: {x: 0.00086409756, y: 0.00022109546, z: 0.020760916}
 --- !u!1 &3347274443780260555
 GameObject:
   m_ObjectHideFlags: 0
@@ -3378,7 +3938,8 @@ GameObject:
   - component: {fileID: 5132788334603911000}
   - component: {fileID: 4031326111113493977}
   - component: {fileID: 6107824871236612530}
-  m_Layer: 0
+  - component: {fileID: 1100081643}
+  m_Layer: 7
   m_Name: StubyCactus.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3426,10 +3987,10 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -9030366640998279740, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
-  - {fileID: 4874126678125670354, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
-  - {fileID: -3846018093981099296, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
-  - {fileID: -632848821830877677, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
+  - {fileID: 2100000, guid: 7f2a3f7994af1d94e8d38be88f0fa69b, type: 2}
+  - {fileID: 2100000, guid: 7f2a3f7994af1d94e8d38be88f0fa69b, type: 2}
+  - {fileID: 2100000, guid: 7f2a3f7994af1d94e8d38be88f0fa69b, type: 2}
+  - {fileID: 2100000, guid: f94db0f1a5669954da56127aa2ffec94, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3451,6 +4012,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &1100081643
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3347274443780260555}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.021152822, y: 0.03010007, z: 0.0332822}
+  m_Center: {x: -0.0025619115, y: 0.00043931667, z: 0.014332828}
 --- !u!1 &3411386114489301087
 GameObject:
   m_ObjectHideFlags: 0
@@ -3462,7 +4036,8 @@ GameObject:
   - component: {fileID: 473988800200471349}
   - component: {fileID: 7836667614779824782}
   - component: {fileID: 3351837536584664724}
-  m_Layer: 0
+  - component: {fileID: 2069203546}
+  m_Layer: 7
   m_Name: StubyCactus.038
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3477,7 +4052,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3411386114489301087}
   m_LocalRotation: {x: -0.008416245, y: 0.005291027, z: 0.99994975, w: -0.0013048672}
-  m_LocalPosition: {x: 2.5698147, y: 3.637837, z: -0.32523146}
+  m_LocalPosition: {x: 2.5698147, y: 3.6378, z: -0.3311}
   m_LocalScale: {x: 3.8679445, y: 3.8679447, z: 3.867944}
   m_Children: []
   m_Father: {fileID: 73391793282416629}
@@ -3510,10 +4085,10 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -9030366640998279740, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
-  - {fileID: 4874126678125670354, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
-  - {fileID: -3846018093981099296, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
-  - {fileID: -632848821830877677, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
+  - {fileID: 2100000, guid: 7f2a3f7994af1d94e8d38be88f0fa69b, type: 2}
+  - {fileID: 2100000, guid: 7f2a3f7994af1d94e8d38be88f0fa69b, type: 2}
+  - {fileID: 2100000, guid: 7f2a3f7994af1d94e8d38be88f0fa69b, type: 2}
+  - {fileID: 2100000, guid: f94db0f1a5669954da56127aa2ffec94, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3535,6 +4110,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &2069203546
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3411386114489301087}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.021152824, y: 0.030100074, z: 0.033282194}
+  m_Center: {x: -0.0025616728, y: 0.00043878038, z: 0.0143324295}
 --- !u!1 &3425114976679020061
 GameObject:
   m_ObjectHideFlags: 0
@@ -3546,7 +4134,8 @@ GameObject:
   - component: {fileID: 8369038641552241136}
   - component: {fileID: 3410673959274710104}
   - component: {fileID: 6269136230409684345}
-  m_Layer: 0
+  - component: {fileID: 1389588236}
+  m_Layer: 7
   m_Name: CurvyCactus.048
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3594,8 +4183,8 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -8751555780163154282, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
-  - {fileID: -8668040885160614049, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
+  - {fileID: 2100000, guid: 7f2a3f7994af1d94e8d38be88f0fa69b, type: 2}
+  - {fileID: 2100000, guid: f94db0f1a5669954da56127aa2ffec94, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3617,6 +4206,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &1389588236
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3425114976679020061}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.016280647, y: 0.034131203, z: 0.04422325}
+  m_Center: {x: 0.00086403696, y: 0.00022169155, z: 0.020761568}
 --- !u!1 &3459283545545786009
 GameObject:
   m_ObjectHideFlags: 0
@@ -3628,7 +4230,8 @@ GameObject:
   - component: {fileID: 5867888888924447217}
   - component: {fileID: 3865266361666522589}
   - component: {fileID: 1848714746498137602}
-  m_Layer: 0
+  - component: {fileID: 213615218}
+  m_Layer: 7
   m_Name: QuadArmCactus.054
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3676,8 +4279,8 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -5475968888143051468, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
-  - {fileID: 8444260790681818259, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
+  - {fileID: 2100000, guid: 7f2a3f7994af1d94e8d38be88f0fa69b, type: 2}
+  - {fileID: 2100000, guid: f94db0f1a5669954da56127aa2ffec94, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3699,6 +4302,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &213615218
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3459283545545786009}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.026913863, y: 0.038907193, z: 0.056934126}
+  m_Center: {x: -0.0023855474, y: -0.0031713578, z: 0.02627414}
 --- !u!1 &3478480956188582779
 GameObject:
   m_ObjectHideFlags: 0
@@ -3710,7 +4326,8 @@ GameObject:
   - component: {fileID: 8522923391004682137}
   - component: {fileID: 4797850708506712973}
   - component: {fileID: 443477974888483104}
-  m_Layer: 0
+  - component: {fileID: 373536580}
+  m_Layer: 7
   m_Name: QuadArmCactus.033
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3725,7 +4342,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3478480956188582779}
   m_LocalRotation: {x: 0.03289596, y: -0.004937464, z: 0.99944556, w: -0.001439534}
-  m_LocalPosition: {x: 0.83964795, y: -4.181537, z: -0.055119894}
+  m_LocalPosition: {x: 0.844, y: -4.134, z: -0.055}
   m_LocalScale: {x: 3.156546, y: 3.1565456, z: 3.1565464}
   m_Children: []
   m_Father: {fileID: 73391793282416629}
@@ -3758,8 +4375,8 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -5475968888143051468, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
-  - {fileID: 8444260790681818259, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
+  - {fileID: 2100000, guid: 7f2a3f7994af1d94e8d38be88f0fa69b, type: 2}
+  - {fileID: 2100000, guid: f94db0f1a5669954da56127aa2ffec94, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3781,6 +4398,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &373536580
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3478480956188582779}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.026913857, y: 0.03890718, z: 0.05693412}
+  m_Center: {x: -0.0023865607, y: -0.0031705226, z: 0.026274888}
 --- !u!1 &3516677302888370794
 GameObject:
   m_ObjectHideFlags: 0
@@ -3792,7 +4422,8 @@ GameObject:
   - component: {fileID: 8342685271566845486}
   - component: {fileID: 737090047290441339}
   - component: {fileID: 7291395913164215386}
-  m_Layer: 0
+  - component: {fileID: 685277436}
+  m_Layer: 7
   m_Name: QuadArmCactus.014
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3840,8 +4471,8 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -5475968888143051468, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
-  - {fileID: 8444260790681818259, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
+  - {fileID: 2100000, guid: 7f2a3f7994af1d94e8d38be88f0fa69b, type: 2}
+  - {fileID: 2100000, guid: f94db0f1a5669954da56127aa2ffec94, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3863,6 +4494,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &685277436
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3516677302888370794}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.02691386, y: 0.0389072, z: 0.05693413}
+  m_Center: {x: -0.0023865611, y: -0.0031707624, z: 0.026274728}
 --- !u!1 &3614706224974670991
 GameObject:
   m_ObjectHideFlags: 0
@@ -3874,7 +4518,8 @@ GameObject:
   - component: {fileID: 2298893054391526718}
   - component: {fileID: 2849807478436901623}
   - component: {fileID: 7280118189060274357}
-  m_Layer: 0
+  - component: {fileID: 1189962612}
+  m_Layer: 7
   m_Name: StubyCactus.019
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3922,10 +4567,10 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -9030366640998279740, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
-  - {fileID: 4874126678125670354, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
-  - {fileID: -3846018093981099296, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
-  - {fileID: -632848821830877677, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
+  - {fileID: 2100000, guid: 7f2a3f7994af1d94e8d38be88f0fa69b, type: 2}
+  - {fileID: 2100000, guid: 7f2a3f7994af1d94e8d38be88f0fa69b, type: 2}
+  - {fileID: 2100000, guid: 7f2a3f7994af1d94e8d38be88f0fa69b, type: 2}
+  - {fileID: 2100000, guid: f94db0f1a5669954da56127aa2ffec94, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3947,6 +4592,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &1189962612
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3614706224974670991}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.021152822, y: 0.030100081, z: 0.033282194}
+  m_Center: {x: -0.002561248, y: 0.00043931685, z: 0.014333018}
 --- !u!1 &3625286597105926638
 GameObject:
   m_ObjectHideFlags: 0
@@ -3958,7 +4616,8 @@ GameObject:
   - component: {fileID: 6721377484673516983}
   - component: {fileID: 7463915473262503890}
   - component: {fileID: 7906201134620428737}
-  m_Layer: 0
+  - component: {fileID: 937381854}
+  m_Layer: 7
   m_Name: StubyCactus.039
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4006,10 +4665,10 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -9030366640998279740, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
-  - {fileID: 4874126678125670354, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
-  - {fileID: -3846018093981099296, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
-  - {fileID: -632848821830877677, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
+  - {fileID: 2100000, guid: 7f2a3f7994af1d94e8d38be88f0fa69b, type: 2}
+  - {fileID: 2100000, guid: 7f2a3f7994af1d94e8d38be88f0fa69b, type: 2}
+  - {fileID: 2100000, guid: 7f2a3f7994af1d94e8d38be88f0fa69b, type: 2}
+  - {fileID: 2100000, guid: f94db0f1a5669954da56127aa2ffec94, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4031,6 +4690,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &937381854
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3625286597105926638}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.021152824, y: 0.030100081, z: 0.033282198}
+  m_Center: {x: -0.002561196, y: 0.00043872083, z: 0.014332409}
 --- !u!1 &3730022171624970379
 GameObject:
   m_ObjectHideFlags: 0
@@ -4042,7 +4714,8 @@ GameObject:
   - component: {fileID: 3862592500413456123}
   - component: {fileID: 437345669407178207}
   - component: {fileID: 437628907514840273}
-  m_Layer: 0
+  - component: {fileID: 1166124257}
+  m_Layer: 7
   m_Name: CurvyCactus.029
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4090,8 +4763,8 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -8751555780163154282, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
-  - {fileID: -8668040885160614049, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
+  - {fileID: 2100000, guid: 7f2a3f7994af1d94e8d38be88f0fa69b, type: 2}
+  - {fileID: 2100000, guid: f94db0f1a5669954da56127aa2ffec94, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4113,6 +4786,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &1166124257
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3730022171624970379}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.016280642, y: 0.034131207, z: 0.044223238}
+  m_Center: {x: 0.0008649917, y: 0.00022133262, z: 0.020761287}
 --- !u!1 &3732196768896580816
 GameObject:
   m_ObjectHideFlags: 0
@@ -4124,7 +4810,8 @@ GameObject:
   - component: {fileID: 1061062297985244938}
   - component: {fileID: 7116646529099223379}
   - component: {fileID: 3927112962381411632}
-  m_Layer: 0
+  - component: {fileID: 102174916}
+  m_Layer: 7
   m_Name: CurvyCactus.003
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4172,8 +4859,8 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -8751555780163154282, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
-  - {fileID: -8668040885160614049, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
+  - {fileID: 2100000, guid: 7f2a3f7994af1d94e8d38be88f0fa69b, type: 2}
+  - {fileID: 2100000, guid: f94db0f1a5669954da56127aa2ffec94, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4195,6 +4882,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &102174916
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3732196768896580816}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.01628064, y: 0.0341312, z: 0.04422325}
+  m_Center: {x: 0.0008636799, y: 0.00022151257, z: 0.020761307}
 --- !u!1 &3855945805152612224
 GameObject:
   m_ObjectHideFlags: 0
@@ -4206,7 +4906,8 @@ GameObject:
   - component: {fileID: 6828612759989772618}
   - component: {fileID: 6677176877723602587}
   - component: {fileID: 3800445923962316783}
-  m_Layer: 0
+  - component: {fileID: 163399134}
+  m_Layer: 7
   m_Name: StubyCactus.057
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4254,10 +4955,10 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -9030366640998279740, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
-  - {fileID: 4874126678125670354, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
-  - {fileID: -3846018093981099296, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
-  - {fileID: -632848821830877677, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
+  - {fileID: 2100000, guid: 7f2a3f7994af1d94e8d38be88f0fa69b, type: 2}
+  - {fileID: 2100000, guid: 7f2a3f7994af1d94e8d38be88f0fa69b, type: 2}
+  - {fileID: 2100000, guid: 7f2a3f7994af1d94e8d38be88f0fa69b, type: 2}
+  - {fileID: 2100000, guid: f94db0f1a5669954da56127aa2ffec94, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4279,6 +4980,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &163399134
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3855945805152612224}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.021152824, y: 0.030100081, z: 0.033282194}
+  m_Center: {x: -0.0025620305, y: 0.00043903376, z: 0.014332601}
 --- !u!1 &3956367652661625401
 GameObject:
   m_ObjectHideFlags: 0
@@ -4290,7 +5004,8 @@ GameObject:
   - component: {fileID: 5109127106775808059}
   - component: {fileID: 5617443938944492214}
   - component: {fileID: 5686481324379745682}
-  m_Layer: 0
+  - component: {fileID: 643704044}
+  m_Layer: 7
   m_Name: StubyCactus.002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4338,10 +5053,10 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -9030366640998279740, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
-  - {fileID: 4874126678125670354, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
-  - {fileID: -3846018093981099296, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
-  - {fileID: -632848821830877677, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
+  - {fileID: 2100000, guid: 7f2a3f7994af1d94e8d38be88f0fa69b, type: 2}
+  - {fileID: 2100000, guid: 7f2a3f7994af1d94e8d38be88f0fa69b, type: 2}
+  - {fileID: 2100000, guid: 7f2a3f7994af1d94e8d38be88f0fa69b, type: 2}
+  - {fileID: 2100000, guid: f94db0f1a5669954da56127aa2ffec94, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4363,6 +5078,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &643704044
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3956367652661625401}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.021152826, y: 0.030100085, z: 0.0332822}
+  m_Center: {x: -0.0025604807, y: 0.00043919776, z: 0.01433291}
 --- !u!1 &4011867401926301048
 GameObject:
   m_ObjectHideFlags: 0
@@ -4374,7 +5102,8 @@ GameObject:
   - component: {fileID: 8268645053131641598}
   - component: {fileID: 2170084911980101439}
   - component: {fileID: 9024873486734620443}
-  m_Layer: 0
+  - component: {fileID: 707291162}
+  m_Layer: 7
   m_Name: StubyCactus.011
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4422,10 +5151,10 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -9030366640998279740, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
-  - {fileID: 4874126678125670354, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
-  - {fileID: -3846018093981099296, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
-  - {fileID: -632848821830877677, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
+  - {fileID: 2100000, guid: 7f2a3f7994af1d94e8d38be88f0fa69b, type: 2}
+  - {fileID: 2100000, guid: 7f2a3f7994af1d94e8d38be88f0fa69b, type: 2}
+  - {fileID: 2100000, guid: 7f2a3f7994af1d94e8d38be88f0fa69b, type: 2}
+  - {fileID: 2100000, guid: f94db0f1a5669954da56127aa2ffec94, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4447,6 +5176,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &707291162
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4011867401926301048}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.021152819, y: 0.03010007, z: 0.033282198}
+  m_Center: {x: -0.0025623878, y: 0.00043860142, z: 0.014332323}
 --- !u!1 &4048045608737098044
 GameObject:
   m_ObjectHideFlags: 0
@@ -4458,7 +5200,8 @@ GameObject:
   - component: {fileID: 2252696813061596426}
   - component: {fileID: 8200372541910126505}
   - component: {fileID: 1567360360423518309}
-  m_Layer: 0
+  - component: {fileID: 1619403403}
+  m_Layer: 7
   m_Name: CurvyCactus.012
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4506,8 +5249,8 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -8751555780163154282, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
-  - {fileID: -8668040885160614049, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
+  - {fileID: 2100000, guid: 7f2a3f7994af1d94e8d38be88f0fa69b, type: 2}
+  - {fileID: 2100000, guid: f94db0f1a5669954da56127aa2ffec94, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4529,6 +5272,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &1619403403
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4048045608737098044}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.016280642, y: 0.034131207, z: 0.044223253}
+  m_Center: {x: 0.0008653491, y: 0.00022121416, z: 0.020761145}
 --- !u!1 &4301626485001783767
 GameObject:
   m_ObjectHideFlags: 0
@@ -4540,7 +5296,8 @@ GameObject:
   - component: {fileID: 2572975604923151469}
   - component: {fileID: 5318991251451706412}
   - component: {fileID: 9057095645537457359}
-  m_Layer: 0
+  - component: {fileID: 1186359980}
+  m_Layer: 7
   m_Name: StubyCactus.037
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4588,10 +5345,10 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -9030366640998279740, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
-  - {fileID: 4874126678125670354, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
-  - {fileID: -3846018093981099296, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
-  - {fileID: -632848821830877677, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
+  - {fileID: 2100000, guid: 7f2a3f7994af1d94e8d38be88f0fa69b, type: 2}
+  - {fileID: 2100000, guid: 7f2a3f7994af1d94e8d38be88f0fa69b, type: 2}
+  - {fileID: 2100000, guid: 7f2a3f7994af1d94e8d38be88f0fa69b, type: 2}
+  - {fileID: 2100000, guid: f94db0f1a5669954da56127aa2ffec94, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4613,6 +5370,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &1186359980
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4301626485001783767}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.021152824, y: 0.030100081, z: 0.0332822}
+  m_Center: {x: -0.0025609576, y: 0.00043872083, z: 0.014332411}
 --- !u!1 &4354106840943386271
 GameObject:
   m_ObjectHideFlags: 0
@@ -4624,7 +5394,8 @@ GameObject:
   - component: {fileID: 2358935357881450446}
   - component: {fileID: 5159873137063479014}
   - component: {fileID: 5078466432770205944}
-  m_Layer: 0
+  - component: {fileID: 970389786}
+  m_Layer: 7
   m_Name: CurvyCactus.035
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4672,8 +5443,8 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -8751555780163154282, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
-  - {fileID: -8668040885160614049, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
+  - {fileID: 2100000, guid: 7f2a3f7994af1d94e8d38be88f0fa69b, type: 2}
+  - {fileID: 2100000, guid: f94db0f1a5669954da56127aa2ffec94, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4695,6 +5466,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &970389786
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4354106840943386271}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.016280646, y: 0.034131207, z: 0.04422325}
+  m_Center: {x: 0.0008645446, y: 0.0002210954, z: 0.02076104}
 --- !u!1 &4437720079827544542
 GameObject:
   m_ObjectHideFlags: 0
@@ -4706,7 +5490,8 @@ GameObject:
   - component: {fileID: 1368434841069292301}
   - component: {fileID: 1036832124665565074}
   - component: {fileID: 1732638048765869152}
-  m_Layer: 0
+  - component: {fileID: 1245667124}
+  m_Layer: 7
   m_Name: CurvyCactus.030
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4754,8 +5539,8 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -8751555780163154282, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
-  - {fileID: -8668040885160614049, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
+  - {fileID: 2100000, guid: 7f2a3f7994af1d94e8d38be88f0fa69b, type: 2}
+  - {fileID: 2100000, guid: f94db0f1a5669954da56127aa2ffec94, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4777,6 +5562,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &1245667124
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4437720079827544542}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.016280638, y: 0.034131195, z: 0.04422324}
+  m_Center: {x: 0.0008636797, y: 0.00022121456, z: 0.020761147}
 --- !u!1 &4567865062272873596
 GameObject:
   m_ObjectHideFlags: 0
@@ -4788,7 +5586,8 @@ GameObject:
   - component: {fileID: 884725559615778016}
   - component: {fileID: 955730008064881922}
   - component: {fileID: 5107789815018009775}
-  m_Layer: 0
+  - component: {fileID: 742073802}
+  m_Layer: 7
   m_Name: CurvyCactus.017
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4836,8 +5635,8 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -8751555780163154282, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
-  - {fileID: -8668040885160614049, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
+  - {fileID: 2100000, guid: 7f2a3f7994af1d94e8d38be88f0fa69b, type: 2}
+  - {fileID: 2100000, guid: f94db0f1a5669954da56127aa2ffec94, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4859,6 +5658,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &742073802
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4567865062272873596}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.01628064, y: 0.034131203, z: 0.044223253}
+  m_Center: {x: 0.00086403755, y: 0.00022130432, z: 0.020761138}
 --- !u!1 &4765435770053762595
 GameObject:
   m_ObjectHideFlags: 0
@@ -4870,7 +5682,8 @@ GameObject:
   - component: {fileID: 4653977638887482988}
   - component: {fileID: 7534027726294069206}
   - component: {fileID: 8201811522631208862}
-  m_Layer: 0
+  - component: {fileID: 1844873299}
+  m_Layer: 7
   m_Name: StubyCactus.013
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4918,10 +5731,10 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -9030366640998279740, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
-  - {fileID: 4874126678125670354, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
-  - {fileID: -3846018093981099296, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
-  - {fileID: -632848821830877677, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
+  - {fileID: 2100000, guid: 7f2a3f7994af1d94e8d38be88f0fa69b, type: 2}
+  - {fileID: 2100000, guid: 7f2a3f7994af1d94e8d38be88f0fa69b, type: 2}
+  - {fileID: 2100000, guid: 7f2a3f7994af1d94e8d38be88f0fa69b, type: 2}
+  - {fileID: 2100000, guid: f94db0f1a5669954da56127aa2ffec94, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4943,6 +5756,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &1844873299
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4765435770053762595}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.021152822, y: 0.030100076, z: 0.033282198}
+  m_Center: {x: -0.0025617306, y: 0.00043910835, z: 0.0143326325}
 --- !u!1 &4778490098937057035
 GameObject:
   m_ObjectHideFlags: 0
@@ -4954,7 +5780,8 @@ GameObject:
   - component: {fileID: 3568877683237304730}
   - component: {fileID: 1302832218019915962}
   - component: {fileID: 2619832526936742123}
-  m_Layer: 0
+  - component: {fileID: 1836756919}
+  m_Layer: 7
   m_Name: CurvyCactus.025
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5002,8 +5829,8 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -8751555780163154282, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
-  - {fileID: -8668040885160614049, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
+  - {fileID: 2100000, guid: 7f2a3f7994af1d94e8d38be88f0fa69b, type: 2}
+  - {fileID: 2100000, guid: f94db0f1a5669954da56127aa2ffec94, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5025,6 +5852,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &1836756919
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4778490098937057035}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.016280647, y: 0.034131207, z: 0.044223234}
+  m_Center: {x: 0.0008641574, y: 0.00022145272, z: 0.020761285}
 --- !u!1 &4813465682254537379
 GameObject:
   m_ObjectHideFlags: 0
@@ -5036,7 +5876,8 @@ GameObject:
   - component: {fileID: 3009998421653323432}
   - component: {fileID: 1990868266700444813}
   - component: {fileID: 4715072562747158273}
-  m_Layer: 0
+  - component: {fileID: 27448818}
+  m_Layer: 7
   m_Name: CurvyCactus.040
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5084,8 +5925,8 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -8751555780163154282, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
-  - {fileID: -8668040885160614049, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
+  - {fileID: 2100000, guid: 7f2a3f7994af1d94e8d38be88f0fa69b, type: 2}
+  - {fileID: 2100000, guid: f94db0f1a5669954da56127aa2ffec94, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5107,6 +5948,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &27448818
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4813465682254537379}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.016280642, y: 0.034131207, z: 0.04422324}
+  m_Center: {x: 0.00086463377, y: 0.0002210954, z: 0.02076099}
 --- !u!1 &4988315212657231212
 GameObject:
   m_ObjectHideFlags: 0
@@ -5118,7 +5972,8 @@ GameObject:
   - component: {fileID: 370109005843058522}
   - component: {fileID: 62867510825059501}
   - component: {fileID: 1711857564700614723}
-  m_Layer: 0
+  - component: {fileID: 1577940222}
+  m_Layer: 7
   m_Name: CurvyCactus.024
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5166,8 +6021,8 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -8751555780163154282, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
-  - {fileID: -8668040885160614049, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
+  - {fileID: 2100000, guid: 7f2a3f7994af1d94e8d38be88f0fa69b, type: 2}
+  - {fileID: 2100000, guid: f94db0f1a5669954da56127aa2ffec94, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5189,6 +6044,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &1577940222
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4988315212657231212}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.016280646, y: 0.034131207, z: 0.04422324}
+  m_Center: {x: 0.00086439785, y: 0.00022145215, z: 0.020761363}
 --- !u!1 &5032919330789252397
 GameObject:
   m_ObjectHideFlags: 0
@@ -5200,7 +6068,8 @@ GameObject:
   - component: {fileID: 856149790354323453}
   - component: {fileID: 753401480142413088}
   - component: {fileID: 8171742713349325907}
-  m_Layer: 0
+  - component: {fileID: 385277029}
+  m_Layer: 7
   m_Name: CurvyCactus.011
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5248,8 +6117,8 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -8751555780163154282, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
-  - {fileID: -8668040885160614049, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
+  - {fileID: 2100000, guid: 7f2a3f7994af1d94e8d38be88f0fa69b, type: 2}
+  - {fileID: 2100000, guid: f94db0f1a5669954da56127aa2ffec94, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5271,6 +6140,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &385277029
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5032919330789252397}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.016280644, y: 0.03413121, z: 0.04422325}
+  m_Center: {x: 0.00086522993, y: 0.00022097622, z: 0.020760994}
 --- !u!1 &5114813116784742372
 GameObject:
   m_ObjectHideFlags: 0
@@ -5282,7 +6164,8 @@ GameObject:
   - component: {fileID: 184553083338690485}
   - component: {fileID: 5473736452228767735}
   - component: {fileID: 4643804952668931049}
-  m_Layer: 0
+  - component: {fileID: 825511361}
+  m_Layer: 7
   m_Name: StubyCactus.009
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5330,10 +6213,10 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -9030366640998279740, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
-  - {fileID: 4874126678125670354, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
-  - {fileID: -3846018093981099296, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
-  - {fileID: -632848821830877677, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
+  - {fileID: 2100000, guid: 7f2a3f7994af1d94e8d38be88f0fa69b, type: 2}
+  - {fileID: 2100000, guid: 7f2a3f7994af1d94e8d38be88f0fa69b, type: 2}
+  - {fileID: 2100000, guid: 7f2a3f7994af1d94e8d38be88f0fa69b, type: 2}
+  - {fileID: 2100000, guid: f94db0f1a5669954da56127aa2ffec94, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5355,6 +6238,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &825511361
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5114813116784742372}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.021152824, y: 0.030100077, z: 0.033282198}
+  m_Center: {x: -0.002561345, y: 0.00043931682, z: 0.014332964}
 --- !u!1 &5299341119844300242
 GameObject:
   m_ObjectHideFlags: 0
@@ -5366,7 +6262,8 @@ GameObject:
   - component: {fileID: 8737698673646680407}
   - component: {fileID: 5302133327860490971}
   - component: {fileID: 9106912058175008872}
-  m_Layer: 0
+  - component: {fileID: 724932377}
+  m_Layer: 7
   m_Name: QuadArmCactus.002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5414,8 +6311,8 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -5475968888143051468, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
-  - {fileID: 8444260790681818259, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
+  - {fileID: 2100000, guid: 7f2a3f7994af1d94e8d38be88f0fa69b, type: 2}
+  - {fileID: 2100000, guid: f94db0f1a5669954da56127aa2ffec94, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5437,6 +6334,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &724932377
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5299341119844300242}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.026913857, y: 0.038907185, z: 0.056934126}
+  m_Center: {x: -0.0023869772, y: -0.0031719534, z: 0.026273858}
 --- !u!1 &5316996932257556594
 GameObject:
   m_ObjectHideFlags: 0
@@ -5448,7 +6358,8 @@ GameObject:
   - component: {fileID: 4604341432540317999}
   - component: {fileID: 5845191124832246872}
   - component: {fileID: 6833807444209386517}
-  m_Layer: 0
+  - component: {fileID: 1998651310}
+  m_Layer: 7
   m_Name: StubyCactus.024
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5496,10 +6407,10 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -9030366640998279740, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
-  - {fileID: 4874126678125670354, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
-  - {fileID: -3846018093981099296, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
-  - {fileID: -632848821830877677, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
+  - {fileID: 2100000, guid: 7f2a3f7994af1d94e8d38be88f0fa69b, type: 2}
+  - {fileID: 2100000, guid: 7f2a3f7994af1d94e8d38be88f0fa69b, type: 2}
+  - {fileID: 2100000, guid: 7f2a3f7994af1d94e8d38be88f0fa69b, type: 2}
+  - {fileID: 2100000, guid: f94db0f1a5669954da56127aa2ffec94, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5521,6 +6432,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &1998651310
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5316996932257556594}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.021152826, y: 0.03010008, z: 0.033282198}
+  m_Center: {x: -0.0025616142, y: 0.00043906312, z: 0.014332752}
 --- !u!1 &5350239868267662029
 GameObject:
   m_ObjectHideFlags: 0
@@ -5532,7 +6456,8 @@ GameObject:
   - component: {fileID: 8889159896224875707}
   - component: {fileID: 1781639471256330599}
   - component: {fileID: 8644290687333769773}
-  m_Layer: 0
+  - component: {fileID: 1829350260}
+  m_Layer: 7
   m_Name: CurvyCactus.019
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5580,8 +6505,8 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -8751555780163154282, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
-  - {fileID: -8668040885160614049, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
+  - {fileID: 2100000, guid: 7f2a3f7994af1d94e8d38be88f0fa69b, type: 2}
+  - {fileID: 2100000, guid: f94db0f1a5669954da56127aa2ffec94, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5603,6 +6528,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &1829350260
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5350239868267662029}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.016280638, y: 0.034131195, z: 0.04422325}
+  m_Center: {x: 0.0008644844, y: 0.00022154236, z: 0.020761326}
 --- !u!1 &5455966903945974504
 GameObject:
   m_ObjectHideFlags: 0
@@ -5614,7 +6552,8 @@ GameObject:
   - component: {fileID: 7487700364648122376}
   - component: {fileID: 7829230949055195908}
   - component: {fileID: 7406699880565789924}
-  m_Layer: 0
+  - component: {fileID: 150779062}
+  m_Layer: 7
   m_Name: QuadArmCactus.009
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5662,8 +6601,8 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -5475968888143051468, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
-  - {fileID: 8444260790681818259, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
+  - {fileID: 2100000, guid: 7f2a3f7994af1d94e8d38be88f0fa69b, type: 2}
+  - {fileID: 2100000, guid: f94db0f1a5669954da56127aa2ffec94, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5685,6 +6624,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &150779062
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5455966903945974504}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.026913863, y: 0.038907196, z: 0.05693412}
+  m_Center: {x: -0.0023861136, y: -0.0031714772, z: 0.02627396}
 --- !u!1 &5895722439387010550
 GameObject:
   m_ObjectHideFlags: 0
@@ -5696,7 +6648,8 @@ GameObject:
   - component: {fileID: 1484478073710871150}
   - component: {fileID: 6169695620579002645}
   - component: {fileID: 6754841485740235455}
-  m_Layer: 0
+  - component: {fileID: 797450613}
+  m_Layer: 7
   m_Name: StubyCactus.036
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5744,10 +6697,10 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -9030366640998279740, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
-  - {fileID: 4874126678125670354, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
-  - {fileID: -3846018093981099296, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
-  - {fileID: -632848821830877677, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
+  - {fileID: 2100000, guid: 7f2a3f7994af1d94e8d38be88f0fa69b, type: 2}
+  - {fileID: 2100000, guid: 7f2a3f7994af1d94e8d38be88f0fa69b, type: 2}
+  - {fileID: 2100000, guid: 7f2a3f7994af1d94e8d38be88f0fa69b, type: 2}
+  - {fileID: 2100000, guid: f94db0f1a5669954da56127aa2ffec94, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5769,6 +6722,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &797450613
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5895722439387010550}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.021152824, y: 0.030100081, z: 0.033282198}
+  m_Center: {x: -0.002561263, y: 0.00043872083, z: 0.014332379}
 --- !u!1 &5902265838059364623
 GameObject:
   m_ObjectHideFlags: 0
@@ -5780,7 +6746,8 @@ GameObject:
   - component: {fileID: 6112002554711215361}
   - component: {fileID: 8602969331058569233}
   - component: {fileID: 8912357370353905828}
-  m_Layer: 0
+  - component: {fileID: 923276511}
+  m_Layer: 7
   m_Name: CurvyCactus.023
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5828,8 +6795,8 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -8751555780163154282, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
-  - {fileID: -8668040885160614049, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
+  - {fileID: 2100000, guid: 7f2a3f7994af1d94e8d38be88f0fa69b, type: 2}
+  - {fileID: 2100000, guid: f94db0f1a5669954da56127aa2ffec94, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5851,6 +6818,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &923276511
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5902265838059364623}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.016280651, y: 0.03413122, z: 0.04422325}
+  m_Center: {x: 0.00086403603, y: 0.00022163149, z: 0.020761406}
 --- !u!1 &5934554293143552705
 GameObject:
   m_ObjectHideFlags: 0
@@ -5862,7 +6842,8 @@ GameObject:
   - component: {fileID: 1984716097234374954}
   - component: {fileID: 4860085326116747242}
   - component: {fileID: 1326952412521530809}
-  m_Layer: 0
+  - component: {fileID: 867868513}
+  m_Layer: 7
   m_Name: QuadArmCactus.025
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5910,8 +6891,8 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -5475968888143051468, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
-  - {fileID: 8444260790681818259, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
+  - {fileID: 2100000, guid: 7f2a3f7994af1d94e8d38be88f0fa69b, type: 2}
+  - {fileID: 2100000, guid: f94db0f1a5669954da56127aa2ffec94, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5933,6 +6914,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &867868513
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5934554293143552705}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.02691386, y: 0.0389072, z: 0.05693412}
+  m_Center: {x: -0.0023864114, y: -0.0031713585, z: 0.026274199}
 --- !u!1 &6014652825550145417
 GameObject:
   m_ObjectHideFlags: 0
@@ -5944,7 +6938,8 @@ GameObject:
   - component: {fileID: 8313578347639654860}
   - component: {fileID: 916042405821699888}
   - component: {fileID: 6545160669290344866}
-  m_Layer: 0
+  - component: {fileID: 92014826}
+  m_Layer: 7
   m_Name: StubyCactus.003
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5992,10 +6987,10 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -9030366640998279740, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
-  - {fileID: 4874126678125670354, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
-  - {fileID: -3846018093981099296, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
-  - {fileID: -632848821830877677, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
+  - {fileID: 2100000, guid: 7f2a3f7994af1d94e8d38be88f0fa69b, type: 2}
+  - {fileID: 2100000, guid: 7f2a3f7994af1d94e8d38be88f0fa69b, type: 2}
+  - {fileID: 2100000, guid: 7f2a3f7994af1d94e8d38be88f0fa69b, type: 2}
+  - {fileID: 2100000, guid: f94db0f1a5669954da56127aa2ffec94, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -6017,6 +7012,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &92014826
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6014652825550145417}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.021152824, y: 0.030100081, z: 0.033282194}
+  m_Center: {x: -0.0025610172, y: 0.00043884004, z: 0.014332407}
 --- !u!1 &6221570947497417733
 GameObject:
   m_ObjectHideFlags: 0
@@ -6028,7 +7036,8 @@ GameObject:
   - component: {fileID: 8790491374201671698}
   - component: {fileID: 4408229269761876562}
   - component: {fileID: 8885449687438277581}
-  m_Layer: 0
+  - component: {fileID: 816868183}
+  m_Layer: 7
   m_Name: StubyCactus.066
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6076,10 +7085,10 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -9030366640998279740, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
-  - {fileID: 4874126678125670354, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
-  - {fileID: -3846018093981099296, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
-  - {fileID: -632848821830877677, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
+  - {fileID: 2100000, guid: 7f2a3f7994af1d94e8d38be88f0fa69b, type: 2}
+  - {fileID: 2100000, guid: 7f2a3f7994af1d94e8d38be88f0fa69b, type: 2}
+  - {fileID: 2100000, guid: 7f2a3f7994af1d94e8d38be88f0fa69b, type: 2}
+  - {fileID: 2100000, guid: f94db0f1a5669954da56127aa2ffec94, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -6101,6 +7110,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &816868183
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6221570947497417733}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.021152815, y: 0.030100074, z: 0.03328219}
+  m_Center: {x: -0.0025604796, y: 0.00043880974, z: 0.014332614}
 --- !u!1 &6324258889267598255
 GameObject:
   m_ObjectHideFlags: 0
@@ -6112,7 +7134,8 @@ GameObject:
   - component: {fileID: 5726955344858482002}
   - component: {fileID: 8375842195003976068}
   - component: {fileID: 4729859954103851887}
-  m_Layer: 0
+  - component: {fileID: 1381704688}
+  m_Layer: 7
   m_Name: QuadArmCactus.048
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6160,8 +7183,8 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -5475968888143051468, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
-  - {fileID: 8444260790681818259, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
+  - {fileID: 2100000, guid: 7f2a3f7994af1d94e8d38be88f0fa69b, type: 2}
+  - {fileID: 2100000, guid: f94db0f1a5669954da56127aa2ffec94, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -6183,6 +7206,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &1381704688
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6324258889267598255}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.02691386, y: 0.038907196, z: 0.05693412}
+  m_Center: {x: -0.0023873353, y: -0.0031712388, z: 0.026274273}
 --- !u!1 &6369933287993590984
 GameObject:
   m_ObjectHideFlags: 0
@@ -6194,7 +7230,8 @@ GameObject:
   - component: {fileID: 527911017313641914}
   - component: {fileID: 3447283966899624360}
   - component: {fileID: 3497294674870474563}
-  m_Layer: 0
+  - component: {fileID: 1636329517}
+  m_Layer: 7
   m_Name: CurvyCactus.022
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6242,8 +7279,8 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -8751555780163154282, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
-  - {fileID: -8668040885160614049, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
+  - {fileID: 2100000, guid: 7f2a3f7994af1d94e8d38be88f0fa69b, type: 2}
+  - {fileID: 2100000, guid: f94db0f1a5669954da56127aa2ffec94, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -6265,6 +7302,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &1636329517
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6369933287993590984}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.016280646, y: 0.0341312, z: 0.04422325}
+  m_Center: {x: 0.0008647534, y: 0.00022169137, z: 0.020761497}
 --- !u!1 &6403247523602883540
 GameObject:
   m_ObjectHideFlags: 0
@@ -6276,7 +7326,8 @@ GameObject:
   - component: {fileID: 4892702259612815093}
   - component: {fileID: 8357176497047656847}
   - component: {fileID: 2749073463085453420}
-  m_Layer: 0
+  - component: {fileID: 101212856}
+  m_Layer: 7
   m_Name: StubyCactus.031
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6324,10 +7375,10 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -9030366640998279740, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
-  - {fileID: 4874126678125670354, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
-  - {fileID: -3846018093981099296, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
-  - {fileID: -632848821830877677, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
+  - {fileID: 2100000, guid: 7f2a3f7994af1d94e8d38be88f0fa69b, type: 2}
+  - {fileID: 2100000, guid: 7f2a3f7994af1d94e8d38be88f0fa69b, type: 2}
+  - {fileID: 2100000, guid: 7f2a3f7994af1d94e8d38be88f0fa69b, type: 2}
+  - {fileID: 2100000, guid: f94db0f1a5669954da56127aa2ffec94, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -6349,6 +7400,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &101212856
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6403247523602883540}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.02115283, y: 0.030100081, z: 0.033282198}
+  m_Center: {x: -0.0025608393, y: 0.00043895884, z: 0.014332573}
 --- !u!1 &6433412004905718338
 GameObject:
   m_ObjectHideFlags: 0
@@ -6360,7 +7424,8 @@ GameObject:
   - component: {fileID: 142444890824958842}
   - component: {fileID: 3626626372167198934}
   - component: {fileID: 1585360743878689141}
-  m_Layer: 0
+  - component: {fileID: 1408598960}
+  m_Layer: 7
   m_Name: StubyCactus.016
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6408,10 +7473,10 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -9030366640998279740, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
-  - {fileID: 4874126678125670354, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
-  - {fileID: -3846018093981099296, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
-  - {fileID: -632848821830877677, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
+  - {fileID: 2100000, guid: 7f2a3f7994af1d94e8d38be88f0fa69b, type: 2}
+  - {fileID: 2100000, guid: 7f2a3f7994af1d94e8d38be88f0fa69b, type: 2}
+  - {fileID: 2100000, guid: 7f2a3f7994af1d94e8d38be88f0fa69b, type: 2}
+  - {fileID: 2100000, guid: f94db0f1a5669954da56127aa2ffec94, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -6433,6 +7498,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &1408598960
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6433412004905718338}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.021152822, y: 0.030100081, z: 0.033282198}
+  m_Center: {x: -0.0025612814, y: 0.00043931688, z: 0.014332912}
 --- !u!1 &6520490621241527431
 GameObject:
   m_ObjectHideFlags: 0
@@ -6444,7 +7522,8 @@ GameObject:
   - component: {fileID: 2054965080695716248}
   - component: {fileID: 5703220936912132204}
   - component: {fileID: 1289197464395978484}
-  m_Layer: 0
+  - component: {fileID: 673895058}
+  m_Layer: 7
   m_Name: StubyCactus.048
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6492,10 +7571,10 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -9030366640998279740, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
-  - {fileID: 4874126678125670354, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
-  - {fileID: -3846018093981099296, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
-  - {fileID: -632848821830877677, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
+  - {fileID: 2100000, guid: 7f2a3f7994af1d94e8d38be88f0fa69b, type: 2}
+  - {fileID: 2100000, guid: 7f2a3f7994af1d94e8d38be88f0fa69b, type: 2}
+  - {fileID: 2100000, guid: 7f2a3f7994af1d94e8d38be88f0fa69b, type: 2}
+  - {fileID: 2100000, guid: f94db0f1a5669954da56127aa2ffec94, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -6517,6 +7596,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &673895058
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6520490621241527431}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.021152819, y: 0.030100077, z: 0.033282194}
+  m_Center: {x: -0.0025612847, y: 0.00043848236, z: 0.014332199}
 --- !u!1 &6767396066626264995
 GameObject:
   m_ObjectHideFlags: 0
@@ -6528,7 +7620,8 @@ GameObject:
   - component: {fileID: 6378991088054031763}
   - component: {fileID: 7177511745943260343}
   - component: {fileID: 7543391916456615072}
-  m_Layer: 0
+  - component: {fileID: 413265683}
+  m_Layer: 7
   m_Name: CurvyCactus.044
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6576,8 +7669,8 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -8751555780163154282, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
-  - {fileID: -8668040885160614049, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
+  - {fileID: 2100000, guid: 7f2a3f7994af1d94e8d38be88f0fa69b, type: 2}
+  - {fileID: 2100000, guid: f94db0f1a5669954da56127aa2ffec94, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -6599,6 +7692,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &413265683
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6767396066626264995}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.016280646, y: 0.03413121, z: 0.04422325}
+  m_Center: {x: 0.00086442544, y: 0.0002209762, z: 0.020760905}
 --- !u!1 &6789668950573251677
 GameObject:
   m_ObjectHideFlags: 0
@@ -6610,7 +7716,8 @@ GameObject:
   - component: {fileID: 7139320458259017351}
   - component: {fileID: 4930497381395086670}
   - component: {fileID: 8897898346852483985}
-  m_Layer: 0
+  - component: {fileID: 1158511762}
+  m_Layer: 7
   m_Name: QuadArmCactus.019
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6625,7 +7732,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6789668950573251677}
   m_LocalRotation: {x: -0.040157568, y: 0.1643462, z: 0.98555285, w: -0.007956242}
-  m_LocalPosition: {x: -0.09839123, y: 1.6712197, z: -0.24179561}
+  m_LocalPosition: {x: -0.09839123, y: 1.6712, z: -0.2487}
   m_LocalScale: {x: 3.0314817, y: 3.0314827, z: 3.0314822}
   m_Children: []
   m_Father: {fileID: 73391793282416629}
@@ -6658,8 +7765,8 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -5475968888143051468, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
-  - {fileID: 8444260790681818259, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
+  - {fileID: 2100000, guid: 7f2a3f7994af1d94e8d38be88f0fa69b, type: 2}
+  - {fileID: 2100000, guid: f94db0f1a5669954da56127aa2ffec94, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -6681,6 +7788,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &1158511762
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6789668950573251677}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.026913866, y: 0.038907193, z: 0.056934115}
+  m_Center: {x: -0.0023863509, y: -0.0031712404, z: 0.026274474}
 --- !u!1 &6865250597177302475
 GameObject:
   m_ObjectHideFlags: 0
@@ -6692,7 +7812,8 @@ GameObject:
   - component: {fileID: 4473880640708289576}
   - component: {fileID: 2384812258113223814}
   - component: {fileID: 4804893390678287360}
-  m_Layer: 0
+  - component: {fileID: 718840081}
+  m_Layer: 7
   m_Name: StubyCactus.028
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6740,10 +7861,10 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -9030366640998279740, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
-  - {fileID: 4874126678125670354, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
-  - {fileID: -3846018093981099296, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
-  - {fileID: -632848821830877677, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
+  - {fileID: 2100000, guid: 7f2a3f7994af1d94e8d38be88f0fa69b, type: 2}
+  - {fileID: 2100000, guid: 7f2a3f7994af1d94e8d38be88f0fa69b, type: 2}
+  - {fileID: 2100000, guid: 7f2a3f7994af1d94e8d38be88f0fa69b, type: 2}
+  - {fileID: 2100000, guid: f94db0f1a5669954da56127aa2ffec94, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -6765,6 +7886,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &718840081
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6865250597177302475}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.021152837, y: 0.030100085, z: 0.0332822}
+  m_Center: {x: -0.002561614, y: 0.0004390117, z: 0.014332605}
 --- !u!1 &6882314108970231159
 GameObject:
   m_ObjectHideFlags: 0
@@ -6776,7 +7910,8 @@ GameObject:
   - component: {fileID: 1829389731552243654}
   - component: {fileID: 8993033109958491120}
   - component: {fileID: 6597180117989143695}
-  m_Layer: 0
+  - component: {fileID: 944050410}
+  m_Layer: 7
   m_Name: CurvyCactus.069
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6824,8 +7959,8 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -8751555780163154282, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
-  - {fileID: -8668040885160614049, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
+  - {fileID: 2100000, guid: 7f2a3f7994af1d94e8d38be88f0fa69b, type: 2}
+  - {fileID: 2100000, guid: f94db0f1a5669954da56127aa2ffec94, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -6847,6 +7982,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &944050410
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6882314108970231159}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.016280644, y: 0.034131207, z: 0.04422325}
+  m_Center: {x: 0.00086397823, y: 0.00022121459, z: 0.020760607}
 --- !u!1 &6934558367851930354
 GameObject:
   m_ObjectHideFlags: 0
@@ -6858,7 +8006,8 @@ GameObject:
   - component: {fileID: 4195347053495541452}
   - component: {fileID: 4957959924605985669}
   - component: {fileID: 8514686284351803680}
-  m_Layer: 0
+  - component: {fileID: 1850865145}
+  m_Layer: 7
   m_Name: CurvyCactus.074
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6906,8 +8055,8 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -8751555780163154282, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
-  - {fileID: -8668040885160614049, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
+  - {fileID: 2100000, guid: 7f2a3f7994af1d94e8d38be88f0fa69b, type: 2}
+  - {fileID: 2100000, guid: f94db0f1a5669954da56127aa2ffec94, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -6929,6 +8078,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &1850865145
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6934558367851930354}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.016280644, y: 0.03413121, z: 0.04422324}
+  m_Center: {x: 0.0008644849, y: 0.00022085701, z: 0.020760842}
 --- !u!1 &6993295818928949043
 GameObject:
   m_ObjectHideFlags: 0
@@ -6940,7 +8102,8 @@ GameObject:
   - component: {fileID: 1329241939289812677}
   - component: {fileID: 4457572753150677316}
   - component: {fileID: 8933138783397668803}
-  m_Layer: 0
+  - component: {fileID: 562875186}
+  m_Layer: 7
   m_Name: CurvyCactus.075
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6988,8 +8151,8 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -8751555780163154282, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
-  - {fileID: -8668040885160614049, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
+  - {fileID: 2100000, guid: 7f2a3f7994af1d94e8d38be88f0fa69b, type: 2}
+  - {fileID: 2100000, guid: f94db0f1a5669954da56127aa2ffec94, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -7011,6 +8174,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &562875186
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6993295818928949043}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.01628065, y: 0.03413122, z: 0.04422324}
+  m_Center: {x: 0.00086397765, y: 0.000221094, z: 0.020761084}
 --- !u!1 &7033123826454815194
 GameObject:
   m_ObjectHideFlags: 0
@@ -7022,7 +8198,8 @@ GameObject:
   - component: {fileID: 5137336598996402069}
   - component: {fileID: 5742973372867023776}
   - component: {fileID: 4753563664149001768}
-  m_Layer: 0
+  - component: {fileID: 1873319766}
+  m_Layer: 7
   m_Name: QuadArmCactus.040
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7070,8 +8247,8 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -5475968888143051468, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
-  - {fileID: 8444260790681818259, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
+  - {fileID: 2100000, guid: 7f2a3f7994af1d94e8d38be88f0fa69b, type: 2}
+  - {fileID: 2100000, guid: f94db0f1a5669954da56127aa2ffec94, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -7093,6 +8270,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &1873319766
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7033123826454815194}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.026913855, y: 0.03890719, z: 0.05693412}
+  m_Center: {x: -0.0023855462, y: -0.0031712092, z: 0.026274497}
 --- !u!1 &7088529512977963611
 GameObject:
   m_ObjectHideFlags: 0
@@ -7104,7 +8294,8 @@ GameObject:
   - component: {fileID: 5351681431374721744}
   - component: {fileID: 6915228332388439142}
   - component: {fileID: 3885405526301490251}
-  m_Layer: 0
+  - component: {fileID: 1787225715}
+  m_Layer: 7
   m_Name: StubyCactus.014
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7152,10 +8343,10 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -9030366640998279740, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
-  - {fileID: 4874126678125670354, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
-  - {fileID: -3846018093981099296, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
-  - {fileID: -632848821830877677, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
+  - {fileID: 2100000, guid: 7f2a3f7994af1d94e8d38be88f0fa69b, type: 2}
+  - {fileID: 2100000, guid: 7f2a3f7994af1d94e8d38be88f0fa69b, type: 2}
+  - {fileID: 2100000, guid: 7f2a3f7994af1d94e8d38be88f0fa69b, type: 2}
+  - {fileID: 2100000, guid: f94db0f1a5669954da56127aa2ffec94, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -7177,6 +8368,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &1787225715
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7088529512977963611}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.021152819, y: 0.030100066, z: 0.0332822}
+  m_Center: {x: -0.0025613448, y: 0.00043919732, z: 0.014332901}
 --- !u!1 &7100460251010193005
 GameObject:
   m_ObjectHideFlags: 0
@@ -7188,7 +8392,8 @@ GameObject:
   - component: {fileID: 8310032311276945705}
   - component: {fileID: 6391457944697399469}
   - component: {fileID: 8943464889703610455}
-  m_Layer: 0
+  - component: {fileID: 500458084}
+  m_Layer: 7
   m_Name: QuadArmCactus.018
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7236,8 +8441,8 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -5475968888143051468, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
-  - {fileID: 8444260790681818259, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
+  - {fileID: 2100000, guid: 7f2a3f7994af1d94e8d38be88f0fa69b, type: 2}
+  - {fileID: 2100000, guid: f94db0f1a5669954da56127aa2ffec94, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -7259,6 +8464,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &500458084
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7100460251010193005}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.026913868, y: 0.038907196, z: 0.05693413}
+  m_Center: {x: -0.0023860224, y: -0.0031710712, z: 0.026274586}
 --- !u!1 &7102094768397195766
 GameObject:
   m_ObjectHideFlags: 0
@@ -7270,7 +8488,8 @@ GameObject:
   - component: {fileID: 8972431724811114697}
   - component: {fileID: 2593005618750818863}
   - component: {fileID: 574745897007106729}
-  m_Layer: 0
+  - component: {fileID: 719116964}
+  m_Layer: 7
   m_Name: QuadArmCactus.020
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7318,8 +8537,8 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -5475968888143051468, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
-  - {fileID: 8444260790681818259, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
+  - {fileID: 2100000, guid: 7f2a3f7994af1d94e8d38be88f0fa69b, type: 2}
+  - {fileID: 2100000, guid: f94db0f1a5669954da56127aa2ffec94, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -7341,6 +8560,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &719116964
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7102094768397195766}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.02691387, y: 0.038907185, z: 0.056934126}
+  m_Center: {x: -0.0023856622, y: -0.003171238, z: 0.026274735}
 --- !u!1 &7183567036582415200
 GameObject:
   m_ObjectHideFlags: 0
@@ -7352,7 +8584,8 @@ GameObject:
   - component: {fileID: 3941349269313803642}
   - component: {fileID: 1659455422888800958}
   - component: {fileID: 6045207892851591414}
-  m_Layer: 0
+  - component: {fileID: 1454740810}
+  m_Layer: 7
   m_Name: CurvyCactus.033
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7400,8 +8633,8 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -8751555780163154282, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
-  - {fileID: -8668040885160614049, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
+  - {fileID: 2100000, guid: 7f2a3f7994af1d94e8d38be88f0fa69b, type: 2}
+  - {fileID: 2100000, guid: f94db0f1a5669954da56127aa2ffec94, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -7423,6 +8656,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &1454740810
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7183567036582415200}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.016280651, y: 0.034131214, z: 0.044223238}
+  m_Center: {x: 0.0008644047, y: 0.00022127181, z: 0.02076123}
 --- !u!1 &7330149178187764175
 GameObject:
   m_ObjectHideFlags: 0
@@ -7434,7 +8680,8 @@ GameObject:
   - component: {fileID: 4473974003441507675}
   - component: {fileID: 7720267247993487283}
   - component: {fileID: 258842985766292354}
-  m_Layer: 0
+  - component: {fileID: 179041431}
+  m_Layer: 7
   m_Name: StubyCactus.017
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7482,10 +8729,10 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -9030366640998279740, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
-  - {fileID: 4874126678125670354, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
-  - {fileID: -3846018093981099296, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
-  - {fileID: -632848821830877677, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
+  - {fileID: 2100000, guid: 7f2a3f7994af1d94e8d38be88f0fa69b, type: 2}
+  - {fileID: 2100000, guid: 7f2a3f7994af1d94e8d38be88f0fa69b, type: 2}
+  - {fileID: 2100000, guid: 7f2a3f7994af1d94e8d38be88f0fa69b, type: 2}
+  - {fileID: 2100000, guid: f94db0f1a5669954da56127aa2ffec94, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -7507,6 +8754,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &179041431
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7330149178187764175}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.021152817, y: 0.030100077, z: 0.033282194}
+  m_Center: {x: -0.0025616125, y: 0.00043919755, z: 0.014332906}
 --- !u!1 &7415578995957405604
 GameObject:
   m_ObjectHideFlags: 0
@@ -7518,7 +8778,8 @@ GameObject:
   - component: {fileID: 8741397830131493954}
   - component: {fileID: 5269080524880601994}
   - component: {fileID: 8681625403274605456}
-  m_Layer: 0
+  - component: {fileID: 725382793}
+  m_Layer: 7
   m_Name: QuadArmCactus.011
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7566,8 +8827,8 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -5475968888143051468, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
-  - {fileID: 8444260790681818259, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
+  - {fileID: 2100000, guid: 7f2a3f7994af1d94e8d38be88f0fa69b, type: 2}
+  - {fileID: 2100000, guid: f94db0f1a5669954da56127aa2ffec94, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -7589,6 +8850,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &725382793
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7415578995957405604}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.026913853, y: 0.03890719, z: 0.056934115}
+  m_Center: {x: -0.0023856661, y: -0.0031711806, z: 0.026274467}
 --- !u!1 &7577589178396170736
 GameObject:
   m_ObjectHideFlags: 0
@@ -7600,7 +8874,8 @@ GameObject:
   - component: {fileID: 9143393225964361833}
   - component: {fileID: 6379281942934835123}
   - component: {fileID: 4884243644096765068}
-  m_Layer: 0
+  - component: {fileID: 1273351835}
+  m_Layer: 7
   m_Name: QuadArmCactus.021
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7648,8 +8923,8 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -5475968888143051468, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
-  - {fileID: 8444260790681818259, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
+  - {fileID: 2100000, guid: 7f2a3f7994af1d94e8d38be88f0fa69b, type: 2}
+  - {fileID: 2100000, guid: f94db0f1a5669954da56127aa2ffec94, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -7671,6 +8946,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &1273351835
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7577589178396170736}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.026913859, y: 0.03890719, z: 0.056934126}
+  m_Center: {x: -0.0023866184, y: -0.0031713583, z: 0.02627426}
 --- !u!1 &7715111525031044923
 GameObject:
   m_ObjectHideFlags: 0
@@ -7682,7 +8970,8 @@ GameObject:
   - component: {fileID: 8975644251386882733}
   - component: {fileID: 5996266112802959127}
   - component: {fileID: 1548650922169324043}
-  m_Layer: 0
+  - component: {fileID: 1502091561}
+  m_Layer: 7
   m_Name: StubyCactus.020
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7730,10 +9019,10 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -9030366640998279740, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
-  - {fileID: 4874126678125670354, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
-  - {fileID: -3846018093981099296, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
-  - {fileID: -632848821830877677, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
+  - {fileID: 2100000, guid: 7f2a3f7994af1d94e8d38be88f0fa69b, type: 2}
+  - {fileID: 2100000, guid: 7f2a3f7994af1d94e8d38be88f0fa69b, type: 2}
+  - {fileID: 2100000, guid: 7f2a3f7994af1d94e8d38be88f0fa69b, type: 2}
+  - {fileID: 2100000, guid: f94db0f1a5669954da56127aa2ffec94, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -7755,6 +9044,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &1502091561
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7715111525031044923}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.02115283, y: 0.03010009, z: 0.033282198}
+  m_Center: {x: -0.0025610477, y: 0.0004395556, z: 0.014333031}
 --- !u!1 &7775329599918926856
 GameObject:
   m_ObjectHideFlags: 0
@@ -7766,7 +9068,8 @@ GameObject:
   - component: {fileID: 5136745999371087625}
   - component: {fileID: 7244058919192066325}
   - component: {fileID: 7992190039607546221}
-  m_Layer: 0
+  - component: {fileID: 1712163023}
+  m_Layer: 7
   m_Name: QuadArmCactus.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7781,7 +9084,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7775329599918926856}
   m_LocalRotation: {x: -0.003998858, y: 0.23823564, z: 0.9711965, w: -0.0022806327}
-  m_LocalPosition: {x: -1.3177332, y: 1.6954004, z: -0.30394742}
+  m_LocalPosition: {x: -1.3183, y: 1.6883, z: -0.3068}
   m_LocalScale: {x: 3.6408904, y: 3.64089, z: 3.64089}
   m_Children: []
   m_Father: {fileID: 73391793282416629}
@@ -7814,8 +9117,8 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -5475968888143051468, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
-  - {fileID: 8444260790681818259, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
+  - {fileID: 2100000, guid: 7f2a3f7994af1d94e8d38be88f0fa69b, type: 2}
+  - {fileID: 2100000, guid: f94db0f1a5669954da56127aa2ffec94, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -7837,6 +9140,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &1712163023
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7775329599918926856}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.026913863, y: 0.03890719, z: 0.05693411}
+  m_Center: {x: -0.0023862023, y: -0.0031711538, z: 0.026274519}
 --- !u!1 &7890148202292282837
 GameObject:
   m_ObjectHideFlags: 0
@@ -7848,7 +9164,8 @@ GameObject:
   - component: {fileID: 4116964724594217108}
   - component: {fileID: 1204739873569514665}
   - component: {fileID: 1083371171654515876}
-  m_Layer: 0
+  - component: {fileID: 73138469}
+  m_Layer: 7
   m_Name: QuadArmCactus.023
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7896,8 +9213,8 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -5475968888143051468, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
-  - {fileID: 8444260790681818259, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
+  - {fileID: 2100000, guid: 7f2a3f7994af1d94e8d38be88f0fa69b, type: 2}
+  - {fileID: 2100000, guid: f94db0f1a5669954da56127aa2ffec94, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -7919,6 +9236,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &73138469
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7890148202292282837}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.02691386, y: 0.038907196, z: 0.056934126}
+  m_Center: {x: -0.0023861432, y: -0.0031714772, z: 0.02627414}
 --- !u!1 &7962700812500189327
 GameObject:
   m_ObjectHideFlags: 0
@@ -7930,7 +9260,8 @@ GameObject:
   - component: {fileID: 557420241634348856}
   - component: {fileID: 973560825134065789}
   - component: {fileID: 7001986084623279917}
-  m_Layer: 0
+  - component: {fileID: 1462025419}
+  m_Layer: 7
   m_Name: StubyCactus.034
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7978,10 +9309,10 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -9030366640998279740, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
-  - {fileID: 4874126678125670354, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
-  - {fileID: -3846018093981099296, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
-  - {fileID: -632848821830877677, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
+  - {fileID: 2100000, guid: 7f2a3f7994af1d94e8d38be88f0fa69b, type: 2}
+  - {fileID: 2100000, guid: 7f2a3f7994af1d94e8d38be88f0fa69b, type: 2}
+  - {fileID: 2100000, guid: 7f2a3f7994af1d94e8d38be88f0fa69b, type: 2}
+  - {fileID: 2100000, guid: f94db0f1a5669954da56127aa2ffec94, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -8003,6 +9334,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &1462025419
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7962700812500189327}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.021152822, y: 0.030100081, z: 0.033282198}
+  m_Center: {x: -0.002561613, y: 0.00043878044, z: 0.014332454}
 --- !u!1 &8277197059639414662
 GameObject:
   m_ObjectHideFlags: 0
@@ -8014,7 +9358,8 @@ GameObject:
   - component: {fileID: 6440477112519797132}
   - component: {fileID: 8361595434114797090}
   - component: {fileID: 6443349265154026442}
-  m_Layer: 0
+  - component: {fileID: 1257364129}
+  m_Layer: 7
   m_Name: StubyCactus.022
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8062,10 +9407,10 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -9030366640998279740, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
-  - {fileID: 4874126678125670354, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
-  - {fileID: -3846018093981099296, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
-  - {fileID: -632848821830877677, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
+  - {fileID: 2100000, guid: 7f2a3f7994af1d94e8d38be88f0fa69b, type: 2}
+  - {fileID: 2100000, guid: 7f2a3f7994af1d94e8d38be88f0fa69b, type: 2}
+  - {fileID: 2100000, guid: 7f2a3f7994af1d94e8d38be88f0fa69b, type: 2}
+  - {fileID: 2100000, guid: f94db0f1a5669954da56127aa2ffec94, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -8087,6 +9432,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &1257364129
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8277197059639414662}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.021152819, y: 0.030100077, z: 0.033282198}
+  m_Center: {x: -0.00256048, y: 0.00043931694, z: 0.014332878}
 --- !u!1 &8309828992571686849
 GameObject:
   m_ObjectHideFlags: 0
@@ -8098,7 +9456,8 @@ GameObject:
   - component: {fileID: 2897038930654197628}
   - component: {fileID: 4164504924188573981}
   - component: {fileID: 6003392596322480515}
-  m_Layer: 0
+  - component: {fileID: 1456004644}
+  m_Layer: 7
   m_Name: CurvyCactus.015
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8146,8 +9505,8 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -8751555780163154282, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
-  - {fileID: -8668040885160614049, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
+  - {fileID: 2100000, guid: 7f2a3f7994af1d94e8d38be88f0fa69b, type: 2}
+  - {fileID: 2100000, guid: f94db0f1a5669954da56127aa2ffec94, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -8169,6 +9528,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &1456004644
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8309828992571686849}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.016280644, y: 0.03413121, z: 0.044223253}
+  m_Center: {x: 0.00086409744, y: 0.00022109543, z: 0.020760877}
 --- !u!1 &8380195111094175607
 GameObject:
   m_ObjectHideFlags: 0
@@ -8180,7 +9552,8 @@ GameObject:
   - component: {fileID: 6637196075281546603}
   - component: {fileID: 8037649260062209529}
   - component: {fileID: 5521768966275999710}
-  m_Layer: 0
+  - component: {fileID: 1719066705}
+  m_Layer: 7
   m_Name: QuadArmCactus.051
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8228,8 +9601,8 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -5475968888143051468, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
-  - {fileID: 8444260790681818259, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
+  - {fileID: 2100000, guid: 7f2a3f7994af1d94e8d38be88f0fa69b, type: 2}
+  - {fileID: 2100000, guid: f94db0f1a5669954da56127aa2ffec94, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -8251,6 +9624,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &1719066705
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8380195111094175607}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.026913863, y: 0.038907196, z: 0.05693412}
+  m_Center: {x: -0.0023862775, y: -0.0031714772, z: 0.026274154}
 --- !u!1 &8509714739502223612
 GameObject:
   m_ObjectHideFlags: 0
@@ -8262,7 +9648,8 @@ GameObject:
   - component: {fileID: 3993422419997312056}
   - component: {fileID: 2494732268626917018}
   - component: {fileID: 1440252896201787074}
-  m_Layer: 0
+  - component: {fileID: 1042821860}
+  m_Layer: 7
   m_Name: CurvyCactus.042
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8310,8 +9697,8 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -8751555780163154282, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
-  - {fileID: -8668040885160614049, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
+  - {fileID: 2100000, guid: 7f2a3f7994af1d94e8d38be88f0fa69b, type: 2}
+  - {fileID: 2100000, guid: f94db0f1a5669954da56127aa2ffec94, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -8333,6 +9720,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &1042821860
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8509714739502223612}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.016280644, y: 0.03413121, z: 0.04422325}
+  m_Center: {x: 0.0008648723, y: 0.00022097622, z: 0.02076083}
 --- !u!1 &8647039794052290294
 GameObject:
   m_ObjectHideFlags: 0
@@ -8344,7 +9744,8 @@ GameObject:
   - component: {fileID: 5082782067734060940}
   - component: {fileID: 5665483428932856410}
   - component: {fileID: 8191469488626149043}
-  m_Layer: 0
+  - component: {fileID: 1349127070}
+  m_Layer: 7
   m_Name: CurvyCactus.018
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8392,8 +9793,8 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -8751555780163154282, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
-  - {fileID: -8668040885160614049, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
+  - {fileID: 2100000, guid: 7f2a3f7994af1d94e8d38be88f0fa69b, type: 2}
+  - {fileID: 2100000, guid: f94db0f1a5669954da56127aa2ffec94, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -8415,6 +9816,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &1349127070
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8647039794052290294}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.016280644, y: 0.034131203, z: 0.04422325}
+  m_Center: {x: 0.0008644698, y: 0.00022145272, z: 0.020761285}
 --- !u!1 &8701852427844492832
 GameObject:
   m_ObjectHideFlags: 0
@@ -8426,7 +9840,8 @@ GameObject:
   - component: {fileID: 6703901828776213827}
   - component: {fileID: 2190269200589084066}
   - component: {fileID: 2673318763283420752}
-  m_Layer: 0
+  - component: {fileID: 1195764616}
+  m_Layer: 7
   m_Name: CurvyCactus.006
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8474,8 +9889,8 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -8751555780163154282, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
-  - {fileID: -8668040885160614049, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
+  - {fileID: 2100000, guid: 7f2a3f7994af1d94e8d38be88f0fa69b, type: 2}
+  - {fileID: 2100000, guid: f94db0f1a5669954da56127aa2ffec94, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -8497,6 +9912,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &1195764616
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8701852427844492832}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.016280642, y: 0.03413121, z: 0.04422324}
+  m_Center: {x: 0.0008642166, y: 0.00022109541, z: 0.020760797}
 --- !u!1 &8706352195639095291
 GameObject:
   m_ObjectHideFlags: 0
@@ -8508,7 +9936,8 @@ GameObject:
   - component: {fileID: 689727550326025803}
   - component: {fileID: 7387897851678120669}
   - component: {fileID: 7373157376307000626}
-  m_Layer: 0
+  - component: {fileID: 1528471440}
+  m_Layer: 7
   m_Name: QuadArmCactus.010
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8556,8 +9985,8 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -5475968888143051468, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
-  - {fileID: 8444260790681818259, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
+  - {fileID: 2100000, guid: 7f2a3f7994af1d94e8d38be88f0fa69b, type: 2}
+  - {fileID: 2100000, guid: f94db0f1a5669954da56127aa2ffec94, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -8579,6 +10008,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &1528471440
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8706352195639095291}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.026913863, y: 0.038907196, z: 0.05693412}
+  m_Center: {x: -0.0023860838, y: -0.0031712984, z: 0.026274288}
 --- !u!1 &8742895811866531813
 GameObject:
   m_ObjectHideFlags: 0
@@ -8590,7 +10032,8 @@ GameObject:
   - component: {fileID: 5235504786146827330}
   - component: {fileID: 1501300780688406604}
   - component: {fileID: 5360693056930173146}
-  m_Layer: 0
+  - component: {fileID: 1702927817}
+  m_Layer: 7
   m_Name: CurvyCactus.036
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8638,8 +10081,8 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -8751555780163154282, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
-  - {fileID: -8668040885160614049, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
+  - {fileID: 2100000, guid: 7f2a3f7994af1d94e8d38be88f0fa69b, type: 2}
+  - {fileID: 2100000, guid: f94db0f1a5669954da56127aa2ffec94, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -8661,6 +10104,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &1702927817
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8742895811866531813}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.016280644, y: 0.034131207, z: 0.04422325}
+  m_Center: {x: 0.00086415705, y: 0.00022115499, z: 0.020761024}
 --- !u!1 &8752918764174638306
 GameObject:
   m_ObjectHideFlags: 0
@@ -8672,7 +10128,8 @@ GameObject:
   - component: {fileID: 1431250211036472701}
   - component: {fileID: 3338013719189999620}
   - component: {fileID: 1386819657745113402}
-  m_Layer: 0
+  - component: {fileID: 1890289157}
+  m_Layer: 7
   m_Name: StubyCactus.070
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8720,10 +10177,10 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -9030366640998279740, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
-  - {fileID: 4874126678125670354, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
-  - {fileID: -3846018093981099296, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
-  - {fileID: -632848821830877677, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
+  - {fileID: 2100000, guid: 7f2a3f7994af1d94e8d38be88f0fa69b, type: 2}
+  - {fileID: 2100000, guid: 7f2a3f7994af1d94e8d38be88f0fa69b, type: 2}
+  - {fileID: 2100000, guid: 7f2a3f7994af1d94e8d38be88f0fa69b, type: 2}
+  - {fileID: 2100000, guid: f94db0f1a5669954da56127aa2ffec94, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -8745,6 +10202,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &1890289157
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8752918764174638306}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.02115283, y: 0.030100081, z: 0.033282198}
+  m_Center: {x: -0.0025602428, y: 0.00043872083, z: 0.0143324835}
 --- !u!1 &8874106751936527342
 GameObject:
   m_ObjectHideFlags: 0
@@ -8756,7 +10226,8 @@ GameObject:
   - component: {fileID: 8543992600950998029}
   - component: {fileID: 9220294923450733880}
   - component: {fileID: 6924701182313033149}
-  m_Layer: 0
+  - component: {fileID: 1049659871}
+  m_Layer: 7
   m_Name: QuadArmCactus.015
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8804,8 +10275,8 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -5475968888143051468, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
-  - {fileID: 8444260790681818259, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
+  - {fileID: 2100000, guid: 7f2a3f7994af1d94e8d38be88f0fa69b, type: 2}
+  - {fileID: 2100000, guid: f94db0f1a5669954da56127aa2ffec94, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -8827,6 +10298,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &1049659871
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8874106751936527342}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.02691386, y: 0.038907193, z: 0.056934126}
+  m_Center: {x: -0.002386471, y: -0.0031708214, z: 0.026274662}
 --- !u!1 &8932536546883146508
 GameObject:
   m_ObjectHideFlags: 0
@@ -8838,7 +10322,8 @@ GameObject:
   - component: {fileID: 6715054998601314482}
   - component: {fileID: 916489618969197227}
   - component: {fileID: 3785790113214985600}
-  m_Layer: 0
+  - component: {fileID: 1530561987}
+  m_Layer: 7
   m_Name: QuadArmCactus.013
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8886,8 +10371,8 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -5475968888143051468, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
-  - {fileID: 8444260790681818259, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
+  - {fileID: 2100000, guid: 7f2a3f7994af1d94e8d38be88f0fa69b, type: 2}
+  - {fileID: 2100000, guid: f94db0f1a5669954da56127aa2ffec94, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -8909,6 +10394,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &1530561987
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8932536546883146508}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.026913857, y: 0.03890718, z: 0.05693412}
+  m_Center: {x: -0.0023869777, y: -0.0031710593, z: 0.026274482}
 --- !u!1 &8951019042415680773
 GameObject:
   m_ObjectHideFlags: 0
@@ -8920,7 +10418,8 @@ GameObject:
   - component: {fileID: 4647809304390012104}
   - component: {fileID: 4169567287445304702}
   - component: {fileID: 7106067206758592193}
-  m_Layer: 0
+  - component: {fileID: 1428384196}
+  m_Layer: 7
   m_Name: CurvyCactus.026
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8968,8 +10467,8 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -8751555780163154282, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
-  - {fileID: -8668040885160614049, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
+  - {fileID: 2100000, guid: 7f2a3f7994af1d94e8d38be88f0fa69b, type: 2}
+  - {fileID: 2100000, guid: f94db0f1a5669954da56127aa2ffec94, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -8991,6 +10490,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &1428384196
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8951019042415680773}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.016280651, y: 0.034131214, z: 0.04422325}
+  m_Center: {x: 0.00086415774, y: 0.00022140822, z: 0.020761233}
 --- !u!1 &8985243678414014917
 GameObject:
   m_ObjectHideFlags: 0
@@ -9002,7 +10514,8 @@ GameObject:
   - component: {fileID: 2845267191542445765}
   - component: {fileID: 3580248527861287135}
   - component: {fileID: 1750540088117535393}
-  m_Layer: 0
+  - component: {fileID: 1735170509}
+  m_Layer: 7
   m_Name: StubyCactus.025
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9050,10 +10563,10 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -9030366640998279740, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
-  - {fileID: 4874126678125670354, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
-  - {fileID: -3846018093981099296, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
-  - {fileID: -632848821830877677, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
+  - {fileID: 2100000, guid: 7f2a3f7994af1d94e8d38be88f0fa69b, type: 2}
+  - {fileID: 2100000, guid: 7f2a3f7994af1d94e8d38be88f0fa69b, type: 2}
+  - {fileID: 2100000, guid: 7f2a3f7994af1d94e8d38be88f0fa69b, type: 2}
+  - {fileID: 2100000, guid: f94db0f1a5669954da56127aa2ffec94, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -9075,6 +10588,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &1735170509
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8985243678414014917}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.021152826, y: 0.030100081, z: 0.033282198}
+  m_Center: {x: -0.0025607198, y: 0.00043909324, z: 0.014332677}
 --- !u!1 &9105672515580571168
 GameObject:
   m_ObjectHideFlags: 0
@@ -9086,7 +10612,8 @@ GameObject:
   - component: {fileID: 6688300251364652077}
   - component: {fileID: 429783841149798536}
   - component: {fileID: 2020902722496822073}
-  m_Layer: 0
+  - component: {fileID: 151439117}
+  m_Layer: 7
   m_Name: CurvyCactus.004
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9134,8 +10661,8 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -8751555780163154282, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
-  - {fileID: -8668040885160614049, guid: 7f8edcb78b7853148bb8220cabcc9ece, type: 3}
+  - {fileID: 2100000, guid: 7f2a3f7994af1d94e8d38be88f0fa69b, type: 2}
+  - {fileID: 2100000, guid: f94db0f1a5669954da56127aa2ffec94, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -9157,3 +10684,16 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &151439117
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9105672515580571168}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.016280646, y: 0.03413121, z: 0.04422325}
+  m_Center: {x: 0.0008635611, y: 0.00022109543, z: 0.020760905}

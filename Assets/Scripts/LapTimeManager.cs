@@ -5,10 +5,11 @@ using UnityEngine;
 public class LapTimeManager : MonoBehaviour
 {
     public static LapTimeManager Instance;
+    RaceInformation raceInfo;
     bool isTimeRunning = false;
 
     float timeInSeconds = 0;
-    float numLaps = 0;
+    int numLaps = 0;
 
     List<float> lapTimesList= new List<float>();
 
@@ -25,6 +26,19 @@ public class LapTimeManager : MonoBehaviour
         {
             Instance = this;
         }
+        raceInfo = ReferenceManager.Instance.GetRaceInformation();
+    }
+
+    private void OnEnable()
+    {
+        CheckpointManager.OnCompletedLap += OnCompletedLap;
+        CheckpointManager.OnFinishedRace += OnFinishedRace;
+    }
+
+    private void OnDisable()
+    {
+        CheckpointManager.OnCompletedLap -= OnCompletedLap;
+        CheckpointManager.OnFinishedRace -= OnFinishedRace;
     }
 
     public float GetTime()
@@ -38,6 +52,11 @@ public class LapTimeManager : MonoBehaviour
         StartCoroutine("RunTimer");
     }
 
+    public int GetNumLaps()
+    {
+        return numLaps;
+    }
+
     public void StopTimer()
     {
         isTimeRunning = false;
@@ -46,9 +65,6 @@ public class LapTimeManager : MonoBehaviour
 
     public void OnCompletedLap()
     {
-        StopCoroutine("RunTimer");
-        numLaps++;
-
         float totalSecondsBeforeThisLap = 0;
         for (int i = 0; i < lapTimesList.Count; i++)
         {
@@ -61,6 +77,18 @@ public class LapTimeManager : MonoBehaviour
         Debug.Log("Lap time: " + GetLapTimeString());
     }
  
+    public void OnFinishedRace()
+    {
+        StopCoroutine("RunTimer"); float totalSecondsBeforeThisLap = 0;
+        for (int i = 0; i < lapTimesList.Count; i++)
+        {
+            totalSecondsBeforeThisLap += lapTimesList[i];
+        }
+
+        lapTimesList.Add(seconds - totalSecondsBeforeThisLap);
+        Debug.Log("Lap time: " + GetLapTimeString());
+
+    }
 
     public string GetLapTimeString()
     {

@@ -7,6 +7,8 @@ using System.IO;
 using System.Runtime.Serialization;
 using System.Runtime.Serialization.Formatters.Binary;
 using UnityEngine.SceneManagement;
+using System.Threading.Tasks;
+using Photon.Pun;
 
 public class GhostCapture : MonoBehaviour
 {
@@ -15,7 +17,7 @@ public class GhostCapture : MonoBehaviour
     
     public GhostCar ghostCar;
     public TextAsset[] ghostCapturePositionAndRotationFiles;
-
+    RaceInformation raceInfo;
 
     public Difficulty currentDifficulty;
 
@@ -29,6 +31,18 @@ public class GhostCapture : MonoBehaviour
 
     string dataPath = "";
 
+
+    private void OnEnable()
+    {
+        CheckpointManager.OnFinishedRace += OnFinishedRace;
+    }
+
+    private void OnDisable()
+    {
+        CheckpointManager.OnFinishedRace -= OnFinishedRace;
+
+    }
+
     private void Awake()
     {
         if (Instance != null)
@@ -39,9 +53,11 @@ public class GhostCapture : MonoBehaviour
             Instance = this;
         }
 
+        raceInfo = ReferenceManager.Instance.GetRaceInformation();
+
         if (!captureCarPosition)
         {
-            currentDifficulty = GhostModeManager.currentDifficulty;
+            currentDifficulty = raceInfo.ghostDifficulty;
         }
     }
 
@@ -50,14 +66,15 @@ public class GhostCapture : MonoBehaviour
         car = CarSpawner.Instance.GetCurrentCar().GetComponent<CarController>();
         fileName = SceneManager.GetActiveScene().name + car.GetCarPresetName() + currentDifficulty.ToString() + ".bytes";
         dataPath = Application.dataPath + "\\GhostCarFiles\\" + fileName;
-        if (!captureCarPosition)
+        if (!captureCarPosition && raceInfo.mode == Mode.GhostRace)
         {
             positionAndRotList = Deserialize();
             ghostCar.SetPosList(positionAndRotList);
-
-        } else
+        }
+        else
         {
             ghostCar.gameObject.SetActive(false);
+            Destroy(ghostCar);
         }
     }
 
@@ -94,7 +111,7 @@ public class GhostCapture : MonoBehaviour
         positionAndRotList.Add(new PositionAndRotation(car.transform.position, car.transform.rotation.eulerAngles));
     }
 
-    public void FinishedRace()
+    public void OnFinishedRace()
     {       
         if (captureCarPosition)
         {
@@ -110,11 +127,6 @@ public class GhostCapture : MonoBehaviour
         Serialize<PositionAndRotation>(positionAndRotList);
     }
 
-    public List<PositionAndRotation> GetPositionAndRotList()
-    {
-        return Deserialize();
-    }
-
     void Serialize<PositionAndRotation>(List<PositionAndRotation> list)
     {
         Stream stream = new FileStream(dataPath, FileMode.Create, FileAccess.Write, FileShare.None);
@@ -124,11 +136,12 @@ public class GhostCapture : MonoBehaviour
         Debug.Log("Serialized");
     }
 
-    private List<PositionAndRotation> Deserialize()
+    List<PositionAndRotation> Deserialize()
     {
+        List<PositionAndRotation> list;
         TextAsset textAsset = new TextAsset();
         // loop through all files
-        for(int i = 0; i < ghostCapturePositionAndRotationFiles.Length; i++)
+        for (int i = 0; i < ghostCapturePositionAndRotationFiles.Length; i++)
         {
             // if this text asset corresponds to the current scene, car, and difficulty
             if (fileName.Equals(ghostCapturePositionAndRotationFiles[i].name + ".bytes"))
@@ -143,9 +156,8 @@ public class GhostCapture : MonoBehaviour
         }
 
         IFormatter formatter = new BinaryFormatter();
-        List<PositionAndRotation> list = (List<PositionAndRotation>)formatter.Deserialize(stream);
+        list = (List<PositionAndRotation>)formatter.Deserialize(stream);
         stream.Close();
-
         return list;
     }
 }

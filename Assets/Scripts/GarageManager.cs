@@ -7,6 +7,7 @@ public class GarageManager : MonoBehaviour
 {
     public static GarageManager Instance;
 
+    public RaceInformation raceInformation;
     public GameObject garageUI;
     public Transform spawnPosition;
 
@@ -38,7 +39,7 @@ public class GarageManager : MonoBehaviour
     private void OnEnable()
     {
         currentCarIndex = PlayerPrefs.GetInt(currentCarIndexKey, 0);
-        CarModelManager.Instance.SetCurrentIndex(currentCarIndex);
+        raceInformation.selectedCarIndex = currentCarIndex;
         SpawnOrEnableCar();
         FillStats();
     }
@@ -94,8 +95,8 @@ public class GarageManager : MonoBehaviour
         currentCarIndex += dir;
         
         CheckIndexUnderOrOverflow();
-        CarModelManager.Instance.SetCurrentIndex(currentCarIndex);
-        
+        //CarModelManager.Instance.SetCurrentIndex(currentCarIndex);
+        raceInformation.selectedCarIndex = currentCarIndex;
 
         if (CarInventoryManager.Instance.IsCarUnlocked(currentCarIndex))
         {
@@ -127,6 +128,7 @@ public class GarageManager : MonoBehaviour
 
         CheckIndexUnderOrOverflow();
         CarModelManager.Instance.SetCurrentIndex(currentCarIndex);
+        raceInformation.selectedCarIndex = currentCarIndex;
 
         if (CarInventoryManager.Instance.IsCarUnlocked(currentCarIndex))
         {

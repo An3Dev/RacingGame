@@ -63,7 +63,6 @@ public class LeaderboardUIManager : MonoBehaviour
     public void SetLeaderboard(GetLeaderboardResult leaderboard)
     {
         leaderboardResult = leaderboard;
-        Debug.Log("Set leaderboard in UI manager");
         infoText.gameObject.SetActive(false);
         RefreshLeaderboard();
     }
@@ -130,8 +129,6 @@ public class LeaderboardUIManager : MonoBehaviour
                 text[2].color = otherPlayerTextColor;
             }
         }
-
-        Debug.Log("Player is in top 10: " + isPlayerInTop10);
 
         if (!isPlayerInTop10)
         {
@@ -221,7 +218,7 @@ public class LeaderboardUIManager : MonoBehaviour
 
         if (!PlayFabClientAPI.IsClientLoggedIn())
         {
-            PlayfabManager.Instance.OnUserLoggedIn += OnPlayerLoggedIn; //like and subscribe
+            PlayfabManager.OnUserLoggedIn += OnPlayerLoggedIn; //like and subscribe
         }
         else
         {

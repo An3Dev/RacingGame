@@ -9,15 +9,17 @@ public class LoadingScreen : MonoBehaviour
 {
     public static LoadingScreen Instance;
 
+    [SerializeField] RaceInformation raceInformation;
+    [SerializeField] MapList mapList;
     public Slider progressBar;
     public TextMeshProUGUI progressText, clickToContinueText;
 
     public Animator carAnimator;
 
-    public static int sceneToLoadBuildIndex = 0;
+    public int buildIndexForSceneToLoad = 0;
     AsyncOperation sceneLoading;
 
-    public static bool didSetSceneIndex = false;
+    public bool didSetSceneIndex = false;
 
     bool finishedLoading = false;
 
@@ -30,10 +32,13 @@ public class LoadingScreen : MonoBehaviour
     private void Awake()
     {
         //Debug.Log(sceneToLoadBuildIndex);
-        if (didSetSceneIndex)
-        {
-            StartCoroutine(LoadAsynchronously(sceneToLoadBuildIndex));
-        }
+        //if (didSetSceneIndex)
+        //{
+
+        buildIndexForSceneToLoad = An3.SceneUtility.SceneIndexFromName(mapList.list[raceInformation.selectedMapIndex]);
+        StartCoroutine(LoadAsynchronously(buildIndexForSceneToLoad));
+        //}
+
     }
 
     private void Update()
@@ -45,13 +50,12 @@ public class LoadingScreen : MonoBehaviour
         }
     }
 
-    IEnumerator LoadAsynchronously(int index)
+    IEnumerator LoadAsynchronously(int buildIndex)
     {
         yield return new WaitForSeconds(0.1f);
-        sceneLoading = SceneManager.LoadSceneAsync(index);
+        sceneLoading = SceneManager.LoadSceneAsync(buildIndex);
 
         // this doesn't allow unity to open the scene once it's loaded.       
-
         sceneLoading.allowSceneActivation = false;
         sceneLoading.completed += Test();
         progress = 0;
@@ -85,8 +89,8 @@ public class LoadingScreen : MonoBehaviour
             yield return new WaitForEndOfFrame();
         }
 
+        // allow unity to open the scene
         sceneLoading.allowSceneActivation = true;
-
     }
 
     System.Action<UnityEngine.AsyncOperation> Test()

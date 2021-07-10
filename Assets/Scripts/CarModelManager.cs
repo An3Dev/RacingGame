@@ -6,25 +6,31 @@ public class CarModelManager : MonoBehaviour
 {
     public static CarModelManager Instance;
 
-    public GameObject[] carPrefabs;
+    //GameObject[] carPrefabs;
     Car[] carComponents;
 
-    public static int currentCarIndex = 0;
+    public int currentCarIndex = 0;
+    [SerializeField] CarsList carsList;
+    RaceInformation raceInformation;
 
     private void Awake()
     {
         Instance = this;
         //DontDestroyOnLoad(this);
-        carComponents = new Car[carPrefabs.Length];
-        for(int i = 0; i < carPrefabs.Length; i++)
+        carComponents = new Car[carsList.carPrefabsList.Length];
+        for(int i = 0; i < carsList.carPrefabsList.Length; i++)
         {
-            carComponents[i] = carPrefabs[i].GetComponent<Car>();
+            carComponents[i] = carsList.carPrefabsList[i].GetComponent<Car>();
         }
+
+        raceInformation = ReferenceManager.Instance.GetRaceInformation();
+        currentCarIndex = raceInformation.selectedCarIndex;
     }
 
     public void SetCurrentIndex(int index)
     {
         currentCarIndex = index;
+        raceInformation.selectedCarIndex = currentCarIndex;
     }
 
     public int GetCurrentIndex()
@@ -34,17 +40,17 @@ public class CarModelManager : MonoBehaviour
 
     public GameObject[] GetCarPrefabs()
     {
-        return carPrefabs;
+        return carsList.carPrefabsList;
     }
 
     public GameObject GetCarByIndex(int index)
     {
-        return carPrefabs[index];
+        return carsList.carPrefabsList[index];
     }
 
     public GameObject GetCurrentCarGameObject()
     {
-        return carPrefabs[currentCarIndex];
+        return carsList.carPrefabsList[currentCarIndex];
     }
 
     public Car GetCurrentCar()
@@ -59,7 +65,7 @@ public class CarModelManager : MonoBehaviour
 
     public string GetCurrentCarName()
     {
-        return carPrefabs[currentCarIndex].name;
+        return carsList.carPrefabsList[currentCarIndex].name;
     }
     public int GetCarNumber()
     {
@@ -73,12 +79,12 @@ public class CarModelManager : MonoBehaviour
 
     public string GetCarName(int index)
     {
-        return carPrefabs[index].name;
+        return carsList.carPrefabsList[index].name;
     }
 
     public int GetCarIndexByCarNumber(int carNumber)
     {
-        for(int i = 0; i < carPrefabs.Length; i++)
+        for(int i = 0; i < carsList.carPrefabsList.Length; i++)
         {
             if (carComponents[i].GetCarNumber() == carNumber)
             {
@@ -90,6 +96,6 @@ public class CarModelManager : MonoBehaviour
 
     public int GetCarListLength()
     {
-        return carPrefabs.Length;
+        return carsList.carPrefabsList.Length;
     }
 }

@@ -14,6 +14,5 @@ public class LoadingScreenParticleSystem : MonoBehaviour
     public void Bruh()
     {
         audioSource.Play();
-        Debug.Log("Test");
     }
 }

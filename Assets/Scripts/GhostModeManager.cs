@@ -7,8 +7,9 @@ public enum Difficulty { Noob, Easy, Medium, Hard, Insane }
 public class GhostModeManager : MonoBehaviour
 {
     public static GhostModeManager Instance;
+    public RaceInformation raceInfo;
 
-    public static Difficulty currentDifficulty;
+    public Difficulty currentDifficulty;
     private void Awake()
     {
         if (Instance == null)
@@ -25,11 +26,16 @@ public class GhostModeManager : MonoBehaviour
             Instance = this;
             //DontDestroyOnLoad(gameObject);
         }
+
+        currentDifficulty = raceInfo.ghostDifficulty;
     }
 
     public void OnClickDifficultyButton(int difficulty)
     {
-        currentDifficulty = (Difficulty)difficulty;
+        raceInfo.mode = Mode.GhostRace;
+        raceInfo.ghostDifficulty = (Difficulty)difficulty;
+        //currentDifficulty = (Difficulty)difficulty;
+        raceInfo.numLaps = 1;
         MainMenu.Instance.StartGame();
     }
 }

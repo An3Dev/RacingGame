@@ -24,7 +24,10 @@ public class Minimap : MonoBehaviour
     {
         transform.position = car.position;
         transform.rotation = car.rotation;
-        
+
+        worldToUIRatioY = worldTop.localPosition.z / UITop.localPosition.y;
+        worldToUIRatioX = worldLeft.localPosition.x / UILeft.localPosition.x;
+
         Vector3 relativePosition = mapWorldCenter.InverseTransformPoint(this.transform.position);
 
         playerInMap.localPosition = new Vector3(relativePosition.x / worldToUIRatioX, relativePosition.z / worldToUIRatioY);

@@ -7,6 +7,10 @@ public class CheckpointManager : MonoBehaviour
 {
     public static CheckpointManager Instance;
 
+    public static Action OnFinishedRace, OnCompletedLap;
+
+    RaceInformation raceInfo;
+
     public Transform checkpointContainer;
     public AudioSource checkpointAudioSource;
 
@@ -18,6 +22,8 @@ public class CheckpointManager : MonoBehaviour
 
     int nextCheckpoint = 1;
 
+    int numLaps;
+
     private void Awake()
     {
         if (Instance == null)
@@ -28,11 +34,13 @@ public class CheckpointManager : MonoBehaviour
             Destroy(this);
         }
 
+        raceInfo = ReferenceManager.Instance.GetRaceInformation();
         if (checkpoints.Count <= 0)
             PopulateCheckpointList();
 
         currentCheckpoint = checkpoints[checkpoints.Count - 1];
         nextCheckpoint = 0;
+
 
 
         //SetCheckpoint(0);
@@ -101,10 +109,19 @@ public class CheckpointManager : MonoBehaviour
             // user completed a lap
             if (allCheckpointsWerePassed)
             {
-                LapTimeManager.Instance.OnCompletedLap();
-                RacingUIManager.Instance.OnCompletedLap();
-                RaceManager.Instance.OnCompletedLap();
-                GhostCapture.Instance.FinishedRace();
+                numLaps++;
+                // if finished the race
+                if (numLaps >= raceInfo.numLaps)
+                {
+                    OnFinishedRace?.Invoke();
+                } else
+                {
+                    OnCompletedLap?.Invoke();
+                }
+                //LapTimeManager.Instance.OnCompletedLap();
+                //RacingUIManager.Instance.OnCompletedLap();
+                //.Instance.OnCompletedLap();
+                //GhostCapture.Instance.OnFinishedRace();
                 ResetCheckpointStates();
             }
         }

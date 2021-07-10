@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-
+using Photon.Pun;
 public class MainMenu : MonoBehaviour
 {
     public static MainMenu Instance;
@@ -11,7 +11,9 @@ public class MainMenu : MonoBehaviour
     [SerializeField] GameObject ghostModeUI;
     [SerializeField] GameObject leaderboardUI;
     [SerializeField] GameObject controlsUI;
+    [SerializeField] GameObject gameModeSelectionUI;
 
+    GameObject[] panels;
     private void Awake()
     {
         if (Instance != null)
@@ -22,11 +24,18 @@ public class MainMenu : MonoBehaviour
             Instance = this;
         }
         Time.timeScale = 1;
+
+        PhotonNetwork.Disconnect();
     }
 
     public void StartGame()
     {
-        LevelLoader.Instance.LoadScene(2);
+        int buildIndex = 2;
+
+        // should get the selected map here. Get its name.
+        // get the build number based on the name.        
+
+        LevelLoader.Instance.LoadScene(buildIndex);
     }
 
     public void ShowMainButtons(bool show)
@@ -36,7 +45,7 @@ public class MainMenu : MonoBehaviour
 
     public void OnClickPlay()
     {
-        ghostModeUI.SetActive(true);
+        gameModeSelectionUI.SetActive(true);
         ShowMainButtons(false);
     }
 
@@ -51,8 +60,24 @@ public class MainMenu : MonoBehaviour
 
         }
         ShowMainButtons(!open);
+    }
 
-        
+    public void OpenGameModeUI(bool open)
+    {
+        gameModeSelectionUI.SetActive(open);
+    }
+
+    public void OpenGhostLevelSelection(bool open)
+    {
+        PhotonNetwork.OfflineMode = true;
+        ghostModeUI.SetActive(open);
+        gameModeSelectionUI.SetActive(!open);
+    }
+
+    public void OnClickMultiplayer()
+    {
+        PhotonNetwork.OfflineMode = false;
+        SceneManager.LoadScene("MultiplayerMenu");
     }
 
     public void OpenControls(bool open)
@@ -72,22 +97,17 @@ public class MainMenu : MonoBehaviour
         if (leaderboardUI.activeInHierarchy)
         {
             leaderboardUI.SetActive(false);
-            ShowMainButtons(true);
         } else if (ghostModeUI.activeInHierarchy)
         {
             ghostModeUI.SetActive(false);
-            ShowMainButtons(true);
         } else if (controlsUI.activeInHierarchy)
         {
-            controlsUI.SetActive(false);
-            ShowMainButtons(true);
+            controlsUI.SetActive(false);         
+        } else if (gameModeSelectionUI.activeInHierarchy)
+        {
+            gameModeSelectionUI.SetActive(false);
         }
-        //else if (settingsUI.gameObject.activeInHierarchy)
-        //{
-        //    //settingsUI.Open(false);
-        //    //OpenSettings(false);
-        //    //ShowMainButtons(true);
-        //}
+        ShowMainButtons(true);
     }
 
     public void OnClickGarage()

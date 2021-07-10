@@ -5520,10 +5520,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d7357e34d1d58e41991d52d3d461733, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  raceInformation: {fileID: 11400000, guid: 7639d8fe18e06b549899af06c032b587, type: 2}
+  mapList: {fileID: 11400000, guid: fb56b63ff4e765e4ebc7992e3342b47e, type: 2}
   progressBar: {fileID: 1120378630}
   progressText: {fileID: 1380378047}
   clickToContinueText: {fileID: 1551780651}
   carAnimator: {fileID: 1120378631}
+  buildIndexForSceneToLoad: 0
+  didSetSceneIndex: 0
 --- !u!4 &1035174115
 Transform:
   m_ObjectHideFlags: 0

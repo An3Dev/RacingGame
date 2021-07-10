@@ -488,7 +488,7 @@ public class CarController : MonoBehaviour
             // if user wants to go in reverse
             else if (localVelocity.z <= 0.1f && brakeInput > 0)
             {
-                if (!isDrifting)
+                if (true)
                 {
                     localVelocity -= Vector3.forward * reverseAccelerationMagnitude * brakeInput * accelerationOverSpeed.Evaluate(-localVelocity.z / maxReverseVelocity) * Time.deltaTime;
                 }
@@ -499,7 +499,7 @@ public class CarController : MonoBehaviour
             } 
             else if (localVelocity.z > 0.1f && brakeInput > 0) // if moving forward, and user is braking
             {
-                if (!isDrifting)
+                if (true)
                 {
                     localVelocity.z -= brakeForce * brakeInput * Time.deltaTime;
                 }
