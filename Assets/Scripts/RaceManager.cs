@@ -89,7 +89,9 @@ public class RaceManager : MonoBehaviourPunCallbacks
             PhotonNetwork.LocalPlayer.SetCustomProperties(hashtable);
             playerList = PhotonNetwork.PlayerList;
             PhotonNetwork.LocalPlayer.CustomProperties.TryGetValue(PlayerCustomProperties.PlayerLoadedLevel, out object loaded);
-            Debug.Log((bool)loaded);
+
+            // allow this client to receive messages again
+            PhotonNetwork.IsMessageQueueRunning = true;
             if (PhotonNetwork.IsMasterClient)
             {
                 if (AllPlayersLoaded())
@@ -119,7 +121,7 @@ public class RaceManager : MonoBehaviourPunCallbacks
 
     public override void OnPlayerPropertiesUpdate(Player targetPlayer, Hashtable changedProps)
     {
-        Debug.Log("Player properties update");
+        //Debug.Log("Player properties update");
         if (PhotonNetwork.IsMasterClient)
         {
             Debug.Log(targetPlayer.NickName + " changed props.");
@@ -132,13 +134,10 @@ public class RaceManager : MonoBehaviourPunCallbacks
     }
 
     bool AllPlayersLoaded()
-    {
-        Debug.Log("Player list count: " + playerList.Length);
-        
+    {       
         foreach (Player p in playerList)
         {
             p.CustomProperties.TryGetValue(PlayerCustomProperties.PlayerLoadedLevel, out object loaded);
-            Debug.Log(p.NickName + " loaded: " + loaded);
             if (loaded == null || !((bool)loaded))
             {
                 allPlayersAreReady = false;
@@ -151,17 +150,13 @@ public class RaceManager : MonoBehaviourPunCallbacks
 
     void RaiseStartCountdownEvent()
     {
-        Debug.Log("Raise event");
         RaiseEventOptions raiseEventOptions = new RaiseEventOptions()
         { Receivers = ReceiverGroup.All, CachingOption = EventCaching.AddToRoomCacheGlobal};
 
         double startTime = PhotonNetwork.Time;
         startTime += 2;
         PhotonNetwork.RaiseEvent(PhotonEvents.AllPlayersLoaded, startTime, raiseEventOptions, ExitGames.Client.Photon.SendOptions.SendReliable);
-    }
-
-
-    
+    }   
 
     public override void OnPlayerLeftRoom(Player otherPlayer)
     {

@@ -77,23 +77,23 @@ public class RoomManager : MonoBehaviourPunCallbacks
 
     public override void OnJoinedLobby()
     {
-        Debug.Log("Entered lobby");
+        //Debug.Log("Entered lobby");
     }
 
     public void JoinRandomRoom()
     {
         PhotonNetwork.JoinRandomRoom();
-        Debug.Log("Join random room");
+        //Debug.Log("Join random room");
     }
 
     public void ViewRooms()
     {
-        Debug.Log("View rooms");
+        //Debug.Log("View rooms");
     }
 
     public void JoinRoom(string roomName)
     {
-        Debug.Log("Try join room");
+        //Debug.Log("Try join room");
         PhotonNetwork.JoinRoom(roomName);
     }
 
@@ -122,7 +122,7 @@ public class RoomManager : MonoBehaviourPunCallbacks
     public override void OnJoinedRoom()
     {
         //base.OnJoinedRoom();
-        Debug.Log("Joined room");
+        //Debug.Log("Joined room");
         roomName = PhotonNetwork.CurrentRoom.Name;
         playersInRoom = PhotonNetwork.CurrentRoom.Players;
 

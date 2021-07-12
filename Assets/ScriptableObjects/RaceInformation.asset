@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b839205720381fb4882e4bad8aa74a7e, type: 3}
   m_Name: RaceInformation
   m_EditorClassIdentifier: 
-  carModelNumber: 0
-  mapNumber: 0
-  modeNumber: 0
+  selectedCarIndex: 0
+  selectedMapIndex: 0
+  mode: 0
+  ghostDifficulty: 0
+  numLaps: 3

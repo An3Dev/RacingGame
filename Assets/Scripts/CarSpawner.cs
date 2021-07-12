@@ -24,7 +24,6 @@ public class CarSpawner : MonoBehaviour
             PhotonNetwork.CreateRoom(null);
         }
 
-        Debug.Log(CarModelManager.Instance.GetCurrentCarGameObject());
         currentCar = PhotonNetwork.Instantiate("Cars/" + CarModelManager.Instance.GetCurrentCarGameObject().name, startingSpot.position, startingSpot.rotation);
         //currentCar = Instantiate(CarModelManager.Instance.GetCurrentCarGameObject());
         //currentCar.transform.position = startingSpot.position;

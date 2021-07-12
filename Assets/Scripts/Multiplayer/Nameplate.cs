@@ -2,64 +2,55 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+
 public class Nameplate : MonoBehaviour
 {
     [SerializeField] TextMeshProUGUI nameText;
-
     [SerializeField] Transform lookTarget;
 
     float height = 5;
 
-    Transform followTarget;
+    [SerializeField] Transform followTarget;
     float lookRate = 0.04f;
     WaitForSeconds waitForSeconds;
 
-    float maxScale = 5;
-    float minScale = 0.5f;
+    float maxScale = 0.5f;
+    float minScale = 0.05f;
 
     float minDistance = 10;
-    float maxDistance = 500;
+    float maxDistance = 200;
+
+    bool autoInitialize = false;
 
     private void Awake()
     {
-        waitForSeconds = new WaitForSeconds(lookRate);
-        //followTarget = transform.parent;
-        // unparent 
-        transform.parent = null;    
+        if (autoInitialize)
+            Initialize(lookTarget, followTarget, name);
     }
 
-    public void SetLookTarget(Transform target)
+    public void Initialize(Transform lookTarget, Transform followTarget, string name)
     {
-        this.lookTarget = target;
-        StartCoroutine(nameof(Tick));
+        this.lookTarget = lookTarget;
+        this.followTarget = followTarget;
+        nameText.text = name;
+
+        //waitForSeconds = new WaitForSeconds(lookRate);
+        //StartCoroutine(nameof(Tick));
     }
 
-    public void SetFollowTarget(Transform target)
+    private void FixedUpdate()
     {
-        this.followTarget = target;
+        transform.LookAt(lookTarget);
+        transform.rotation = Quaternion.Euler(0, transform.eulerAngles.y, transform.eulerAngles.z);
+        transform.position = followTarget.position + Vector3.up * height;
+        //Debug.Log("Nameplate: " + lookTarget);
+        float distance = Vector3.Distance(transform.position, lookTarget.position);
+        float scale = Mathf.Lerp(minScale, maxScale, distance / maxDistance);
+        transform.localScale = new Vector3(scale, scale, scale);
     }
 
-    public void SetText(string text)
-    {
-        nameText.text = text;
-    }
-
-    IEnumerator Tick()
-    {
-        while(true)
-        {
-            if (lookTarget = null)
-            {
-                yield return null;
-            }
-            transform.LookAt(lookTarget);
-            transform.rotation = Quaternion.Euler(0, transform.eulerAngles.y, transform.eulerAngles.z);
-            transform.position = followTarget.position + Vector3.up * height;
-            Debug.Log("Nameplate: " + lookTarget);
-            float distance = Vector3.Distance(transform.position, lookTarget.position);
-            float scale = Mathf.Lerp(minScale, maxScale, distance / maxDistance);
-            transform.localScale = new Vector3(scale, scale, scale);
-            yield return waitForSeconds;
-        }
-    }
+    //private void OnDisable()
+    //{
+    //    StopCoroutine(nameof(Tick));
+    //}
 }

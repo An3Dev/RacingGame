@@ -217,6 +217,9 @@ public class MultiplayerRoom : MonoBehaviourPunCallbacks, IOnEventCallback
             raceInformation.numLaps = 3;
             //LoadingScreen.sceneToLoadBuildIndex = An3.SceneUtility.sceneIndexFromName(sceneName);
             //LoadingScreen.didSetSceneIndex = true;
+            
+            // disables this client from getting messages from other clients.
+            PhotonNetwork.IsMessageQueueRunning = false;
             SceneManager.LoadScene("LoadingScreen");
         }
     }
